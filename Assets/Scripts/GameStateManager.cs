@@ -9,11 +9,11 @@ public class GameStateManager : MonoBehaviour {
 	public int spawnPipeIdx;
 
 	public int marioSize;
-	public int lives;
+	public int lives; //Make it infinite //Old: 400 asendiing
 	public int coins;
 	public int scores;
-	public float timeLeft;
-	public bool hurryUp;
+	public float timeElapsed; //Make it infinite
+	public bool hurryUp; //purpose = make music faster
 
 	public string sceneToLoad; // what scene to load after level start screen finishes?
 	public bool timeup;
@@ -43,7 +43,7 @@ public class GameStateManager : MonoBehaviour {
 		lives = 3;
 		coins = 0;
 		scores = 0;
-		timeLeft = 400.5f;
+		timeElapsed = 0.0f; 
 		hurryUp = false;
 		ResetSpawnPosition ();
 		sceneToLoad = null;
@@ -51,13 +51,13 @@ public class GameStateManager : MonoBehaviour {
 	}
 
 	public void ConfigNewLevel() {
-		timeLeft = 400.5f;
+		timeElapsed = 400.5f; //todo: Here add the previous time from last level
 		hurryUp = false;
 		ResetSpawnPosition ();
 	}
 
 	public void ConfigReplayedLevel() { // e.g. Mario respawns
-		timeLeft = 400.5f;
+		timeElapsed = 400.5f;
 		hurryUp = false;
 	}
 
@@ -67,7 +67,7 @@ public class GameStateManager : MonoBehaviour {
 		lives = t_LevelManager.lives;
 		coins = t_LevelManager.coins;
 		scores = t_LevelManager.scores;
-		timeLeft = t_LevelManager.timeLeft;
+		timeElapsed = t_LevelManager.timeElapsed;
 		hurryUp = t_LevelManager.hurryUp;
 	}
 

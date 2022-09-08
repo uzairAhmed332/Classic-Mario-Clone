@@ -14,8 +14,14 @@ public class LevelManager : MonoBehaviour {
 	public int lives;
 	public int coins;
 	public int scores;
-	public float timeLeft;
-	private int timeLeftInt;
+	public float timeElapsed;
+	private int timeElapsedInt;
+
+	public int coinBonus = 200;
+	public int powerupBonus = 1000;
+	public int starmanBonus = 1000;
+	public int oneupBonus = 0;
+	public int breakBlockBonus = 50;
 
 	private bool isRespawning;
 	private bool isPoweringDown;
@@ -66,11 +72,7 @@ public class LevelManager : MonoBehaviour {
 	public AudioClip stompSound;
 	public AudioClip warningSound;
 
-	public int coinBonus = 200;
-	public int powerupBonus = 1000;
-	public int starmanBonus = 1000;
-	public int oneupBonus = 0;
-	public int breakBlockBonus = 50;
+
 
 	public Vector2 stompBounceVelocity = new Vector2 (0, 15);
 
@@ -116,7 +118,7 @@ public class LevelManager : MonoBehaviour {
 		lives = t_GameStateManager.lives;
 		coins = t_GameStateManager.coins;
 		scores = t_GameStateManager.scores;
-		timeLeft = t_GameStateManager.timeLeft;
+		timeElapsed = t_GameStateManager.timeElapsed;
 		hurryUp = t_GameStateManager.hurryUp;
 	}
 
@@ -124,23 +126,23 @@ public class LevelManager : MonoBehaviour {
 	/****************** Timer */
 	void Update() {
 		if (!timerPaused) {
-			timeLeft -= Time.deltaTime / .4f; // 1 game sec ~ 0.4 real time sec
+			timeElapsed += Time.deltaTime ; // 1 game sec ~ 0.4 real time sec
 			SetHudTime ();
 		}
 
-		if (timeLeftInt < 100 && !hurryUp) {
+		if (timeElapsedInt < 100 && !hurryUp) { //Todo: Not required. comment it after checking isInvincibleStarman thing
 			hurryUp = true;
 			PauseMusicPlaySound (warningSound, true);
-			if (isInvincibleStarman) {
+			if (isInvincibleStarman) {  //Todo: I think isInvincibleStarman needs to be outside
 				ChangeMusic (starmanMusicHurry, warningSound.length);
 			} else {
 				ChangeMusic (levelMusicHurry, warningSound.length);
 			}
 		}
 
-		if (timeLeftInt <= 0) {
+		/*if (timeLeftInt <= 0) {
 			MarioRespawn (true);
-		}
+		}*/
 
 		if (Input.GetButtonDown ("Pause")) {
 			if (!gamePaused) {
@@ -454,8 +456,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void SetHudTime() {
-		timeLeftInt = Mathf.RoundToInt (timeLeft);
-		timeText.text = timeLeftInt.ToString ("D3");
+		timeElapsedInt = Mathf.RoundToInt (timeElapsed);
+		timeText.text = timeElapsedInt.ToString ("D0");
 	}
 
 	public void CreateFloatingText(string text, Vector3 spawnPos) {
