@@ -463,7 +463,11 @@ public class LevelManager : MonoBehaviour {
 
 	public void SetHudTime() {
 		timeElapsedInt = Mathf.RoundToInt (timeElapsed);
-		timeText.text = timeElapsedInt.ToString ("D0");
+		//timeText.text = timeElapsedInt.ToString ("D0"); //Old format
+
+		float minutes = Mathf.FloorToInt(timeElapsedInt / 60);
+		float seconds = Mathf.FloorToInt(timeElapsedInt % 60);
+		timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 	}
 
 	public void SetHudDeath()
