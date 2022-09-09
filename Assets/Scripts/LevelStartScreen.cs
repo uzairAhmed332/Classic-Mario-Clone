@@ -27,7 +27,7 @@ public class LevelStartScreen : MonoBehaviour {
 		ScoreTextHUD.text = t_GameStateManager.scores.ToString ("D6");
 		CoinTextHUD.text = "x" + t_GameStateManager.coins.ToString ("D2");
 		WorldTextMain.text = worldName.ToUpper ();
-		livesText.text = t_GameStateManager.lives.ToString ();
+		livesText.text = t_GameStateManager.deaths.ToString ();
 
 		StartCoroutine (LoadSceneDelayCo (t_GameStateManager.sceneToLoad, loadScreenDelay));
 

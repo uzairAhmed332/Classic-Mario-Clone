@@ -29,22 +29,25 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4908287474821086
 Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485481461405040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114310586089754620
 MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485481461405040}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -55,7 +58,10 @@ MonoBehaviour:
   spawnPointIdx: 0
   spawnPipeIdx: 0
   marioSize: 0
-  lives: 0
+  deaths: 0
   coins: 0
   scores: 0
-  timeLeft: 0
+  timeElapsed: 0
+  hurryUp: 0
+  sceneToLoad: 
+  timeup: 0

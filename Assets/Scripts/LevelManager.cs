@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour {
 
 	public bool hurryUp; // within last 100 secs?
 	public int marioSize; // 0..2
-	public int lives;
+	public int deaths;
 	public int coins;
 	public int scores;
 	public float timeElapsed;
@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour {
 	public int powerupBonus = 1000;
 	public int starmanBonus = 1000;
 	public int oneupBonus = 0;
-	public int breakBlockBonus = 50;
+	public int breakBlockBonus = 50; //todo Why its always 50 even when value chnaged? Ans: Value getting from unity editor and its getting prority over code!
 
 	private bool isRespawning;
 	private bool isPoweringDown;
@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour {
 	public Text scoreText;
 	public Text coinText;
 	public Text timeText;
+	public Text deathText;
 	public GameObject FloatingTextEffect;
 	private const float floatingTextOffsetY = 2f;
 
@@ -103,6 +104,7 @@ public class LevelManager : MonoBehaviour {
 		// HUD
 		SetHudCoin ();
 		SetHudScore ();
+		SetHudDeath();
 		SetHudTime ();
 		if (hurryUp) {
 			ChangeMusic (levelMusicHurry);
@@ -115,7 +117,7 @@ public class LevelManager : MonoBehaviour {
 
 	void RetrieveGameState() {
 		marioSize = t_GameStateManager.marioSize;
-		lives = t_GameStateManager.lives;
+		deaths = t_GameStateManager.deaths;
 		coins = t_GameStateManager.coins;
 		scores = t_GameStateManager.scores;
 		timeElapsed = t_GameStateManager.timeElapsed;
@@ -316,8 +318,8 @@ public class LevelManager : MonoBehaviour {
 			isRespawning = true;
 
 			marioSize = 0;
-			lives--;
-
+			deaths++;
+			SetHudDeath();
 			soundSource.Stop ();
 			musicSource.Stop ();
 			musicPaused = true;
@@ -329,13 +331,15 @@ public class LevelManager : MonoBehaviour {
 			if (timeup) {
 				Debug.Log(this.name + " MarioRespawn: called due to timeup");
 			}
-			Debug.Log (this.name + " MarioRespawn: lives left=" + lives.ToString ());
+			Debug.Log (this.name + " MarioRespawn: death counts=" + deaths.ToString ());
 
-			if (lives > 0) {
+			if (deaths > 0) {
 				ReloadCurrentLevel (deadSound.length, timeup);
-			} else {
-				LoadGameOver (deadSound.length, timeup);
-				Debug.Log(this.name + " MarioRespawn: all dead");
+			} 
+			else {
+				//No need of this as lives are infinite so only initiate "ReloadCurrentLevel" 
+				/*				LoadGameOver (deadSound.length, timeup);
+								Debug.Log(this.name + " MarioRespawn: all dead");*/
 			}
 		}
 	}
@@ -437,6 +441,8 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void LoadGameOver(float delay = loadSceneDelay, bool timeup = false) {
+		//todo: I think this will never called! as game never ends beacuse of infite lives! 
+
 		int currentHighScore = PlayerPrefs.GetInt ("highScore", 0);
 		if (scores > currentHighScore) {
 			PlayerPrefs.SetInt ("highScore", scores);
@@ -458,6 +464,11 @@ public class LevelManager : MonoBehaviour {
 	public void SetHudTime() {
 		timeElapsedInt = Mathf.RoundToInt (timeElapsed);
 		timeText.text = timeElapsedInt.ToString ("D0");
+	}
+
+	public void SetHudDeath()
+	{
+		deathText.text = deaths.ToString("D0");
 	}
 
 	public void CreateFloatingText(string text, Vector3 spawnPos) {
@@ -513,12 +524,14 @@ public class LevelManager : MonoBehaviour {
 
 	/****************** Game state */
 	public void AddLife() {
-		lives++;
+		deaths--;
+		SetHudDeath();
 		soundSource.PlayOneShot (oneUpSound);
 	}
 
 	public void AddLife(Vector3 spawnPos) {
-		lives++;
+		deaths--;
+		SetHudDeath();
 		soundSource.PlayOneShot (oneUpSound);
 		CreateFloatingText ("1UP", spawnPos);
 	}

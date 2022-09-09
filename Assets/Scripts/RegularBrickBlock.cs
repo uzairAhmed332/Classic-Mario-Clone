@@ -43,6 +43,7 @@ public class RegularBrickBlock : MonoBehaviour {
 			if (t_LevelManager.marioSize == 0) {
 				m_Animator.SetTrigger ("bounce");
 				t_LevelManager.soundSource.PlayOneShot (t_LevelManager.bumpSound);
+				Debug.Log("brick bumped "+ t_LevelManager.breakBlockBonus);
 			} else {
 				BreakIntoPieces ();
 				t_LevelManager.AddScore(t_LevelManager.breakBlockBonus);
