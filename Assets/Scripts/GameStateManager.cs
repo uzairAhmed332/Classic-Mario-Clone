@@ -61,7 +61,7 @@ public class GameStateManager : MonoBehaviour {
 		hurryUp = false;
 	}
 
-	public void SaveGameState() {
+	public void SaveGameState() { // also called before Mario dies
 		LevelManager t_LevelManager = FindObjectOfType<LevelManager> ();
 		marioSize = t_LevelManager.marioSize;
 		deaths = t_LevelManager.deaths;

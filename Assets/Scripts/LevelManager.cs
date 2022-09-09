@@ -430,13 +430,14 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void ReloadCurrentLevel(float delay = loadSceneDelay, bool timeup = false) {
+		//Called when mario dies!
 		t_GameStateManager.SaveGameState ();
-		t_GameStateManager.ConfigReplayedLevel ();
-		t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene ().name;
+		//t_GameStateManager.ConfigReplayedLevel (); //No need
+		t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene ().name; //stores current level name. Helps in restating same level
 		if (timeup) {
-			LoadSceneDelay ("Time Up Screen", delay);
+			LoadSceneDelay ("Time Up Screen", delay); //Will never called but Show something like this when Mario resues princess!
 		} else {
-			LoadSceneDelay ("Level Start Screen", delay);
+			LoadSceneDelay ("Level Start Screen", delay); //This will be called Only
 		}
 	}
 
