@@ -21,10 +21,11 @@ public class LevelManager : MonoBehaviour {
 	public int powerupBonus = 1000;
 	public int starmanBonus = 1000;
 	public int oneupBonus = 0;
-	public int breakBlockBonus = 50; //todo Why its always 50 even when value chnaged? Ans: Value getting from unity editor and its getting prority over code!
+	public int breakBlockBonus = 50; //Why its always 50 even when value chnaged? Ans: Value getting from unity editor and its getting prority over code!
 
 	private bool isRespawning;
 	private bool isPoweringDown;
+	public bool isFeedbackPanelVisible = false;
 
 	public bool isInvinciblePowerdown;
 	public bool isInvincibleStarman;
@@ -38,6 +39,7 @@ public class LevelManager : MonoBehaviour {
 	private Rigidbody2D mario_Rigidbody2D;
 
 	public Text scoreText;
+	public GameObject feedbackPanel;
 	public Text coinText;
 	public Text timeText;
 	public Text deathText;
@@ -326,7 +328,8 @@ public class LevelManager : MonoBehaviour {
 			soundSource.PlayOneShot (deadSound);
 
 			Time.timeScale = 0f;
-			mario.FreezeAndDie ();
+		     mario.Freeze ();
+			// mario.FreezeAndDie ();
 
 			if (timeup) {
 				Debug.Log(this.name + " MarioRespawn: called due to timeup");
@@ -389,18 +392,22 @@ public class LevelManager : MonoBehaviour {
 
 	IEnumerator LoadSceneDelayCo(string sceneName, float delay) {
 		Debug.Log (this.name + " LoadSceneDelayCo: starts loading " + sceneName);
-
-		float waited = 0;
-		while (waited < delay) {
-			if (!gamePaused) { // should not count delay while game paused
-				waited += Time.unscaledDeltaTime;
+		
+        float waited = 0;
+			while (waited < 5)
+        {
+            if (!gamePaused)
+            { // should not count delay while game paused
+                waited += Time.unscaledDeltaTime;
+				
 			}
-			yield return null;
-		}
-		yield return new WaitWhile (() => gamePaused);
+            yield return null;
+        }
+        yield return new WaitWhile(() => gamePaused);
 
-		Debug.Log (this.name + " LoadSceneDelayCo: done loading " + sceneName);
-
+        Debug.Log (this.name + " LoadSceneDelayCo: done loading " + sceneName);
+		feedbackPanel.gameObject.SetActive(false);
+		mario.Die();
 		isRespawning = false;
 		isPoweringDown = false;
 		SceneManager.LoadScene (sceneName);
@@ -432,17 +439,27 @@ public class LevelManager : MonoBehaviour {
 	public void ReloadCurrentLevel(float delay = loadSceneDelay, bool timeup = false) {
 		//Called when mario dies!
 		t_GameStateManager.SaveGameState ();
-		//t_GameStateManager.ConfigReplayedLevel (); //No need
+		//t_GameStateManager.ConfigReplayedLevel (); //No need. Only setting time!
 		t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene ().name; //stores current level name. Helps in restating same level
+
+		//todo Imeplement feedback panel here before reloading the scene
+		
+		//if (!isFeedbackPanelVisible) {
+		//	isFeedbackPanelVisible = true;
+			feedbackPanel.gameObject.SetActive(true);
+		//}
+
+		//End
+
 		if (timeup) {
-			LoadSceneDelay ("Time Up Screen", delay); //Will never called but Show something like this when Mario resues princess!
+			LoadSceneDelay ("Time Up Screen", delay); //Will NOT called as time is infinite
 		} else {
-			LoadSceneDelay ("Level Start Screen", delay); //This will be called Only
+			LoadSceneDelay ("Level Start Screen", delay); //Only this will be called 
 		}
 	}
 
 	public void LoadGameOver(float delay = loadSceneDelay, bool timeup = false) {
-		//todo: I think this will never called! as game never ends beacuse of infite lives! 
+		// I think this will never called! as game never ends beacuse of infite lives! 
 
 		int currentHighScore = PlayerPrefs.GetInt ("highScore", 0);
 		if (scores > currentHighScore) {

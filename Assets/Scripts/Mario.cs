@@ -303,10 +303,15 @@ public class Mario : MonoBehaviour {
 
 	public bool isDying = false;
 	float deadUpTimer = .25f;
-//	Vector2 deadUpVelocity = new Vector2 (0, 10f);
-//	Vector2 deadDownVelocity = new Vector2 (0, -15f);
-	public void FreezeAndDie() {
-		FreezeUserInput ();
+	//	Vector2 deadUpVelocity = new Vector2 (0, 10f);
+	//	Vector2 deadDownVelocity = new Vector2 (0, -15f);
+
+	public void Freeze() 
+	{
+		FreezeUserInput();
+	}
+	public void Die() { //call this after freeze
+		//FreezeUserInput ();
 		isDying = true;
 		m_Rigidbody2D.bodyType = RigidbodyType2D.Kinematic;
 		m_Animator.SetTrigger ("respawn");
@@ -314,6 +319,8 @@ public class Mario : MonoBehaviour {
 		gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground Effect";
 	}
 
+
+	
 
 	bool isClimbingFlagPole = false;
 	Vector2 climbFlagPoleVelocity = new Vector2 (0, -5f);
