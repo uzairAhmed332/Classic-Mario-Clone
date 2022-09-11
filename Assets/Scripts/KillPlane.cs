@@ -16,8 +16,8 @@ public class KillPlane : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "Player") {
-			t_LevelManager.MarioRespawn ();
+		if (other.gameObject.tag == "Player") {  //Called when mario dies by drawning like planes and ...
+			t_LevelManager.MarioRespawn(Constants.ENEMY_PLANES);
 		} else {
 			Destroy (other.gameObject);
 		}

@@ -424,10 +424,11 @@ public class Mario : MonoBehaviour {
 				{
 					Debug.Log (this.name + " OnCollisionEnter2D: Damaged by " + other.gameObject.name
 						+ " from " + normal.ToString () + "; isFalling=" + isFalling); // TODO sometimes fire before stompbox reacts
-					t_LevelManager.MarioPowerDown ();
+					t_LevelManager.MarioPowerDown (Constants.ENEMY_GOOMBA); //So far this called when Mario dies from Brown Goomba
 				}
 
-			} else if (t_LevelManager.isInvincibleStarman) {
+			}
+			else if (t_LevelManager.isInvincibleStarman) {
 				t_LevelManager.MarioStarmanTouchEnemy (enemy);
 			}
 		
