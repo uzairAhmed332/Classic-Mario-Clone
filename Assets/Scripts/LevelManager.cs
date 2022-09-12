@@ -8,7 +8,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    private const float loadSceneDelay = 1f;
+    public const float loadSceneDelay = 8f;
 
     public bool hurryUp; // within last 100 secs?
     public int marioSize; // 0..2
@@ -46,9 +46,8 @@ public class LevelManager : MonoBehaviour
     public GameObject FloatingTextEffect;
     private const float floatingTextOffsetY = 2f;
 
-
+    public GameObject feedbackPanelWhenItemMissed;
     public GameObject feedbackPanel;
-    public string feedbackPanelTitle;
     public TextMeshProUGUI feedbackPanelTitleText;
     public TextMeshProUGUI feedbackPanelDecsriptionText;
 
@@ -395,7 +394,8 @@ public class LevelManager : MonoBehaviour
 
             if (deaths > 0)
             {
-                ReloadCurrentLevel(diedFrom, deadSound.length, timeup);
+                //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
+                ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
             }
             else
             {
@@ -460,7 +460,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log(this.name + " LoadSceneDelayCo: starts loading " + sceneName);
 
         float waited = 0;
-        while (waited < 5)
+        while (waited < delay)
         {
             if (!gamePaused)
             { // should not count delay while game paused

@@ -22,7 +22,7 @@ public class Goomba : Enemy {
 		StopInteraction ();
 		Debug.Log (this.name + " StompedByMario: stopped interaction");
 		m_Animator.SetTrigger ("stomped");
-		Destroy (gameObject, stompedDuration);
+		Destroy (gameObject, stompedDuration); //Make enemy deleted from inspector! and
 		isBeingStomped = false;
 	}
 }
