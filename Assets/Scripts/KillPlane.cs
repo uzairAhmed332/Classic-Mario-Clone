@@ -37,11 +37,13 @@ public class KillPlane : MonoBehaviour {
 		t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 		Image image = t_LevelManager.feedbackPanel.GetComponent<Image>();
 		var tempColor = image.color;
-		tempColor.a = 1f;
+		tempColor.a = 0.4f;
 		//image.color = Color.green;
 		t_LevelManager.feedbackPanelTitleText.text = "You lost Score by losing an enemy";
 		t_LevelManager.feedbackPanelDecsriptionText.text = "kill the enemy before it fell to the down by jumping over it";
+		//todo Stop the time!
 		mario.Freeze();
+		
 		yield return new WaitForSeconds(delay);
 		t_LevelManager.feedbackPanel.gameObject.SetActive(false);
 		mario.UnfreezeUserInput();

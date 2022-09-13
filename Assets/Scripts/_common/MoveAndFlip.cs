@@ -9,6 +9,7 @@ using UnityEngine;
  */
 
 public class MoveAndFlip : MonoBehaviour {
+	int counter = 0;
 	public bool canMove = false;
 	public bool canMoveAutomatic = true;
 	private float minDistanceToMove = 14f;
@@ -46,20 +47,20 @@ public class MoveAndFlip : MonoBehaviour {
 
     private void OnBecameInvisible()
     {
-		if(this.name == Constants.Brown_Goomba_1 && !isFeedbackRunning)
+		if(this.name.Contains(Constants.Brown_Goomba_1) && !isFeedbackRunning && counter == 0)
         {
-			routine= StartCoroutine(showFeedback(this.name));
+			routine= StartCoroutine(showFeedback(this.name) );
 			Debug.Log(this.name + " Hi");
-		
 		}
 
 		Debug.Log(this.name + " invisible!");
 	}
-
+	
     IEnumerator showFeedback(string enemyName,float delay = 10f)
 	{
-		
-		//t_mario.Freeze();
+		counter++;
+
+		  //t_mario.Freeze();
 		isFeedbackRunning = true;
 		t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 		t_LevelManager.feedbackPanelTitleText.text = "Enemy went out of sight. You might lose score!";
