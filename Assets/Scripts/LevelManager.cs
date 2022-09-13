@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
     public GameObject FloatingTextEffect;
     private const float floatingTextOffsetY = 2f;
 
-    public GameObject feedbackPanelWhenItemMissed;
+ 
     public GameObject feedbackPanel;
     public TextMeshProUGUI feedbackPanelTitleText;
     public TextMeshProUGUI feedbackPanelDecsriptionText;

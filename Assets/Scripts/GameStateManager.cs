@@ -67,7 +67,7 @@ public class GameStateManager : MonoBehaviour {
 		deaths = t_LevelManager.deaths;
 		coins = t_LevelManager.coins;
 		scores = t_LevelManager.scores;
-		timeElapsed = t_LevelManager.timeElapsed + LevelManager.loadSceneDelay;
+		timeElapsed = t_LevelManager.timeElapsed + LevelManager.loadSceneDelay; // LevelManager.loadSceneDelay is added to add the (extra)time to read feedback!
 		hurryUp = t_LevelManager.hurryUp;
 	}
 
