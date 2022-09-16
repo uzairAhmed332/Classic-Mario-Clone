@@ -50,8 +50,8 @@ public class PipeWarpDown : MonoBehaviour {
 	private void OnBecameInvisible()
 	{
 				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-				t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_PIPE;
-				t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_PIPE;
+				t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL;
+				t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL;
 				Time.timeScale = 0f;
 	}
 		

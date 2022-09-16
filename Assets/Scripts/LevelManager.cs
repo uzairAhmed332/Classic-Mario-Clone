@@ -517,8 +517,14 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 1f;
  
         }
-        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_PIPE)
+        
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL)
         { //from PipeWarpDown
+            feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_COIN)
+        { //from Coin
             feedbackPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
 
