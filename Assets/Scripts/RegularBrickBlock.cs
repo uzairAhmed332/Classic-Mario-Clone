@@ -55,18 +55,18 @@ public class RegularBrickBlock : MonoBehaviour {
 
 		
 	void BreakIntoPieces() {
-		GameObject brickPiece;
-		brickPiece = Instantiate (BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // up right
-		brickPiece.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3f, 12f);
-		brickPiece = Instantiate (BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // up left
-		brickPiece.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-3f, 12f);
-		brickPiece = Instantiate (BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // down right
-		brickPiece.GetComponent<Rigidbody2D> ().velocity = new Vector2 (3f, 8f);
-		brickPiece = Instantiate (BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // down left
-		brickPiece.GetComponent<Rigidbody2D> ().velocity = new Vector2 (-3f, 8f);
+        GameObject brickPiece;
+        brickPiece = Instantiate(BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // up right
+        brickPiece.GetComponent<Rigidbody2D>().velocity = new Vector2(3f, 12f);
+        brickPiece = Instantiate(BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // up left
+        /*brickPiece.GetComponent<Rigidbody2D>().velocity = new Vector2(-3f, 12f);
+        brickPiece = Instantiate(BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // down right
+        brickPiece.GetComponent<Rigidbody2D>().velocity = new Vector2(3f, 8f);
+        brickPiece = Instantiate(BrickPiece, transform.position, Quaternion.Euler(new Vector3(45, 0, 0))); // down lef*/
+        brickPiece.GetComponent<Rigidbody2D>().velocity = new Vector2(-3f, 8f);
 
-		// prevent Player from breaking bricks above this
-		Instantiate (TempCollider, transform.position, Quaternion.identity);
+        // prevent Player from breaking bricks above this
+        Instantiate (TempCollider, transform.position, Quaternion.identity);
 		Destroy (transform.gameObject);
 	}
 

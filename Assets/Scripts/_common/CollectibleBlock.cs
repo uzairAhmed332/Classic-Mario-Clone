@@ -83,4 +83,16 @@ public class CollectibleBlock : MonoBehaviour {
 			enemiesOnTop.Remove (other.gameObject);
 		}
 	}
+
+	private void OnBecameInvisible()
+	{
+		Debug.Log("Blocks");
+		if (isActive)
+		{
+			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK;
+			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_COLLECTABLE_BLOCK;
+			Time.timeScale = 0f;
+		}
+	}
 }

@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class KillPlane : MonoBehaviour {
 	private LevelManager t_LevelManager;
+	public Button feedback_button;
 	private Mario mario;
 	// Use this for initialization
+
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
 		mario = FindObjectOfType<Mario>();
@@ -20,15 +22,26 @@ public class KillPlane : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {  //Called when mario dies by drawning by hitting planes and ...
 			t_LevelManager.MarioRespawn(Constants.ENEMY_PLANES);
-		} else {
+		} else if(other.gameObject.tag == "Enemy") {
 			//Todo Make feeback when enemy falls to plane and misses by Mario for better score!
 			
-			Debug.Log(this.name + " ---- " + t_LevelManager.feedbackPanel.transform.GetChild(0).gameObject.name.ToString());
-			
+			Debug.Log(this.name + " ---- " + t_LevelManager.feedbackPanel.transform.GetChild(3).gameObject.name.ToString());
 			Debug.Log(this.name + " onPlanecollide " + other.gameObject.name);
 			
 			Destroy (other.gameObject); //hack:Called when Enemy (Non Mario!) dies by hitting planes and ...
-			StartCoroutine(showFeedback());
+			//StartCoroutine(showFeedback());
+
+			t_LevelManager.timerPaused = true;
+			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+			//Image image = t_LevelManager.feedbackPanel.GetComponent<Image>();
+			//var tempColor = image.color;
+			//tempColor.a = 0.4f;
+			//image.color = Color.green;
+			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_LOST_ENEMY;
+			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY;
+			//todo Stop the time!
+			Time.timeScale = 0f;
+			//mario.Freeze();
 		}
 	}
 
@@ -39,10 +52,10 @@ public class KillPlane : MonoBehaviour {
 		var tempColor = image.color;
 		tempColor.a = 0.4f;
 		//image.color = Color.green;
-		t_LevelManager.feedbackPanelTitleText.text = "You lost Score by losing an enemy";
-		t_LevelManager.feedbackPanelDecsriptionText.text = "kill the enemy before it fell to the down by jumping over it";
+		t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_LOST_ENEMY;
+		t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY;
 		//todo Stop the time!
-		mario.Freeze();
+		//mario.Freeze();
 		
 		yield return new WaitForSeconds(delay);
 		t_LevelManager.feedbackPanel.gameObject.SetActive(false);

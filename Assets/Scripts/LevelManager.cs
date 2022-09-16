@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 using TMPro;
+using System;
 
 public class LevelManager : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class LevelManager : MonoBehaviour
 
     private GameStateManager t_GameStateManager;
     private Mario mario;
+    private MoveAndFlip moveAndFlip;
+   
     private Animator mario_Animator;
     private Rigidbody2D mario_Rigidbody2D;
 
@@ -101,6 +104,8 @@ public class LevelManager : MonoBehaviour
         RetrieveGameState();
 
         mario = FindObjectOfType<Mario>();
+        moveAndFlip = FindObjectOfType<MoveAndFlip>();
+        
         mario_Animator = mario.gameObject.GetComponent<Animator>();
         mario_Rigidbody2D = mario.gameObject.GetComponent<Rigidbody2D>();
         mario.UpdateSize();
@@ -363,50 +368,7 @@ public class LevelManager : MonoBehaviour
         mario_Animator.SetBool("isPoweringDown", false);
         isPoweringDown = false;
     }
-    //Sequence of calling
-    //MarioPowerDown then MarioRespawn
-
-    // Always called when mario dies in any way 
-    public void MarioRespawn(string diedFrom, bool timeup = false)
-    {
-        //Todo Distinguish feedback types from String "diedFrom"
-        if (!isRespawning)
-        {
-            isRespawning = true;
-
-            marioSize = 0;
-            deaths++;
-            SetHudDeath();
-            soundSource.Stop();
-            musicSource.Stop();
-            musicPaused = true;
-            soundSource.PlayOneShot(deadSound);
-
-            Time.timeScale = 0f; //it stops enemy mario movement when mario dies!
-            mario.Freeze();
-            // mario.Die (); //Now this is called after feedback timer is over in "LoadSceneDelayCo"!
-
-            if (timeup)
-            {
-                Debug.Log(this.name + " MarioRespawn: called due to timeup");
-            }
-            Debug.Log(this.name + " MarioRespawn: death counts=" + deaths.ToString());
-
-            if (deaths > 0)
-            {
-                //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
-                ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
-            }
-            else
-            {
-                //No need of this as lives are infinite so only initiate "ReloadCurrentLevel" 
-                /*				LoadGameOver (deadSound.length, timeup);
-								Debug.Log(this.name + " MarioRespawn: all dead");*/
-            }
-        }
-    }
-
-
+  
     /****************** Kill enemy */
     public void MarioStompEnemy(Enemy enemy)
     {
@@ -449,10 +411,54 @@ public class LevelManager : MonoBehaviour
     }
 
     /****************** Scene loading */
+
+    //Sequence of calling
+    //MarioPowerDown then MarioRespawn
+
+    // Always called when mario dies in any way 
+    public void MarioRespawn(string diedFrom, bool timeup = false)
+    {
+        //Todo Distinguish feedback types from String "diedFrom"
+        if (!isRespawning)
+        {
+            isRespawning = true;
+
+            marioSize = 0;
+            deaths++;
+            SetHudDeath();
+            soundSource.Stop();
+            musicSource.Stop();
+            musicPaused = true;
+            soundSource.PlayOneShot(deadSound);
+
+            Time.timeScale = 0f; //it stops enemy mario movement when mario dies!
+            //mario.Freeze();
+            // mario.Die (); //Now this is called after feedback timer is over in "LoadSceneDelayCo"!
+
+            if (timeup)
+            {
+                Debug.Log(this.name + " MarioRespawn: called due to timeup");
+            }
+            Debug.Log(this.name + " MarioRespawn: death counts=" + deaths.ToString());
+
+            if (deaths > 0)
+            {
+                //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
+                ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
+            }
+            else
+            {
+                //No need of this as lives are infinite so only initiate "ReloadCurrentLevel" 
+                /*				LoadGameOver (deadSound.length, timeup);
+								Debug.Log(this.name + " MarioRespawn: all dead");*/
+            }
+        }
+    }
     void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
     {
         timerPaused = true;
-        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
+        // StartCoroutine(LoadSceneDelayCo(sceneName, delay));
+
     }
 
     IEnumerator LoadSceneDelayCo(string sceneName, float delay)
@@ -470,15 +476,105 @@ public class LevelManager : MonoBehaviour
             yield return null;
         }
         yield return new WaitWhile(() => gamePaused);
-
-        Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
-        
+ 
         if (feedbackPanel != null)
-        feedbackPanel.gameObject.SetActive(false);
+            feedbackPanel.gameObject.SetActive(false);
         mario.Die();
         isRespawning = false;
         isPoweringDown = false;
+        Debug.Log(this.name + sceneName);
+
         SceneManager.LoadScene(sceneName);
+        
+        Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
+    }
+    public void FeedbackButtonClicked()
+    {
+        if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY) //From LevelManager
+        {
+            feedbackPanel.gameObject.SetActive(false);
+            StartCoroutine(LoadSceneWhenMarioDied(3));
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_LOST_ENEMY) //from KillPlane
+        { 
+            feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            //mario.UnfreezeUserInput();
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE) //from LevelManager
+        {
+            feedbackPanel.gameObject.SetActive(false);
+            StartCoroutine(LoadSceneWhenMarioDied(3));
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY) { //from MoveAndFlip
+            feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            //moveAndFlip.canMove = true;
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK)
+        { //from CollectibleBlock
+            feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+ 
+        }
+    }
+
+    IEnumerator LoadSceneWhenMarioDied(float delay = 3f)
+    {
+        mario.Die();
+        isRespawning = false;
+        isPoweringDown = false;
+        float waited = 0;
+
+        while (waited < delay)
+        {
+            if (!gamePaused)
+            { // should not count delay while game paused
+                waited += Time.unscaledDeltaTime;
+
+            }
+            yield return null;
+        }
+        yield return new WaitWhile(() => gamePaused);
+        SceneManager.LoadScene(t_GameStateManager.sceneToLoad);
+    }
+
+    public void ReloadCurrentLevel(string diedFrom, float delay = loadSceneDelay, bool timeup = false)
+    {
+        Debug.Log("----- " + diedFrom);
+        //Called when mario dies!
+        t_GameStateManager.SaveGameState();
+        //t_GameStateManager.ConfigReplayedLevel (); //No need. Only setting time!
+        t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene().name; //stores current level name. Helps in restating same level
+
+        //todo Imeplement feedback panel + typesbefore reloading the scene
+        if (diedFrom == Constants.ENEMY_PLANES)
+        {
+            feedbackPanel.gameObject.SetActive(true);
+            feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE;
+            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_PLANE;
+        }
+        else if (diedFrom == Constants.ENEMY_GOOMBA)
+        {
+            feedbackPanel.gameObject.SetActive(true);
+            feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY;
+            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MARIO_DIED;
+        }
+        else
+        {
+            feedbackPanel.gameObject.SetActive(true);
+        }
+
+        //End
+
+        if (timeup)
+        {
+            LoadSceneDelay("Time Up Screen", delay); //Will NOT called as time is infinite
+        }
+        else
+        {
+            LoadSceneDelay("Level Start Screen", delay); //Only this will be called 
+        }
     }
 
     public void LoadNewLevel(string sceneName, float delay = loadSceneDelay)
@@ -507,44 +603,7 @@ public class LevelManager : MonoBehaviour
             + t_GameStateManager.spawnPipeIdx.ToString());
     }
 
-    public void ReloadCurrentLevel(string diedFrom, float delay = loadSceneDelay, bool timeup = false)
-    {
-        Debug.Log("----- " + diedFrom);
-        //Called when mario dies!
-        t_GameStateManager.SaveGameState();
-        //t_GameStateManager.ConfigReplayedLevel (); //No need. Only setting time!
-      t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene().name; //stores current level name. Helps in restating same level
-
-        //todo Imeplement feedback panel + typesbefore reloading the scene
-        if (diedFrom == Constants.ENEMY_PLANES)
-        {
-            feedbackPanel.gameObject.SetActive(true);
-            feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE;
-            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_PLANE;
-        }
-        else if (diedFrom == Constants.ENEMY_GOOMBA)
-        {
-            feedbackPanel.gameObject.SetActive(true);
-            feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY;
-            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_ENEMY;
-        }
-        else
-        {
-            feedbackPanel.gameObject.SetActive(true);
-        }
-
-        //End
-
-        if (timeup)
-        {
-            LoadSceneDelay("Time Up Screen", delay); //Will NOT called as time is infinite
-        }
-        else
-        {
-            LoadSceneDelay("Level Start Screen", delay); //Only this will be called 
-        }
-    }
-
+    
     public void LoadGameOver(float delay = loadSceneDelay, bool timeup = false)
     {
         // I think this will never called! as game never ends beacuse of infite lives! 

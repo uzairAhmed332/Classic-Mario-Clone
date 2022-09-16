@@ -9,7 +9,7 @@ using UnityEngine;
  */
 
 public class MoveAndFlip : MonoBehaviour {
-	int counter = 0;
+	static int counterOutOfSightFeedback = 0;
 	public bool canMove = false;
 	public bool canMoveAutomatic = true;
 	private float minDistanceToMove = 14f;
@@ -19,57 +19,88 @@ public class MoveAndFlip : MonoBehaviour {
 	private Rigidbody2D m_Rigidbody2D;
 	private GameObject mario;
 	private Mario t_mario;
+	private Enemy enemy;
 	private LevelManager t_LevelManager;
 	Coroutine routine;
 
 	bool isFeedbackRunning = false;
-	// Use this for initialization
+
+	public Transform t_transform;
+	int count_pos_y = 0;
+	bool doNotShowOutOfSightFeedback = false;
 	void Start () {
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		t_LevelManager = FindObjectOfType<LevelManager>();
+		enemy = GetComponent<Enemy>();
 		mario = FindObjectOfType<Mario> ().gameObject;
 		t_mario = FindObjectOfType<Mario>();
+		//enemy_pos_y= t_transform.position.y;
 		OrientSprite ();
 	}
 
 
 	void Update() {
-		
-		if (!canMove & Mathf.Abs (mario.transform.position.x - transform.position.x) <= minDistanceToMove && canMoveAutomatic) {
+        //Debug.Log(this.name + "Pos y => " + (transform.position.y));
+        if (transform.position.y <= -1 )
+        {
+           // count_pos_y++;
+            doNotShowOutOfSightFeedback = true;
+        }
+       /* else
+        {
+            showEnemyDiedFeedback = false;
+        }*/
+        if (!canMove & Mathf.Abs (mario.transform.position.x - transform.position.x) <= minDistanceToMove && canMoveAutomatic) {
 			canMove = true; //comment for temp purpose
-			if (Mathf.Abs(mario.transform.position.x - (-(transform.position.x))) <= minDistanceToMove) {
-				Debug.Log(this.name + " Enemy past!");
-			}
 			Debug.Log(this.name + " Enemy now moving!");
 		}
 	}
 
 
-    private void OnBecameInvisible()
-    {
-		if(this.name.Contains(Constants.Brown_Goomba_1) && !isFeedbackRunning && counter == 0)
-        {
-			routine= StartCoroutine(showFeedback(this.name) );
-			Debug.Log(this.name + " Hi");
+	void FixedUpdate()
+	{
+		if (canMove)
+		{
+			m_Rigidbody2D.velocity = new Vector2(Speed.x * directionX, m_Rigidbody2D.velocity.y);
 		}
-
-		Debug.Log(this.name + " invisible!");
 	}
-	
+
+	/* private void OnBecameVisible()
+	 {
+		 Time.timeScale = 0f;
+	 }*/
+
+	private void OnBecameInvisible()
+	{
+		if(!enemy.isBeingStomped){ //Not working as expected!Getting false even when stomped !
+		if (this.name.Contains(Constants.Brown_Goomba)
+			&& counterOutOfSightFeedback <2
+			&& !doNotShowOutOfSightFeedback)
+		{
+			doNotShowOutOfSightFeedback = true; //Now this will always be true and shows ememy died feedback
+			counterOutOfSightFeedback++;
+			//isFeedbackRunning = true;
+			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
+			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
+			Time.timeScale = 0f;
+			//canMove = false;
+			}
+		}
+	}
     IEnumerator showFeedback(string enemyName,float delay = 10f)
 	{
-		counter++;
+		counterOutOfSightFeedback++;
 
 		  //t_mario.Freeze();
 		isFeedbackRunning = true;
 		t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-		t_LevelManager.feedbackPanelTitleText.text = "Enemy went out of sight. You might lose score!";
-		t_LevelManager.feedbackPanelDecsriptionText.text = "Mario can only go to the left few steps. Better to kill enemy when its on the right side!";
+		t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
+		t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
 		yield return new WaitForSeconds(delay);
 		t_LevelManager.feedbackPanel.gameObject.SetActive(false);
 		isFeedbackRunning = false;
 		StopCoroutine(routine);
-		StopAllCoroutines();
 		//t_mario.UnfreezeUserInput();
 
 	}
@@ -90,11 +121,6 @@ public class MoveAndFlip : MonoBehaviour {
 		}
 	}
 
-	void FixedUpdate () {
-		if (canMove) {
-			m_Rigidbody2D.velocity = new Vector2(Speed.x * directionX, m_Rigidbody2D.velocity.y);
-		}
-	}
 
 	void OnCollisionEnter2D(Collision2D other) {
 		Vector2 normal = other.contacts[0].normal;
