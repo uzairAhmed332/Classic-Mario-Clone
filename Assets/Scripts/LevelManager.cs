@@ -517,6 +517,12 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 1f;
  
         }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_PIPE)
+        { //from PipeWarpDown
+            feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+
+        }
     }
 
     IEnumerator LoadSceneWhenMarioDied(float delay = 3f)

@@ -46,4 +46,13 @@ public class PipeWarpDown : MonoBehaviour {
 			t_LevelManager.soundSource.PlayOneShot (t_LevelManager.pipePowerdownSound);
 		}
 	}
+
+	private void OnBecameInvisible()
+	{
+				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+				t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_PIPE;
+				t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_PIPE;
+				Time.timeScale = 0f;
+	}
+		
 }
