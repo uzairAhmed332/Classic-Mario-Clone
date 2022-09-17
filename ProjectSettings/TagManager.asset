@@ -11,6 +11,7 @@ TagManager:
   - Enemy/Piranha
   - Mario Fireball
   - Enemy/Bowser
+  - BrickHiddenCoin
   layers:
   - Default
   - TransparentFX

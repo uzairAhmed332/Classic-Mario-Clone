@@ -72,7 +72,7 @@ public class MoveAndFlip : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-		if(!enemy.isBeingStomped){ //Not working as expected!Getting false even when stomped !
+		if(!enemy.isBeingStomped){
 		if (this.name.Contains(Constants.Brown_Goomba)
 			&& counterOutOfSightFeedback <2
 			&& !doNotShowOutOfSightFeedback)

@@ -31,7 +31,7 @@ public class KillPlane : MonoBehaviour {
 			Destroy (other.gameObject); //hack:Called when Enemy (Non Mario!) dies by hitting planes and ...
 			//StartCoroutine(showFeedback());
 
-			t_LevelManager.timerPaused = true;
+			//t_LevelManager.timerPaused = true;
 			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 			//Image image = t_LevelManager.feedbackPanel.GetComponent<Image>();
 			//var tempColor = image.color;
