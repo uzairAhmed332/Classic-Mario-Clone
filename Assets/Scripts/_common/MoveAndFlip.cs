@@ -79,11 +79,12 @@ public class MoveAndFlip : MonoBehaviour {
 		{
 			doNotShowOutOfSightFeedback = true; //Now this will always be true and shows ememy died feedback
 			counterOutOfSightFeedback++;
-			//isFeedbackRunning = true;
-			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+				//isFeedbackRunning = true;
+				t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY, Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY);
+/*				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
 			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
-			Time.timeScale = 0f;
+			Time.timeScale = 0f;*/
 			//canMove = false;
 			}
 		}

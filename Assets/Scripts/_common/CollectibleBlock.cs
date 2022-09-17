@@ -86,13 +86,14 @@ public class CollectibleBlock : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-		Debug.Log("Blocks");
 		if (isActive)
 		{
-			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK;
-			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_COLLECTABLE_BLOCK;
-			Time.timeScale = 0f;
+			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK, Constants.FEEDBACK_DESCRIPTION_MISSED_COLLECTABLE_BLOCK);
+			
+			//t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+			//t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK;
+			//t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_COLLECTABLE_BLOCK;
+			//Time.timeScale = 0f;
 		}
 	}
 }

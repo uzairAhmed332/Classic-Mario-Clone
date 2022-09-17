@@ -23,10 +23,11 @@ public class Coin : MonoBehaviour {
 	{
 		if (!isCoinTaken)
 		{
-			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_MISSED_COIN, Constants.FEEDBACK_DESCRIPTION_MISSED_COIN);
+/*			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_COIN;
 			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_COIN;
-			Time.timeScale = 0f;
+			Time.timeScale = 0f;*/
 		}
 	}
 }

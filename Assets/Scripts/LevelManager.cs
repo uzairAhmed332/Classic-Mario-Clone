@@ -531,8 +531,16 @@ public class LevelManager : MonoBehaviour
 
         }
     }
+    //
+    public void FeedbackActivaotor(string title, string Description)
+    {
+       /* feedbackPanel.gameObject.SetActive(true);
+        Time.timeScale = 0f;*/
 
-    IEnumerator LoadSceneWhenMarioDied(float delay = 3f)
+        feedbackPanelTitleText.text = title; 
+        feedbackPanelDecsriptionText.text = Description;
+    }
+        IEnumerator LoadSceneWhenMarioDied(float delay = 3f)
     {
         mario.Die();
         isRespawning = false;
@@ -563,9 +571,10 @@ public class LevelManager : MonoBehaviour
         //todo Imeplement feedback panel + typesbefore reloading the scene
         if (diedFrom == Constants.ENEMY_PLANES)
         {
-            feedbackPanel.gameObject.SetActive(true);
+           FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE, Constants.FEEDBACK_DESCRIPTION_PLANE);
+/*            feedbackPanel.gameObject.SetActive(true);
             feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE;
-            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_PLANE;
+            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_PLANE;*/
         }
         else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA)
         {
