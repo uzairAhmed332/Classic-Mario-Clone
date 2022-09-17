@@ -12,6 +12,8 @@ public class PipeWarpDown : MonoBehaviour {
 	public string sceneName;
 	public bool leadToSameLevel = true;
 
+	static int marioEnteredCount = 0;
+
 	// Use this for initialization
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
@@ -20,25 +22,35 @@ public class PipeWarpDown : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (isMoving) {
-			if (transform.position.y > stop.position.y) {
-				if (!t_LevelManager.timerPaused) {
-					t_LevelManager.timerPaused = true;
+			if (isMoving)
+			{
+				if (transform.position.y > stop.position.y)
+				{
+					if (!t_LevelManager.timerPaused)
+					{
+						t_LevelManager.timerPaused = true;
+					}
+					transform.position = new Vector2(transform.position.x, transform.position.y + platformVelocityY);
 				}
-				transform.position = new Vector2 (transform.position.x, transform.position.y + platformVelocityY);
-			} else {
-				if (leadToSameLevel) {
-					t_LevelManager.LoadSceneCurrentLevel (sceneName);
-				} else {
-					t_LevelManager.LoadNewLevel (sceneName);
+				else
+				{
+					if (leadToSameLevel)
+					{
+						t_LevelManager.LoadSceneCurrentLevel(sceneName);  //"World 1-1 - Underground"
+						this.gameObject.GetComponent<PipeWarpDown>().enabled = false;
+					}
+					else
+					{
+						t_LevelManager.LoadNewLevel(sceneName);
+					}
 				}
 			}
 		}
-	}
 
 	bool marioEntered = false;
 	void OnTriggerStay2D(Collider2D other) {
-		if (other.tag == "Player" && mario.isCrouching && !marioEntered) {
+		if (other.tag == "Player" && mario.isCrouching && !marioEntered && marioEnteredCount == 0) {
+			marioEnteredCount++;
 			mario.AutomaticCrouch ();
 			isMoving = true;
 			marioEntered = true;
@@ -49,10 +61,13 @@ public class PipeWarpDown : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-				t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL;
-				t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL;
-				Time.timeScale = 0f;
+		if (marioEnteredCount == 0)
+		{
+			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL;
+			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL;
+			Time.timeScale = 0f;
+		}
 	}
 		
 }

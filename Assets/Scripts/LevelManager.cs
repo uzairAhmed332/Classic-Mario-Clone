@@ -9,7 +9,7 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public const float loadSceneDelay = 8f;
+    public const float loadSceneDelay = 3f;
 
     public bool hurryUp; // within last 100 secs?
     public int marioSize; // 0..2
@@ -37,8 +37,8 @@ public class LevelManager : MonoBehaviour
 
     private GameStateManager t_GameStateManager;
     private Mario mario;
-    private MoveAndFlip moveAndFlip;
-   
+    private PipeWarpDown pipeWarpDown;
+
     private Animator mario_Animator;
     private Rigidbody2D mario_Rigidbody2D;
 
@@ -104,8 +104,9 @@ public class LevelManager : MonoBehaviour
         RetrieveGameState();
 
         mario = FindObjectOfType<Mario>();
-        moveAndFlip = FindObjectOfType<MoveAndFlip>();
+        pipeWarpDown = FindObjectOfType<PipeWarpDown>();
         
+
         mario_Animator = mario.gameObject.GetComponent<Animator>();
         mario_Rigidbody2D = mario.gameObject.GetComponent<Rigidbody2D>();
         mario.UpdateSize();
@@ -457,7 +458,7 @@ public class LevelManager : MonoBehaviour
     void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
     {
         timerPaused = true;
-        // StartCoroutine(LoadSceneDelayCo(sceneName, delay));
+        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
 
     }
 
@@ -477,11 +478,11 @@ public class LevelManager : MonoBehaviour
         }
         yield return new WaitWhile(() => gamePaused);
  
-        if (feedbackPanel != null)
+ /*       if (feedbackPanel != null)
             feedbackPanel.gameObject.SetActive(false);
         mario.Die();
         isRespawning = false;
-        isPoweringDown = false;
+        isPoweringDown = false;*/
         Debug.Log(this.name + sceneName);
 
         SceneManager.LoadScene(sceneName);
@@ -509,7 +510,7 @@ public class LevelManager : MonoBehaviour
         else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY) { //from MoveAndFlip
             feedbackPanel.gameObject.SetActive(false);
             Time.timeScale = 1f;
-            //moveAndFlip.canMove = true;
+ 
         }
         else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK)
         { //from CollectibleBlock
