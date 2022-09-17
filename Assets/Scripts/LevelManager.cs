@@ -458,8 +458,8 @@ public class LevelManager : MonoBehaviour
     void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
     {
         timerPaused = true;
-        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
-
+        if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
+            StartCoroutine(LoadSceneDelayCo(sceneName, delay));
     }
 
     IEnumerator LoadSceneDelayCo(string sceneName, float delay)
@@ -567,7 +567,7 @@ public class LevelManager : MonoBehaviour
             feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE;
             feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_PLANE;
         }
-        else if (diedFrom == Constants.ENEMY_GOOMBA)
+        else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA)
         {
             feedbackPanel.gameObject.SetActive(true);
             feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY;

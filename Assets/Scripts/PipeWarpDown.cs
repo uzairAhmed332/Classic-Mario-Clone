@@ -12,7 +12,7 @@ public class PipeWarpDown : MonoBehaviour {
 	public string sceneName;
 	public bool leadToSameLevel = true;
 
-	static int marioEnteredCount = 0;
+	public static int marioEnteredCount = 0;
 
 	// Use this for initialization
 	void Start () {
