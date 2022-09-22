@@ -9,7 +9,7 @@ using System;
 
 public class LevelManager : MonoBehaviour
 {
-    public const float loadSceneDelay = 3f;
+    public const float loadSceneDelay = 1f;
 
     public bool hurryUp; // within last 100 secs?
     public int marioSize; // 0..2
@@ -458,7 +458,7 @@ public class LevelManager : MonoBehaviour
     void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
     {
         timerPaused = true;
-        if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
+      //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
             StartCoroutine(LoadSceneDelayCo(sceneName, delay));
     }
 
@@ -534,7 +534,7 @@ public class LevelManager : MonoBehaviour
     //
     public void FeedbackActivaotor(string title, string Description)
     {
-       /* feedbackPanel.gameObject.SetActive(true);
+/*        feedbackPanel.gameObject.SetActive(true);
         Time.timeScale = 0f;*/
 
         feedbackPanelTitleText.text = title; 
@@ -578,9 +578,10 @@ public class LevelManager : MonoBehaviour
         }
         else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA)
         {
-            feedbackPanel.gameObject.SetActive(true);
+            FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY, Constants.FEEDBACK_DESCRIPTION_MARIO_DIED);
+/*            feedbackPanel.gameObject.SetActive(true);
             feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY;
-            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MARIO_DIED;
+            feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MARIO_DIED;*/
         }
         else
         {
@@ -608,14 +609,14 @@ public class LevelManager : MonoBehaviour
     }
 
     public void LoadSceneCurrentLevel(string sceneName, float delay = loadSceneDelay)
-    {
+    {  //Also called when entering pipe down "PipeWarpDown" and ...
         t_GameStateManager.SaveGameState();
         t_GameStateManager.ResetSpawnPosition(); // TODO
         LoadSceneDelay(sceneName, delay);
     }
 
     public void LoadSceneCurrentLevelSetSpawnPipe(string sceneName, int spawnPipeIdx, float delay = loadSceneDelay)
-    {
+    { //Also called when entering pipe side "PipeWarpSide" and ...
         t_GameStateManager.SaveGameState();
         t_GameStateManager.SetSpawnPipe(spawnPipeIdx);
         LoadSceneDelay(sceneName, delay);

@@ -22,6 +22,7 @@ public class PipeWarpDown : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
+
 			if (isMoving)
 			{
 				if (transform.position.y > stop.position.y)
@@ -43,8 +44,8 @@ public class PipeWarpDown : MonoBehaviour {
 					{
 						t_LevelManager.LoadNewLevel(sceneName);
 					}
-				}
 			}
+		}
 		}
 
 	bool marioEntered = false;
@@ -61,7 +62,7 @@ public class PipeWarpDown : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-		if (marioEnteredCount == 0)
+			if(marioEnteredCount == 0)
 		{
 			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL, Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL);
 		/*	t_LevelManager.feedbackPanel.gameObject.SetActive(true);
