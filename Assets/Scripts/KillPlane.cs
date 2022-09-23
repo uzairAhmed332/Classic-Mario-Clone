@@ -34,12 +34,13 @@ public class KillPlane : MonoBehaviour {
 			//t_LevelManager.timerPaused = true;
 			//t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_LOST_ENEMY, Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY);
+			Constants.FEEDBACK_LOST_ENEMY_COUNT++;
 			//Image image = t_LevelManager.feedbackPanel.GetComponent<Image>();
 			//var tempColor = image.color;
 			//tempColor.a = 0.4f;
 			//image.color = Color.green;
-		//	t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_LOST_ENEMY;
-		//	t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY;
+			//	t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_LOST_ENEMY;
+			//	t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY;
 			//todo Stop the time!
 			//Time.timeScale = 0f;
 			//mario.Freeze();

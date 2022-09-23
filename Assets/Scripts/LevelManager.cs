@@ -572,6 +572,7 @@ public class LevelManager : MonoBehaviour
         if (diedFrom == Constants.ENEMY_PLANES)
         {
            FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE, Constants.FEEDBACK_DESCRIPTION_PLANE);
+            Constants.FEEDBACK_MARIO_DIED_FROM_PLANE_COUNT++; 
 /*            feedbackPanel.gameObject.SetActive(true);
             feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE;
             feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_PLANE;*/
@@ -579,6 +580,7 @@ public class LevelManager : MonoBehaviour
         else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA)
         {
             FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY, Constants.FEEDBACK_DESCRIPTION_MARIO_DIED);
+            Constants.FEEDBACK_MARIO_DIED_FROM_ENEMY_COUNT++;
 /*            feedbackPanel.gameObject.SetActive(true);
             feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY;
             feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MARIO_DIED;*/

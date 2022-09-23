@@ -81,7 +81,7 @@ public class MoveAndFlip : MonoBehaviour {
 			counterOutOfSightFeedback++;
 				//isFeedbackRunning = true;
 				t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY, Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY);
-                Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT++;
+				Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT++;
 /*				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
 			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
