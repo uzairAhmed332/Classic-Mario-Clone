@@ -18,7 +18,9 @@ public class GameStateManager : MonoBehaviour {
 	public string sceneToLoad; // what scene to load after level start screen finishes?
 	public bool timeup;
 
-	void Awake () {
+    public bool delayWhenGamestatesaved = false;
+
+    void Awake () {
 		if (FindObjectsOfType (GetType ()).Length == 1) {
 			DontDestroyOnLoad (gameObject);
 			ConfigNewGame ();
@@ -69,6 +71,16 @@ public class GameStateManager : MonoBehaviour {
 		scores = t_LevelManager.scores;
 		timeElapsed = t_LevelManager.timeElapsed; // "+ LevelManager.loadSceneDelay" LevelManager.loadSceneDelay is added to add the (extra)time to read feedback!
 		hurryUp = t_LevelManager.hurryUp;
+
+		//delayWhenGamestatesaved = true; getting true from LevelStartScreen when mario dies!
+		Invoke("SetBoolBack", 5f);
 	}
+
+	private void SetBoolBack()
+	{
+		delayWhenGamestatesaved = false;
+	}
+
+
 
 }

@@ -12,10 +12,10 @@ public class MoveAndFlip : MonoBehaviour {
 	static int counterOutOfSightFeedback = 0;
 	public bool canMove = false;
 	public bool canMoveAutomatic = true;
-	private float minDistanceToMove = 14f;
+	private float minDistanceToMove = 10f;  //old value = 14 
 
 	public float directionX = 1;
-	public Vector2 Speed = new Vector2 (3, 0);
+	public Vector2 Speed = new Vector2(3, 0);
 	private Rigidbody2D m_Rigidbody2D;
 	private GameObject mario;
 	private Mario t_mario;
@@ -28,29 +28,29 @@ public class MoveAndFlip : MonoBehaviour {
 	public Transform t_transform;
 	int count_pos_y = 0;
 	bool doNotShowOutOfSightFeedback = false;
-	void Start () {
+	void Start() {
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 		t_LevelManager = FindObjectOfType<LevelManager>();
 		enemy = GetComponent<Enemy>();
-		mario = FindObjectOfType<Mario> ().gameObject;
+		mario = FindObjectOfType<Mario>().gameObject;
 		t_mario = FindObjectOfType<Mario>();
 		//enemy_pos_y= t_transform.position.y;
-		OrientSprite ();
+		OrientSprite();
 	}
 
 
 	void Update() {
-        //Debug.Log(this.name + "Pos y => " + (transform.position.y));
-        if (transform.position.y <= -1 )
-        {
-           // count_pos_y++;
-            doNotShowOutOfSightFeedback = true;
-        }
-       /* else
-        {
-            showEnemyDiedFeedback = false;
-        }*/
-        if (!canMove & Mathf.Abs (mario.transform.position.x - transform.position.x) <= minDistanceToMove && canMoveAutomatic) {
+		//Debug.Log(this.name + "Pos y => " + (transform.position.y));
+		if (transform.position.y <= -1)
+		{
+			// count_pos_y++;
+			doNotShowOutOfSightFeedback = true;
+		}
+		/* else
+		 {
+			 showEnemyDiedFeedback = false;
+		 }*/
+		if (!canMove & Mathf.Abs(mario.transform.position.x - transform.position.x) <= minDistanceToMove && canMoveAutomatic) {
 			canMove = true; //comment for temp purpose
 			Debug.Log(this.name + " Enemy now moving!");
 		}
@@ -72,25 +72,31 @@ public class MoveAndFlip : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-		if(!enemy.isBeingStomped){
-		if (this.name.Contains(Constants.Brown_Goomba)
-			&& counterOutOfSightFeedback <2
-			&& !doNotShowOutOfSightFeedback)
-		{
-			doNotShowOutOfSightFeedback = true; //Now this will always be true and shows ememy died feedback
-			counterOutOfSightFeedback++;
-				//isFeedbackRunning = true;
-				t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY, Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY);
-				Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT++;
-/*				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
-			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
-			Time.timeScale = 0f;*/
-				//canMove = false;
+		if (!t_LevelManager.isRespawning)
+		{//will not be called when mario dies
+			if (!enemy.isBeingStomped)
+			{
+				if (this.name.Contains(Constants.Brown_Goomba)
+					&& counterOutOfSightFeedback < 2
+					&& !doNotShowOutOfSightFeedback)
+				{
+					doNotShowOutOfSightFeedback = true; //Now this will always be true and shows ememy died feedback
+					counterOutOfSightFeedback++;
+					//isFeedbackRunning = true;
+					t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY, Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY);
+					Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT++;
+					/*				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+								t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
+								t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
+								Time.timeScale = 0f;*/
+					//canMove = false;
 
+				}
 			}
 		}
-	}
+	
+		}
+	
     IEnumerator showFeedback(string enemyName,float delay = 10f)
 	{
 		counterOutOfSightFeedback++;

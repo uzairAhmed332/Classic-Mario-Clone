@@ -25,7 +25,7 @@ public class LevelManager : MonoBehaviour
     public int oneupBonus = 0;
     public int breakBlockBonus = 50; //Why its always 50 even when value chnaged? Ans: Value getting from unity editor and its getting prority over code!
 
-    private bool isRespawning;
+    public bool isRespawning;
     private bool isPoweringDown;
     //public bool isFeedbackPanelVisible = false;
 
@@ -455,40 +455,7 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
-    void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
-    {
-        timerPaused = true;
-      //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
-            StartCoroutine(LoadSceneDelayCo(sceneName, delay));
-    }
-
-    IEnumerator LoadSceneDelayCo(string sceneName, float delay)
-    {
-        Debug.Log(this.name + " LoadSceneDelayCo: starts loading " + sceneName);
-
-        float waited = 0;
-        while (waited < delay)
-        {
-            if (!gamePaused)
-            { // should not count delay while game paused
-                waited += Time.unscaledDeltaTime;
-
-            }
-            yield return null;
-        }
-        yield return new WaitWhile(() => gamePaused);
- 
- /*       if (feedbackPanel != null)
-            feedbackPanel.gameObject.SetActive(false);
-        mario.Die();
-        isRespawning = false;
-        isPoweringDown = false;*/
-        Debug.Log(this.name + sceneName);
-
-        SceneManager.LoadScene(sceneName);
-        
-        Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
-    }
+  
     public void FeedbackButtonClicked()
     {
         if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY) //From LevelManager
@@ -558,6 +525,43 @@ public class LevelManager : MonoBehaviour
         }
         yield return new WaitWhile(() => gamePaused);
         SceneManager.LoadScene(t_GameStateManager.sceneToLoad);
+    }
+
+    void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
+    {
+        t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
+
+        timerPaused = true;
+        //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
+        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
+    }
+
+    IEnumerator LoadSceneDelayCo(string sceneName, float delay)
+    {
+        Debug.Log(this.name + " LoadSceneDelayCo: starts loading " + sceneName);
+
+        float waited = 0;
+        while (waited < delay)
+        {
+            if (!gamePaused)
+            { // should not count delay while game paused
+                waited += Time.unscaledDeltaTime;
+
+            }
+            yield return null;
+        }
+        yield return new WaitWhile(() => gamePaused);
+
+        /*       if (feedbackPanel != null)
+                   feedbackPanel.gameObject.SetActive(false);
+               mario.Die();
+               isRespawning = false;
+               isPoweringDown = false;*/
+        Debug.Log(this.name + sceneName);
+
+        SceneManager.LoadScene(sceneName);
+
+        Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
     }
 
     public void ReloadCurrentLevel(string diedFrom, float delay = loadSceneDelay, bool timeup = false)

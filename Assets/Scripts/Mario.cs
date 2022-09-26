@@ -61,7 +61,7 @@ public class Mario : MonoBehaviour {
 	private bool jumpButtonReleased;
 
 	public bool inputFreezed;
-
+	public bool isDying;
 
 	// Use this for initialization
 	void Start () {
@@ -81,6 +81,7 @@ public class Mario : MonoBehaviour {
 		UpdateSize ();
 
 		jumpButtonReleased = true;
+		isDying = false;
 		fireTime1 = 0;
 		fireTime2 = 0;
 	}
@@ -301,7 +302,7 @@ public class Mario : MonoBehaviour {
 	}
 
 
-	public bool isDying = false;
+	
 	float deadUpTimer = .25f;
 	//	Vector2 deadUpVelocity = new Vector2 (0, 10f);
 	//	Vector2 deadDownVelocity = new Vector2 (0, -15f);
