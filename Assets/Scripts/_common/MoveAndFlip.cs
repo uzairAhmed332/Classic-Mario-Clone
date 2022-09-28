@@ -77,7 +77,7 @@ public class MoveAndFlip : MonoBehaviour {
 			if (!enemy.isBeingStomped)
 			{
 				if (this.name.Contains(Constants.Brown_Goomba)
-					&& counterOutOfSightFeedback < 2
+					&& counterOutOfSightFeedback < 100   //you can restrict it to not show everytime!
 					&& !doNotShowOutOfSightFeedback)
 				{
 					doNotShowOutOfSightFeedback = true; //Now this will always be true and shows ememy died feedback
@@ -85,7 +85,7 @@ public class MoveAndFlip : MonoBehaviour {
 					//isFeedbackRunning = true;
 					t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY, Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY);
 					Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT++;
-					/*				t_LevelManager.feedbackPanel.gameObject.SetActive(true);
+					/*			t_LevelManager.feedbackPanel.gameObject.SetActive(true);
 								t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY;
 								t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_OUT_OF_SIGHT_ENEMY;
 								Time.timeScale = 0f;*/

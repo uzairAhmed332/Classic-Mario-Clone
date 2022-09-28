@@ -501,8 +501,11 @@ public class LevelManager : MonoBehaviour
     //
     public void FeedbackActivaotor(string title, string Description)
     {
-/*        feedbackPanel.gameObject.SetActive(true);
-        Time.timeScale = 0f;*/
+        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK)
+        {
+            feedbackPanel.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
 
         feedbackPanelTitleText.text = title; 
         feedbackPanelDecsriptionText.text = Description;

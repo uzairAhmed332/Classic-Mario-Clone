@@ -54,7 +54,7 @@ public class LevelStartScreen : MonoBehaviour {
 		t_LevelManager = GetComponent<LevelManager>();
 		//Debug.Log("+++ " + t_LevelManager);
 		
-		if (Constants.IS_FEEDBACK_DELAYED && !t_GameStateManager.delayWhenGamestatesaved)
+		if (Constants.IS_FEEDBACK_DELAYED && !t_GameStateManager.delayWhenGamestatesaved  && !Constants.NO_FEEDBACK)
 		{
 			//Delayed feedback is enabled. 
 			Debug.Log(this.name + "1:" + transform.GetChild(0).transform.GetChild(1).gameObject.name); //DelayedFeedbackPanel
@@ -131,7 +131,7 @@ public class LevelStartScreen : MonoBehaviour {
 		if (Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT > 0)
 		{
 			FB_5.gameObject.SetActive(true);
-			FB_5_title.text = "Enemy went out of sight <b>" + Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT + "</b> times";
+			FB_5_title.text = "Enemy went out of sight <b>" + Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT + "</b> times. You might lose score!";
 			FB_5_desc.text = "Remember: Mario can only go to the left few steps. Better to kill enemy when its on the right side!";
 		}
 		//6
