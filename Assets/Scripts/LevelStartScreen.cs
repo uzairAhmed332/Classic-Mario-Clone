@@ -53,7 +53,7 @@ public class LevelStartScreen : MonoBehaviour {
 		t_GameStateManager = FindObjectOfType<GameStateManager>();
 		t_LevelManager = GetComponent<LevelManager>();
 		//Debug.Log("+++ " + t_LevelManager);
-		
+		//feedbackConditions(); //just for temp for testing
 		if (Constants.IS_FEEDBACK_DELAYED && !t_GameStateManager.delayWhenGamestatesaved  && !Constants.NO_FEEDBACK)
 		{
 			//Delayed feedback is enabled. 
@@ -100,52 +100,53 @@ public class LevelStartScreen : MonoBehaviour {
     private void feedbackConditions()
     {
 		//Disable everyfeedback //enable it based on their constant > 0
+		//1
 		if (Constants.FEEDBACK_MISSED_COLLECTABLE_BLOCK_COUNT > 0)
 		{
 			FB_1.gameObject.SetActive(true);
-			FB_1_title.text = "You missed <b>" + Constants.FEEDBACK_MISSED_COLLECTABLE_BLOCK_COUNT + "</b> collectable block";
-			FB_1_desc.text = "- Headbutt blocks with question mark \n- You will get valuable things like scores and powerups!";
+			FB_1_title.text = "You missed <b><color=red>" + Constants.FEEDBACK_MISSED_COLLECTABLE_BLOCK_COUNT + "</b></color> the collectible block.";
+			FB_1_desc.text = "- Headbutt blocks with question mark \n- You will get valuable things like scores and power-ups!";
 		}
 		//2
 		if (Constants.FEEDBACK_MARIO_DIED_FROM_ENEMY_COUNT > 0)
 		{
 			FB_2.gameObject.SetActive(true);
-			FB_2_title.text = "Mario dies <b>" + Constants.FEEDBACK_MARIO_DIED_FROM_ENEMY_COUNT + "</b> times as it hit by the enemy";
+			FB_2_title.text = "Mario dies <b><color=red>" + Constants.FEEDBACK_MARIO_DIED_FROM_ENEMY_COUNT + "</b></color> times as it hit by the enemy";
 			FB_2_desc.text = "- Either stomp the enemy\n- Or, Jump past an enemy";
 		}
 		//3
 		if (Constants.FEEDBACK_MARIO_DIED_FROM_PLANE_COUNT > 0)
 		{
 			FB_3.gameObject.SetActive(true);
-			FB_3_title.text = "Mario dies <b>" + Constants.FEEDBACK_MARIO_DIED_FROM_PLANE_COUNT + "</b> times as it falls off the platform";
-			FB_3_desc.text = "- Jump higher by long pressing button 'Z' \n- Jump while running makes jump further";
+			FB_3_title.text = "Mario dies <b><color=red>" + Constants.FEEDBACK_MARIO_DIED_FROM_PLANE_COUNT + "</b></color> times as he falls off the platform";
+			FB_3_desc.text = "- Jump higher by long pressing a button 'Z' \n- Jump while running makes jump further";
 		}
 		//4
 		if (Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT > 0)
 		{
 			FB_4.gameObject.SetActive(true);
-			FB_4_title.text = "You lost score by losing enemy <b>" + Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT + "</b> times";
-			FB_4_desc.text = "kill the enemy before it fell to the ground to gain more score";
+			FB_4_title.text = "You lost score by losing enemy <b><color=red>" + Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT + "</b></color> times";
+			FB_4_desc.text = "kill the enemy before it falls to the ground to gain more score";
 		}
 		//5
 		if (Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT > 0)
 		{
 			FB_5.gameObject.SetActive(true);
-			FB_5_title.text = "Enemy went out of sight <b>" + Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT + "</b> times. You might lose score!";
-			FB_5_desc.text = "Remember: Mario can only go to the left few steps. Better to kill enemy when its on the right side!";
+			FB_5_title.text = "The enemy went out of sight <b><color=red>" + Constants.FEEDBACK_OUT_OF_SIGHT_ENEMY_COUNT + "</b></color> times. You could've lost score!";
+			FB_5_desc.text = "Remember: Mario can only go to the left a few steps. Better to kill an enemy when its on the right side!";
 		}
 		//6
 		if (Constants.FEEDBACK_MISSED_BONUS_LEVEL_COUNT > 0)
 		{
 			FB_6.gameObject.SetActive(true);
-			FB_6_title.text = "You missed a bonus level!";
-			FB_6_desc.text = "Better to press down whenever Mario is standing on pipe!";
+			FB_6_title.text = "You lost a massive score by missing a bonus level!";
+			FB_6_desc.text = "Better to press down whenever Mario is standing on the pipe!";
 		}
 		//7
-		if (Constants.FEEDBACK_MISSED_COIN_COUNT > 0)
+		if (Constants.FEEDBACK_MISSED_COIN_COUNT == 0)
 		{
 			FB_7.gameObject.SetActive(true);
-			FB_7_title.text = "You lost score by misseg <b>" + Constants.FEEDBACK_MISSED_COIN_COUNT + "</b> coins ";
+			FB_7_title.text = "You lost score by missing <b><color=red>" + Constants.FEEDBACK_MISSED_COIN_COUNT + "</b></color> coins";
 			FB_7_desc.text = "Catch all the coins to maximize the score";
 		}
 	}

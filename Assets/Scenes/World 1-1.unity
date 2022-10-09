@@ -949,6 +949,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 58825237329308170, guid: ed84cd197f7024048a728aa8354e0523,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61606141072524460, guid: ed84cd197f7024048a728aa8354e0523,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed84cd197f7024048a728aa8354e0523, type: 3}
 --- !u!4 &238027344 stripped
@@ -1415,7 +1425,7 @@ PrefabInstance:
     - target: {fileID: 61109072218639410, guid: 2edb2b8e476654f0ea2807c7a8261a76,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.9
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 61109072218639410, guid: 2edb2b8e476654f0ea2807c7a8261a76,
         type: 3}
@@ -1467,6 +1477,11 @@ PrefabInstance:
       propertyPath: deathText
       value: 
       objectReference: {fileID: 2091024178}
+    - target: {fileID: 114750208195470174, guid: 2edb2b8e476654f0ea2807c7a8261a76,
+        type: 3}
+      propertyPath: marioSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114750208195470174, guid: 2edb2b8e476654f0ea2807c7a8261a76,
         type: 3}
       propertyPath: levelMusic
@@ -1821,7 +1836,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379062239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 155.6, y: 0.67, z: 0}
+  m_LocalPosition: {x: 62.5, y: 0.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4399,7 +4414,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1853458744217640, guid: 02739983e8875481da95619ddc1b41e0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4822034138584250, guid: 02739983e8875481da95619ddc1b41e0, type: 3}
       propertyPath: m_RootOrder

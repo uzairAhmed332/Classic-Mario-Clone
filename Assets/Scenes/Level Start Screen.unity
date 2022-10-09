@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.35065857, g: 0.9433962, b: 0.5261619, a: 1}
+  m_Color: {r: 0.18956922, g: 0.7075472, b: 0.34291798, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -830,7 +830,7 @@ PrefabInstance:
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -71.755
+      value: -992.815
       objectReference: {fileID: 0}
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
@@ -1141,7 +1141,12 @@ PrefabInstance:
     - target: {fileID: 7852987032208010265, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
       propertyPath: m_text
-      value: -----Enemy went out of sight. You might lose score!
+      value: -Enemy went out of sight. You might lose score! long text lons
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852987032208010265, guid: f3545154a21da5d4582eba8160e3fe65,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -74.54541
       objectReference: {fileID: 0}
     - target: {fileID: 9208195633307369612, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
@@ -1854,7 +1859,7 @@ PrefabInstance:
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -225.26498
+      value: -839.305
       objectReference: {fileID: 0}
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
@@ -2050,7 +2055,7 @@ PrefabInstance:
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -225.26498
+      value: -378.775
       objectReference: {fileID: 0}
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
@@ -3592,7 +3597,7 @@ PrefabInstance:
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -71.755
+      value: -532.285
       objectReference: {fileID: 0}
     - target: {fileID: 1433343581599143501, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
@@ -4251,7 +4256,7 @@ PrefabInstance:
     - target: {fileID: 7852987032208010265, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}
       propertyPath: m_text
-      value: -----You missed collectable block
+      value: You missed collectable block
       objectReference: {fileID: 0}
     - target: {fileID: 9160429952312111028, guid: f3545154a21da5d4582eba8160e3fe65,
         type: 3}

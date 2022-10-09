@@ -240,9 +240,9 @@ public class Mario : MonoBehaviour {
 		}
 
 		/******** Shooting */
-		if (isShooting && t_LevelManager.marioSize == 2) {
+		/*if (isShooting && t_LevelManager.marioSize == 2) {
 			fireTime2 = Time.time;
-
+			Debug.Log("Firex");
 			if (fireTime2 - fireTime1 >= waitBetweenFire) {
 				m_Animator.SetTrigger ("isFiring");
 				GameObject fireball = Instantiate (Fireball, FirePos.position, Quaternion.identity);
@@ -250,7 +250,7 @@ public class Mario : MonoBehaviour {
 				t_LevelManager.soundSource.PlayOneShot (t_LevelManager.fireballSound);
 				fireTime1 = Time.time;
 			}
-		}
+		}*/
 
 		/******** Set params */
 		m_Rigidbody2D.velocity = new Vector2 (moveDirectionX*currentSpeedX, m_Rigidbody2D.velocity.y);
@@ -269,6 +269,21 @@ public class Mario : MonoBehaviour {
 
 	/****************** Automatic movement sequences */
 	void Update() {
+
+		if (isShooting && t_LevelManager.marioSize == 2)
+		{
+			fireTime2 = Time.time;
+			Debug.Log("Firex");
+			if (fireTime2 - fireTime1 >= waitBetweenFire)
+			{
+				m_Animator.SetTrigger("isFiring");
+				GameObject fireball = Instantiate(Fireball, FirePos.position, Quaternion.identity);
+				fireball.GetComponent<MarioFireball>().directionX = transform.localScale.x;
+				t_LevelManager.soundSource.PlayOneShot(t_LevelManager.fireballSound);
+				fireTime1 = Time.time;
+			}
+		}
+
 		if (!inputFreezed) {
 			faceDirectionX = Input.GetAxisRaw ("Horizontal"); // > 0 for right, < 0 for left
 			isDashing = Input.GetButton ("Dash");
