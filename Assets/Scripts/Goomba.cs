@@ -11,7 +11,7 @@ public class Goomba : Enemy {
 		m_Animator = GetComponent<Animator> ();
 
 		starmanBonus = 100;
-		rollingShellBonus = 500;
+		rollingShellBonus = 100;
 		hitByBlockBonus = 100;
 		fireballBonus = 100;
 		stompBonus = 100;

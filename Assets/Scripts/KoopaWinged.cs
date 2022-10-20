@@ -7,7 +7,7 @@ public class KoopaWinged : Enemy {
 
 	void Start() { // ???
 		starmanBonus = 100;
-		rollingShellBonus = 500;
+		rollingShellBonus = 100;
 		hitByBlockBonus = 100;
 		fireballBonus = 100;
 		stompBonus = 100;

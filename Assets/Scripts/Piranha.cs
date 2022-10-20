@@ -22,7 +22,7 @@ public class Piranha : Enemy {
 		m_CircleCollider2D.enabled = false;
 
 		starmanBonus = 100; // ???
-		rollingShellBonus = 500; // ???
+		rollingShellBonus = 100; // ???
 		hitByBlockBonus = 0;
 		fireballBonus = 200;
 		stompBonus = 0;
