@@ -53,7 +53,7 @@ public class LevelStartScreen : MonoBehaviour {
 		t_GameStateManager = FindObjectOfType<GameStateManager>();
 		t_LevelManager = GetComponent<LevelManager>();
 		//Debug.Log("+++ " + t_LevelManager);
-		//feedbackConditions(); //just for temp for testing
+		feedbackConditions(); //just for temp for testing
 		if (Constants.IS_FEEDBACK_DELAYED && !t_GameStateManager.delayWhenGamestatesaved  && !Constants.NO_FEEDBACK)
 		{
 			//Delayed feedback is enabled. 
@@ -143,7 +143,7 @@ public class LevelStartScreen : MonoBehaviour {
 			FB_6_desc.text = "Try to press down whenever Mario is standing on a pipe!";
 		}
 		//7
-		if (Constants.FEEDBACK_MISSED_COIN_COUNT == 0)
+		if (Constants.FEEDBACK_MISSED_COIN_COUNT > 0)
 		{
 			FB_7.gameObject.SetActive(true);
 			FB_7_title.text = "You lost score by missing <b><color=red>" + Constants.FEEDBACK_MISSED_COIN_COUNT + "</b></color> coins";

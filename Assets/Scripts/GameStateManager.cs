@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour {
 	public bool spawnFromPoint;
@@ -52,8 +53,12 @@ public class GameStateManager : MonoBehaviour {
 		timeup = false;
 	}
 
-	public void ConfigNewLevel() {
-		timeElapsed = 400.5f; //todo: Here add the previous time from last level
+	public void ConfigNewLevel() { //Make everything resetwhen new level starts
+		marioSize = 0;
+		deaths = 0;
+		coins = 0;
+		scores = 0;
+		timeElapsed = 0.0f; //todo: Here add the previous time from last level
 		hurryUp = false;
 		ResetSpawnPosition ();
 	}
@@ -82,5 +87,27 @@ public class GameStateManager : MonoBehaviour {
 	}
 
 
+	public void savePerformanceInFile()
+	{
+		Debug.Log("***Saving Performace Matrics***");
+		LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
+		//Path of the file
+		string path = Application.dataPath + "/PerformaceMetrics.txt";
+		//Create File if it doesn't exist
+		if (!File.Exists(path))
+		{
+			File.WriteAllText(path, "Performance Metric \n\n");
+		}
+        //Content of the file 
+        //Call When 
+        //1. Everytime Level ends
+        //2. After 15 min when level ends (Think about it wheter to do it or not! I think not)
+        string content = "Level: " + SceneManager.GetActiveScene().name + "\n" +
+                         "Score: " + t_LevelManager.scores + "\n" +
+                         "Deaths: " + t_LevelManager.deaths + "\n" +
+                         "Time: " + t_LevelManager.timeElapsed + "\n\n";
+        //Add some to text to it
+        File.AppendAllText(path, content);
+	}
 
 }

@@ -426,6 +426,7 @@ public class LevelManager : MonoBehaviour
 
             marioSize = 0;
             deaths++;
+            scores = 0;  //Makes score always 0 when marios dies. AS game will starts from srart.
             SetHudDeath();
             soundSource.Stop();
             musicSource.Stop();
@@ -611,10 +612,11 @@ public class LevelManager : MonoBehaviour
 
     public void LoadNewLevel(string sceneName, float delay = loadSceneDelay)
     {
+        t_GameStateManager.savePerformanceInFile();
         t_GameStateManager.SaveGameState();
         t_GameStateManager.ConfigNewLevel();
         t_GameStateManager.sceneToLoad = sceneName;
-        LoadSceneDelay("Level Start Screen", delay);
+        LoadSceneDelay("Level Start Screen", 0f);
     }
 
     public void LoadSceneCurrentLevel(string sceneName, float delay = loadSceneDelay)
