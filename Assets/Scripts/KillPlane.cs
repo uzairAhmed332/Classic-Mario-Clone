@@ -22,6 +22,7 @@ public class KillPlane : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {  //Called when mario dies by drawning by hitting planes and ...
 			t_LevelManager.MarioRespawn(Constants.ENEMY_PLANES);
+
 		} else if(other.gameObject.tag == "Enemy") {
 			//Todo Make feeback when enemy falls to plane and misses by Mario for better score!
 			
@@ -29,24 +30,12 @@ public class KillPlane : MonoBehaviour {
 			Debug.Log(this.name + " onPlanecollide " + other.gameObject.name);
 			
 			Destroy (other.gameObject); //hack:Called when Enemy (Non Mario!) dies by hitting planes and ...
-			//StartCoroutine(showFeedback());
-			//t_LevelManager.timerPaused = true;
-			//t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-
 
 			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_LOST_ENEMY, Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY);
 			Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT++;
+
 			Debug.Log("xxx"+Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT);
 
-
-			//Image image = t_LevelManager.feedbackPanel.GetComponent<Image>();
-			//var tempColor = image.color;
-			//tempColor.a = 0.4f;
-			//image.color = Color.green;
-
-			//todo Stop the time!
-			//Time.timeScale = 0f;
-			//mario.Freeze();
 		}
 	}
 

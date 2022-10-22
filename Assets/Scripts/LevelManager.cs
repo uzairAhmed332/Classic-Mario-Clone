@@ -456,13 +456,27 @@ public class LevelManager : MonoBehaviour
             }
         }
     }
-  
+
+    public void FeedbackActivaotor(string title, string Description)
+    {
+        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK)
+        {
+            feedbackPanel.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
+        feedbackPanelTitleText.text = title;
+        feedbackPanelDecsriptionText.text = Description;
+    }
+
     public void FeedbackButtonClicked()
     {
         if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY) //From LevelManager
         {
             feedbackPanel.gameObject.SetActive(false);
-            StartCoroutine(LoadSceneWhenMarioDied(3));
+            Time.timeScale = 1f;
+            LoadSceneDelay("Level Start Screen", 0);
+           // StartCoroutine(LoadSceneWhenMarioDied(3));// Now not using this
         }
         else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_LOST_ENEMY) //from KillPlane
         { 
@@ -473,7 +487,9 @@ public class LevelManager : MonoBehaviour
         else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE) //from LevelManager
         {
             feedbackPanel.gameObject.SetActive(false);
-            StartCoroutine(LoadSceneWhenMarioDied(3));
+            Time.timeScale = 1f;
+            LoadSceneDelay("Level Start Screen", 0);
+            // StartCoroutine(LoadSceneWhenMarioDied(3));// Now not using this
         }
         else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY) { //from MoveAndFlip
             feedbackPanel.gameObject.SetActive(false);
@@ -486,7 +502,6 @@ public class LevelManager : MonoBehaviour
             Time.timeScale = 1f;
  
         }
-        
         else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL)
         { //from PipeWarpDown
             feedbackPanel.gameObject.SetActive(false);
@@ -500,18 +515,9 @@ public class LevelManager : MonoBehaviour
         }
     }
     //
-    public void FeedbackActivaotor(string title, string Description)
-    {
-        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK)
-        {
-            feedbackPanel.gameObject.SetActive(true);
-            Time.timeScale = 0f;
-        }
-
-        feedbackPanelTitleText.text = title; 
-        feedbackPanelDecsriptionText.text = Description;
-    }
+  
         IEnumerator LoadSceneWhenMarioDied(float delay = 3f)
+
     {
         mario.Die();
         isRespawning = false;
@@ -531,16 +537,7 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(t_GameStateManager.sceneToLoad);
     }
 
-    void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
-    {
-        t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
-
-        timerPaused = true;
-        //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
-        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
-    }
-
-    IEnumerator LoadSceneDelayCo(string sceneName, float delay)
+     IEnumerator LoadSceneDelayCo(string sceneName, float delay)
     {
         Debug.Log(this.name + " LoadSceneDelayCo: starts loading " + sceneName);
 
@@ -567,6 +564,16 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
     }
+    void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
+    {
+        t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
+
+        timerPaused = true;
+        //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
+        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
+    }
+
+   
 
     public void ReloadCurrentLevel(string diedFrom, float delay = loadSceneDelay, bool timeup = false)
     {
@@ -576,18 +583,15 @@ public class LevelManager : MonoBehaviour
         //t_GameStateManager.ConfigReplayedLevel (); //No need. Only setting time!
         t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene().name; //stores current level name. Helps in restating same level
 
-        //todo Imeplement feedback panel + typesbefore reloading the scene
         if (diedFrom == Constants.ENEMY_PLANES)
         {
-           FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE, Constants.FEEDBACK_DESCRIPTION_PLANE);
+            FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE, Constants.FEEDBACK_DESCRIPTION_PLANE);
             Constants.FEEDBACK_MARIO_DIED_FROM_PLANE_COUNT++; 
-
         }
         else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA || diedFrom == Constants.ENEMY_PIRANHA)
         {
             FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY, Constants.FEEDBACK_DESCRIPTION_MARIO_DIED);
             Constants.FEEDBACK_MARIO_DIED_FROM_ENEMY_COUNT++;
-
         }
         else
         {
@@ -602,7 +606,9 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            LoadSceneDelay("Level Start Screen", delay); //Only this will be called 
+            if(Constants.IS_FEEDBACK_DELAYED || Constants.NO_FEEDBACK) {  //condition ressopn to Not call for immediate feedback. Call it when button pressed!
+            LoadSceneDelay("Level Start Screen", delay); //Only this will be called
+             }
         }
     }
 

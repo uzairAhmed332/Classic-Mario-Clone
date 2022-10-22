@@ -5,10 +5,12 @@ using UnityEngine;
 public class Constants 
 {
     public const bool IS_FEEDBACK_DELAYED = false;  //False == immediate  feedback, true == Delayed feedback
-    public const bool NO_FEEDBACK = true; //When true -->Run like delayed but last screen like immediate
+    public const bool NO_FEEDBACK = false; //When true -->Run like delayed but last screen like immediate
 
     public const string ENEMY_GOOMBA = "Goomba"; //Brown Goomba,Green Goomba
     public const string ENEMY_KOOPA = "Koopa";
+    public const string ENEMY_PIRANHA = "Piranha";
+    
     public const string ENEMY_PLANES = "Planes";
 
     //1
