@@ -1754,6 +1754,11 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d8538255f671b4550bce48803d6a0053, type: 3}
+    - target: {fileID: 114256751761485294, guid: 2edb2b8e476654f0ea2807c7a8261a76,
+        type: 3}
+      propertyPath: stompBox
+      value: 
+      objectReference: {fileID: 513874147}
     - target: {fileID: 114750208195470174, guid: 2edb2b8e476654f0ea2807c7a8261a76,
         type: 3}
       propertyPath: deathText
@@ -1833,6 +1838,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &513874147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884793665642004, guid: 2edb2b8e476654f0ea2807c7a8261a76,
+    type: 3}
+  m_PrefabInstance: {fileID: 513874142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &519851694
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2183,6 +2183,11 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114256751761485294, guid: 2edb2b8e476654f0ea2807c7a8261a76,
+        type: 3}
+      propertyPath: stompBox
+      value: 
+      objectReference: {fileID: 133477645}
     - target: {fileID: 114750208195470174, guid: 2edb2b8e476654f0ea2807c7a8261a76,
         type: 3}
       propertyPath: deathText
@@ -2230,6 +2235,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2edb2b8e476654f0ea2807c7a8261a76, type: 3}
+--- !u!1 &133477645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1884793665642004, guid: 2edb2b8e476654f0ea2807c7a8261a76,
+    type: 3}
+  m_PrefabInstance: {fileID: 133477644}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &135730553
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 	private GameStateManager t_GameStateManager;
-	public Text TopText;
+	//public Text TopText;
 
 	public GameObject VolumePanel;
 	public GameObject SoundSlider;
@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour {
 		t_GameStateManager.ConfigNewGame ();
 
 		int currentHighScore = PlayerPrefs.GetInt ("highScore", 0);
-		TopText.text = "TOP- " + currentHighScore.ToString ("D6");
+	//	TopText.text = "TOP- " + currentHighScore.ToString ("D6");
 
 		if (!PlayerPrefs.HasKey ("soundVolume")) {
 			PlayerPrefs.SetFloat ("soundVolume", 1);
@@ -55,7 +55,8 @@ public class MainMenu : MonoBehaviour {
 	public void StartNewGame() {
 		if (!volumePanelActive) {
 			t_GameStateManager.sceneToLoad = "World 1-1";
-			SceneManager.LoadScene ("Level Start Screen");
+			//SceneManager.LoadScene ("Level Start Screen"); //Old
+			SceneManager.LoadScene("World 1-1");
 		}
 	}
 
