@@ -10,12 +10,13 @@ public class Toad : MonoBehaviour {
 
 	private Mario mario;
 	private LevelManager t_LevelManager;
-
+	private GameStateManager t_GameStateManager;
 
 	// Use this for initialization
 	void Start () {
 		mario = FindObjectOfType<Mario> ();
 		t_LevelManager = FindObjectOfType<LevelManager> ();
+		t_GameStateManager = FindObjectOfType<GameStateManager>();
 	}
 
 
@@ -31,6 +32,9 @@ public class Toad : MonoBehaviour {
 		yield return new WaitForSecondsRealtime (.75f);
 		ButOurPrincess.SetActive (true);
 		yield return new WaitForSecondsRealtime (t_LevelManager.castleCompleteMusic.length);
-		SceneManager.LoadScene ("Main Menu");
+		t_GameStateManager.savePerformanceInFile(); //filing
+		SceneManager.LoadScene ("Main Menu");  //OLD
+
+		//t_LevelManager.LoadNewLevel("Main Menu", t_LevelManager.levelCompleteMusic.length);
 	}
 }

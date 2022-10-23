@@ -66,10 +66,6 @@ public class PipeWarpDown : MonoBehaviour {
 		{
 			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL, Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL);
 			Constants.FEEDBACK_MISSED_BONUS_LEVEL_COUNT++;
-		/*	t_LevelManager.feedbackPanel.gameObject.SetActive(true);
-			t_LevelManager.feedbackPanelTitleText.text = Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL;
-			t_LevelManager.feedbackPanelDecsriptionText.text = Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL;
-			Time.timeScale = 0f;*/
 		}
 	}
 		

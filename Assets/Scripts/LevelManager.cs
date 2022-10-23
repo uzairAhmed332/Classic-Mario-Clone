@@ -588,9 +588,9 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-          //  if(Constants.IS_FEEDBACK_DELAYED || Constants.NO_FEEDBACK) {  //condition ressopn to Not call for immediate feedback. Call it when button pressed!
-            LoadSceneDelay("Level Start Screen", delay); //Only this will be called
-          //   }
+            if(Constants.IS_FEEDBACK_DELAYED || Constants.NO_FEEDBACK) {  //condition respawn to Not call for immediate feedback. Call it when button pressed!
+                LoadSceneDelay("Level Start Screen", delay); //Only this will be called
+            }
         }
     }
 

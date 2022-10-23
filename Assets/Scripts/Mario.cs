@@ -425,7 +425,11 @@ public class Mario : MonoBehaviour {
 		return val;
 	}
 
+	public GameObject stompBox;
 	void OnCollisionEnter2D(Collision2D other) {
+		if (stompBox.activeSelf) {
+			return;
+		}
 		Vector2 normal = other.contacts[0].normal;
 		Vector2 bottomSide = new Vector2(0f, 1f);
 		bool bottomHit = normal == bottomSide;
@@ -442,7 +446,7 @@ public class Mario : MonoBehaviour {
 				{
 					Debug.Log (this.name + " OnCollisionEnter2D: Damaged by " + other.gameObject.name
 						+ " from " + normal.ToString () + "; isFalling=" + isFalling); // TODO sometimes fire before stompbox reacts
-					t_LevelManager.MarioPowerDown (Constants.ENEMY_GOOMBA); //So far this called when Mario dies from Brown Goomba
+				t_LevelManager.MarioPowerDown (Constants.ENEMY_GOOMBA); //So far this called when Mario dies from Brown Goomba
 				}
 
 			}
