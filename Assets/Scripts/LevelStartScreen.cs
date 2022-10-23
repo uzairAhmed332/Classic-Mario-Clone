@@ -53,8 +53,8 @@ public class LevelStartScreen : MonoBehaviour {
 		t_GameStateManager = FindObjectOfType<GameStateManager>();
 		t_LevelManager = GetComponent<LevelManager>();
 		//Debug.Log("+++ " + t_LevelManager);
-		feedbackConditions(); //just for temp for testing
-		if (Constants.IS_FEEDBACK_DELAYED && !t_GameStateManager.delayWhenGamestatesaved  && !Constants.NO_FEEDBACK)
+		//feedbackConditions(); //just for temp for testing
+		if (Constants.IS_FEEDBACK_DELAYED && !t_GameStateManager.dontShowDelayedFeedbackWhenDied && !Constants.NO_FEEDBACK)  
 		{
 			//Delayed feedback is enabled. 
 			Debug.Log(this.name + "1:" + transform.GetChild(0).transform.GetChild(1).gameObject.name); //DelayedFeedbackPanel

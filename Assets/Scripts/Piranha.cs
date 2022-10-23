@@ -9,7 +9,7 @@ public class Piranha : Enemy {
 	private PatrolVertical patrolScript;
 
 	private bool visible;
-	private float maxDistanceToMove = 0; //default: 2 should not emerge if Mario is within this distance of pipe
+	private float maxDistanceToMove = 2; //default: 2 should not emerge if Mario is within this distance of pipe
 
 	// Use this for initialization
 	void Start () {

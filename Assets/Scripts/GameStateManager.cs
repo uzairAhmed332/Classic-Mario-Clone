@@ -19,7 +19,7 @@ public class GameStateManager : MonoBehaviour {
 	public string sceneToLoad; // what scene to load after level start screen finishes?
 	public bool timeup;
 
-    public bool delayWhenGamestatesaved = false;
+    public bool dontShowDelayedFeedbackWhenDied = false; //if delayed feedback is true. Then dont show it when mario dies, Only show after level ends
 
     void Awake () {
 		if (FindObjectsOfType (GetType ()).Length == 1) {
@@ -68,8 +68,9 @@ public class GameStateManager : MonoBehaviour {
 		hurryUp = false;
 	}
 
-	public void SaveGameState() { // also called before Mario dies
-		LevelManager t_LevelManager = FindObjectOfType<LevelManager> ();
+	public void SaveGameState()
+	{ // also called before Mario dies
+		LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
 		marioSize = t_LevelManager.marioSize;
 		deaths = t_LevelManager.deaths;
 		coins = t_LevelManager.coins;
@@ -77,13 +78,14 @@ public class GameStateManager : MonoBehaviour {
 		timeElapsed = t_LevelManager.timeElapsed; // "+ LevelManager.loadSceneDelay" LevelManager.loadSceneDelay is added to add the (extra)time to read feedback!
 		hurryUp = t_LevelManager.hurryUp;
 
-		//delayWhenGamestatesaved = true; getting true from LevelStartScreen when mario dies!
+
 		Invoke("SetBoolBack", 5f);
+
 	}
 
-	private void SetBoolBack()
+        private void SetBoolBack()
 	{
-		delayWhenGamestatesaved = false;
+		dontShowDelayedFeedbackWhenDied = false;
 	}
 
 

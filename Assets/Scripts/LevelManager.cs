@@ -153,24 +153,6 @@ public class LevelManager : MonoBehaviour
             SetHudTime();
         }
 
-       /* if (timeElapsedInt < 100 && !hurryUp)
-        { //Todo: Not required. comment it after checking isInvincibleStarman thing
-            hurryUp = true;
-            PauseMusicPlaySound(warningSound, true);
-            if (isInvincibleStarman)
-            {  //Todo: I think isInvincibleStarman needs to be outside
-                ChangeMusic(starmanMusicHurry, warningSound.length);
-            }
-            else
-            {
-                ChangeMusic(levelMusicHurry, warningSound.length);
-            }
-        }*/
-
-        /*if (timeLeftInt <= 0) {
-			MarioRespawn (true);
-		}*/
-
         if (Input.GetButtonDown("Pause"))
         {
             if (!gamePaused)
@@ -415,7 +397,6 @@ public class LevelManager : MonoBehaviour
 
     //Sequence of calling
     //MarioPowerDown then MarioRespawn
-
     // Always called when mario dies in any way 
     public void MarioRespawn(string diedFrom, bool timeup = false)
     {
@@ -447,6 +428,7 @@ public class LevelManager : MonoBehaviour
             {
                 //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
                 ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
+                t_GameStateManager.dontShowDelayedFeedbackWhenDied = true; //
             }
             else
             {
@@ -566,7 +548,7 @@ public class LevelManager : MonoBehaviour
     }
     void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
     {
-        t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
+       // t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
 
         timerPaused = true;
         //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
@@ -606,9 +588,9 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            if(Constants.IS_FEEDBACK_DELAYED || Constants.NO_FEEDBACK) {  //condition ressopn to Not call for immediate feedback. Call it when button pressed!
+          //  if(Constants.IS_FEEDBACK_DELAYED || Constants.NO_FEEDBACK) {  //condition ressopn to Not call for immediate feedback. Call it when button pressed!
             LoadSceneDelay("Level Start Screen", delay); //Only this will be called
-             }
+          //   }
         }
     }
 
