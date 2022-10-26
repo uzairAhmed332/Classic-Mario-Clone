@@ -9,6 +9,7 @@ public class GameStateManager : MonoBehaviour {
 	public int spawnPointIdx;
 	public int spawnPipeIdx;
 
+	public Canvas traningTimeOverCanvas;
 	public int marioSize;
 	public int deaths; 
 	public int coins;
@@ -16,12 +17,44 @@ public class GameStateManager : MonoBehaviour {
 	public float timeElapsed; //Make it infinite
 	public bool hurryUp; //purpose = make music faster
 
+	private int timeTraning;
+	private int timeTraningInt;
+	private string timeTraningString;
+
 	public string sceneToLoad; // what scene to load after level start screen finishes?
 	public bool timeup;
 
     public bool dontShowDelayedFeedbackWhenDied = false; //if delayed feedback is true. Then dont show it when mario dies, Only show after level ends
 
-    void Awake () {
+	void Start()
+	{
+		//StartCoroutine(Countdown());
+	}
+
+	private IEnumerator Countdown()
+	{
+		float counter = 10f; // 3 seconds you can change this 
+							 //to whatever you want
+		while (counter > 0)
+		{
+			yield return new WaitForSecondsRealtime(1);
+			
+
+			timeTraningInt = Mathf.RoundToInt(counter);
+
+			float minutes = Mathf.FloorToInt(timeTraningInt / 60);
+			float seconds = Mathf.FloorToInt(timeTraningInt % 60);
+			timeTraningString = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+			Debug.Log("Rem time: " + timeTraningString);
+			counter--;
+		}
+		Debug.Log("Times Up ");
+		Time.timeScale = 0;
+		traningTimeOverCanvas.gameObject.SetActive(true);
+	}
+
+	void Awake () {
 		if (FindObjectsOfType (GetType ()).Length == 1) {
 			DontDestroyOnLoad (gameObject);
 			ConfigNewGame ();
