@@ -1,0 +1,55 @@
+Level: World 1-4
+Score: 0
+Deaths: 0
+Time: 15.77984
+
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 25.13432
+
+Level: World 1-1
+Score: 1900
+Deaths: 1
+Time: 147.5499
+
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 10.19697
+
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 2.033884
+
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.690847
+
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 16.35778
+
+Level: World 1-1
+Score: 1200
+Deaths: 0
+Time: 56.3666
+
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 16.02447
+
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 16.02447
+
+Level: World 1-1
+Score: 2500
+Deaths: 2
+Time: 70.47185
+
