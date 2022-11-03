@@ -12,6 +12,7 @@ TagManager:
   - Mario Fireball
   - Enemy/Bowser
   - BrickHiddenCoin
+  - Ghost
   layers:
   - Default
   - TransparentFX

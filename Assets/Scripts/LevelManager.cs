@@ -323,6 +323,7 @@ public class LevelManager : MonoBehaviour
             }
             else
             {
+                PipeWarpDown.marioEnteredCount = 0;  //so that Mario can go again to bonus level
                 MarioRespawn(diedFrom);
             }
             Debug.Log(this.name + " MarioPowerDown: done executing");
@@ -564,7 +565,8 @@ public class LevelManager : MonoBehaviour
         t_GameStateManager.SaveGameState();
         //t_GameStateManager.ConfigReplayedLevel (); //No need. Only setting time!
         t_GameStateManager.sceneToLoad = SceneManager.GetActiveScene().name; //stores current level name. Helps in restating same level
-
+        PipeWarpDown.marioEnteredCount = 0;  //so that Mario can go again to bonus level
+        
         if (diedFrom == Constants.ENEMY_PLANES)
         {
             FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE, Constants.FEEDBACK_DESCRIPTION_PLANE);

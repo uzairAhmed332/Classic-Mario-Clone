@@ -12,7 +12,7 @@ public class MoveAndFlip : MonoBehaviour {
 	static int counterOutOfSightFeedback = 0;
 	public bool canMove = false;
 	public bool canMoveAutomatic = true;
-	private float minDistanceToMove = 11f;  //old value = 14 
+	private float minDistanceToMove = 10001f;  //old value = 14 
 
 	public float directionX = 1;
 	public Vector2 Speed = new Vector2(3, 0);
