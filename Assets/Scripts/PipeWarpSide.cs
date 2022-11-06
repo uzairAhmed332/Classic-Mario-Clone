@@ -45,6 +45,7 @@ public class PipeWarpSide : MonoBehaviour {
 					+ " teleports player to different scene same level " + sceneName
 					+ ", pipe idx " + spawnPipeIdx);
 				t_LevelManager.LoadSceneCurrentLevelSetSpawnPipe (sceneName, spawnPipeIdx);
+				LevelManager.comingFromPipe = true;  //Set booloan value to "true" here for ghost video after coming out from pipe (Bonus level)
 				t_Ghost.StopRecordingGhost();
 			} else {
 				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name

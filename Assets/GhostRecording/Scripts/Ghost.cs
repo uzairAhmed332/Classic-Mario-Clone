@@ -122,7 +122,7 @@ public class Ghost : MonoBehaviour
 	public bool startRecording = false, recordingFrame = false, playRecording = false;
 
 	// Temp variable For Saving and loading of video. 
-	string currentVideoEndPath = Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO;
+	string currentVideoEndPath = "/testVideo";
 
 	void FixedUpdate()
 	{
@@ -170,18 +170,53 @@ public class Ghost : MonoBehaviour
 		startRecording = true;
 	}
 
+	//This is for making new ghost videos
 	public void loadFromFile()
 	{
 		//Check if Ghost file exists. If it does load it
 		if (File.Exists(Application.persistentDataPath + currentVideoEndPath))  //Old: Ghost
 		{
-			//Debug.Log("Loading & Playing GhostGhost file from: " + Application.persistentDataPath + currentVideoConst);
 			BinaryFormatter bf = new BinaryFormatter();
 			FileStream file = File.Open(Application.persistentDataPath + currentVideoEndPath, FileMode.Open);
 			Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
 			lastReplayList = (List<GhostShot>)bf.Deserialize(file);
 			Debug.Log("Loading: " + lastReplayList.Count);
 			file.Close();
+			playGhostRecording();
+		}
+		else
+		{
+			Debug.Log("No Load/Ghost Found");
+		}
+	}
+
+	//This is for existing ghost videos
+	public void loadFromFile(string loadSceneGhostFromLevelManager, bool comingFromPipe = false)
+	{
+
+		if (File.Exists(Application.persistentDataPath + loadSceneGhostFromLevelManager))  
+		{
+			BinaryFormatter bf = new BinaryFormatter();
+			if (!comingFromPipe)
+			{ //Normal
+				FileStream file = File.Open(Application.persistentDataPath + loadSceneGhostFromLevelManager, FileMode.Open);
+				Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
+				lastReplayList = (List<GhostShot>)bf.Deserialize(file);
+				Debug.Log("Loading: " + lastReplayList.Count);
+				file.Close();
+			}
+			else {
+				//Doing this when coming from pipe but scene name is same!
+				if (loadSceneGhostFromLevelManager.Equals("World 1-1"))
+				{ 
+					FileStream file = File.Open(Application.persistentDataPath + Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, FileMode.Open);
+					Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
+					lastReplayList = (List<GhostShot>)bf.Deserialize(file);
+					Debug.Log("Loading: " + lastReplayList.Count);
+					file.Close();
+				}
+			}
+		
 			playGhostRecording();
 		}
 		else

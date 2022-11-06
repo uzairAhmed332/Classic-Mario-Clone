@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public const float loadSceneDelay = 1f;
 
     public bool hurryUp; // within last 100 secs?
+    public static bool comingFromPipe = false;
     public int marioSize; // 0..2
     public int deaths;
     public int coins;
@@ -36,6 +37,7 @@ public class LevelManager : MonoBehaviour
     private float transformDuration = 1;
 
     private GameStateManager t_GameStateManager;
+    private Ghost t_Ghost;
     private Mario mario;
     private PipeWarpDown pipeWarpDown;
 
@@ -101,6 +103,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         t_GameStateManager = FindObjectOfType<GameStateManager>();
+        t_Ghost = FindObjectOfType<Ghost>();
         RetrieveGameState();
 
         mario = FindObjectOfType<Mario>();
@@ -131,6 +134,20 @@ public class LevelManager : MonoBehaviour
         }
 
         Debug.Log(this.name + " Start: current scene is " + SceneManager.GetActiveScene().name);
+        //Load ghost here based on active scene 
+
+         if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)  //after bonus level till end
+        {
+            t_Ghost.loadFromFile(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO);
+        }
+        else if(SceneManager.GetActiveScene().name.Equals("World 1-1"))
+        {
+            t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground")) {
+            t_Ghost.loadFromFile(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO);
+        }
+      
     }
 
     void RetrieveGameState()
@@ -616,6 +633,7 @@ public class LevelManager : MonoBehaviour
     { //Also called when entering pipe side "PipeWarpSide" and ...
         t_GameStateManager.SaveGameState();
         t_GameStateManager.SetSpawnPipe(spawnPipeIdx);
+   
         LoadSceneDelay(sceneName, delay);
         Debug.Log(this.name + " LoadSceneCurrentLevelSetSpawnPipe: supposed to load " + sceneName
             + ", spawnPipeIdx=" + spawnPipeIdx.ToString() + "; actual GSM spawnFromPoint="

@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Constants 
 {
+    //Scene Name: "World 1-1",
+    
+
+
     public const string LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_1"; //From start till bonus level  //Done
     public const string LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_2"; //Only Bonus level
     public const string LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_3"; //After bonus level till end

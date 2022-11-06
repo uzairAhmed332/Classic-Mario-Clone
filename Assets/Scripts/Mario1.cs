@@ -462,7 +462,7 @@ public class Mario1 : MonoBehaviour {
 	}*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-		Debug.Log("LogCheck2" + this.name + " | " + " name: " + collision.gameObject.name + " tag: " + collision.gameObject.tag);
+	//	Debug.Log("LogCheck2" + this.name + " | " + " name: " + collision.gameObject.name + " tag: " + collision.gameObject.tag);
 		if (collision.gameObject.tag.Contains("Enemy/Piranha")){ 
 		}
 	
