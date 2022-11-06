@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PipeWarpSide : MonoBehaviour {
 	private LevelManager t_LevelManager;
+	private Ghost t_Ghost;
 	private Mario mario;
 	private bool reachedPortal;
 
@@ -17,6 +18,7 @@ public class PipeWarpSide : MonoBehaviour {
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
 		mario = FindObjectOfType<Mario> ();
+		t_Ghost = FindObjectOfType<Ghost>();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +45,7 @@ public class PipeWarpSide : MonoBehaviour {
 					+ " teleports player to different scene same level " + sceneName
 					+ ", pipe idx " + spawnPipeIdx);
 				t_LevelManager.LoadSceneCurrentLevelSetSpawnPipe (sceneName, spawnPipeIdx);
+				t_Ghost.StopRecordingGhost();
 			} else {
 				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name
 					+ " teleports player to new level " + sceneName 

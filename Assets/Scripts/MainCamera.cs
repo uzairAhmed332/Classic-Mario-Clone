@@ -56,7 +56,8 @@ public class MainCamera : MonoBehaviour {
 
 			// move target of camera ahead of Player, but do not let camera shoot pass
 			// level boundaries
-			if (target.transform.localScale.x > 0f && !passedRightEdge &&
+			// Old: && !passedRightEdge  --> Removed this so that mario can go to the right infinite!
+			if (target.transform.localScale.x > 0f  &&
 			    targetPosition.x - leftEdge.position.x >= cameraWidth - followAhead) {
 				if (canMoveBackward || target.transform.position.x + followAhead >= transform.position.x) {
 					targetPosition = new Vector3 (targetPosition.x + followAhead, targetPosition.y, targetPosition.z);

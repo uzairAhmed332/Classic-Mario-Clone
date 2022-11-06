@@ -715,7 +715,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4280507532537537379, guid: 1f28d1c9318fbd44e8b495865f3a80f9,
           type: 3}
         m_TargetAssemblyTypeName: Ghost, Assembly-CSharp
-        m_MethodName: StartRecording
+        m_MethodName: StartRecordingGhost
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

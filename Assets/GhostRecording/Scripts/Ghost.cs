@@ -119,19 +119,20 @@ public class Ghost : MonoBehaviour
 	private float replayTime = 0.0f;
 
 	//Check whether we should be recording or not
-	bool startRecording = false, recordingFrame = false, playRecording = false;
+	public bool startRecording = false, recordingFrame = false, playRecording = false;
 
 	// Temp variable For Saving and loading of video. 
-	string currentVideoEndPath = "/GhostLvl1_3";
+	string currentVideoEndPath = Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO;
 
 	void FixedUpdate()
 	{
-		if (startRecording)  //No need of this condition block. Code runs fine without it!
+		if (startRecording)   //Why its not not working with other demo scene!
+
 		{
 			startRecording = false;
 			StartRecording();
 		}
-		else if (recordingFrame)  //Not called when "recordingFrame" becomes "True" in Other scenes!
+		else if (recordingFrame) 
 		{
 			RecordFrame();
 		}
