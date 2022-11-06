@@ -26,15 +26,15 @@ public class KillPlane : MonoBehaviour {
 		} else if(other.gameObject.tag == "Enemy") {
 			//Todo Make feeback when enemy falls to plane and misses by Mario for better score!
 			
-			Debug.Log(this.name + " ---- " + t_LevelManager.feedbackPanel.transform.GetChild(3).gameObject.name.ToString());
-			Debug.Log(this.name + " onPlanecollide " + other.gameObject.name);
+		//	Debug.Log(this.name + " ---- " + t_LevelManager.feedbackPanel.transform.GetChild(3).gameObject.name.ToString());
+		//	Debug.Log(this.name + " onPlanecollide " + other.gameObject.name);
 			
 			Destroy (other.gameObject); //hack:Called when Enemy (Non Mario!) dies by hitting planes and ...
 
 			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_LOST_ENEMY, Constants.FEEDBACK_DESCRIPTION_LOST_ENEMY);
 			Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT++;
 
-			Debug.Log("xxx"+Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT);
+			//Debug.Log("xxx"+Constants.FEEDBACK_OUT_OF_LOST_ENEMY_COUNT);
 
 		}
 	}

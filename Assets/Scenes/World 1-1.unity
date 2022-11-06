@@ -1859,7 +1859,7 @@ PrefabInstance:
     - target: {fileID: 1482416847223157635, guid: fe0a1aef82f5f9947950e0866bc6b6f9,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.7000427
+      value: 1.7000732
       objectReference: {fileID: 0}
     - target: {fileID: 1482416847584454721, guid: fe0a1aef82f5f9947950e0866bc6b6f9,
         type: 3}
@@ -1895,6 +1895,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Ghost, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482416848498652293, guid: fe0a1aef82f5f9947950e0866bc6b6f9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.9057312
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe0a1aef82f5f9947950e0866bc6b6f9, type: 3}
@@ -2517,7 +2522,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379062239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 57, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4718,7 +4723,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1485481461405040, guid: 8130008fbd8044b4e94595114a970409, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4908287474821086, guid: 8130008fbd8044b4e94595114a970409, type: 3}
       propertyPath: m_RootOrder

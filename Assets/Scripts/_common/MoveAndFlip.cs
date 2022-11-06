@@ -26,7 +26,7 @@ public class MoveAndFlip : MonoBehaviour {
 	bool isFeedbackRunning = false;
 
 	public Transform t_transform;
-	int count_pos_y = 0;
+	//int count_pos_y = 0;
 	bool doNotShowOutOfSightFeedback = false;
 	void Start() {
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
