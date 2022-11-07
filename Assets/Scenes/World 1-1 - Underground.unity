@@ -745,6 +745,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasTarodev
       objectReference: {fileID: 0}
+    - target: {fileID: 1482416846407736518, guid: fe0a1aef82f5f9947950e0866bc6b6f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1482416846955133851, guid: fe0a1aef82f5f9947950e0866bc6b6f9,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2450,7 +2455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1485481461405040, guid: 8130008fbd8044b4e94595114a970409, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4908287474821086, guid: 8130008fbd8044b4e94595114a970409, type: 3}
       propertyPath: m_RootOrder

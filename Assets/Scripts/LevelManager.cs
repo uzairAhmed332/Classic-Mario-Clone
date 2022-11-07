@@ -135,26 +135,28 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log(this.name + " Start: current scene is " + SceneManager.GetActiveScene().name);
         //Load ghost here based on active scene 
-
-         if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
-        {//after Bonus level till end
-
-            t_Ghost.loadFromFile(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO);
-            //t_Ghost.loadFromFile();
-            // t_Ghost.StartRecordingGhost();
-        }
-        else if(SceneManager.GetActiveScene().name.Equals("World 1-1"))
+        if (Constants.isghostModeOn)
         {
-           // t_Ghost.loadFromFile();
-             t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
-            //   t_Ghost.StartRecordingGhost();
-            // t_Ghost.loadFromFile();
-        }
-        else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground")) {
-              t_Ghost.loadFromFile(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO);
-             //  t_Ghost.StartRecordingGhost();
-        }
+            if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
+            {//after Bonus level till end
 
+                t_Ghost.loadFromFile(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO);
+                //t_Ghost.loadFromFile();
+                // t_Ghost.StartRecordingGhost();
+            }
+            else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
+            {
+                // t_Ghost.loadFromFile();
+                t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
+                //   t_Ghost.StartRecordingGhost();
+                // t_Ghost.loadFromFile();
+            }
+            else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
+            {
+                t_Ghost.loadFromFile(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO);
+                //  t_Ghost.StartRecordingGhost();
+            }
+        }
     }
 
     void RetrieveGameState()

@@ -58,13 +58,10 @@ public class LevelStartScreen : MonoBehaviour {
 		{
 			//Delayed feedback is enabled. 
 			Debug.Log(this.name + "1:" + transform.GetChild(0).transform.GetChild(1).gameObject.name); //DelayedFeedbackPanel
-			transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true); // enabling DelayedFeedbackPanel
-																					//Debug.Log(this.name + "2: " + transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0)); //Content //On this
-																					//transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).gameObject.SetActive(true);
 
-			//if (Constants.FEEDBACK_MISSED_COLLECTABLE_BLOCK_COUNT>0) {
-			//	title.text = "You missed <b>" + Constants.FEEDBACK_MISSED_COLLECTABLE_BLOCK_COUNT + "</b> collectable block";
-			//}
+			//NOTE: enable this line when OLD way of delayed feedback is required, otherwise it will stay inactive!
+			//transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(true); // enabling DelayedFeedbackPanel
+																			
 			Time.timeScale = 1;
 			Debug.Log("=== " + t_GameStateManager.sceneToLoad + " | " + loadScreenDelay);
 			feedbackConditions();
@@ -73,7 +70,6 @@ public class LevelStartScreen : MonoBehaviour {
 		else {
 			transform.GetChild(0).transform.GetChild(1).gameObject.SetActive(false);  //// disabling DelayedFeedbackPanel
 			Time.timeScale = 1;
-
 
 			string worldName = t_GameStateManager.sceneToLoad;
 
