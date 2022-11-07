@@ -53,3 +53,3298 @@ Score: 2500
 Deaths: 2
 Time: 70.47185
 
+Level: World 1-1
+Score: 6000
+Deaths: 3
+Time: 150.2426
+
+Level: World 1-1
+Score: 6000
+Deaths: 3
+Time: 150.2426
+
+Level: World 1-1
+Score: 5800
+Deaths: 1
+Time: 57.46831
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 5900
+Deaths: 0
+Time: 43.66195
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
+Level: World 1-1
+Score: 9900
+Deaths: 0
+Time: 52.27945
+
