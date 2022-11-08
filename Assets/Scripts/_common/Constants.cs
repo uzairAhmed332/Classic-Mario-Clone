@@ -6,7 +6,7 @@ public class Constants
 {
     //Scene Name: "World 1-1",
 
-    public const bool isghostModeOn = false;
+    public const bool isghostModeOn = true;
 
     public const string LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_1"; //From start till bonus level  //Done
     public const string LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_2"; //Only Bonus level

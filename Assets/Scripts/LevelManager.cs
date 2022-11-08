@@ -139,7 +139,7 @@ public class LevelManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
             {//after Bonus level till end
-
+                comingFromPipe = false;
                 t_Ghost.loadFromFile(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO);
                 //t_Ghost.loadFromFile();
                 // t_Ghost.StartRecordingGhost();
