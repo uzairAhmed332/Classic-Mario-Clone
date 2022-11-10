@@ -3388,3 +3388,43 @@ Score: 0
 Deaths: 0
 Time: 1.717474
 
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.519629
+
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.978117
+
+Level: World 1-1
+Score: 3000
+Deaths: 0
+Time: 93.35152
+
+Level: World 1-1
+Score: 9100
+Deaths: 0
+Time: 82.82407
+
+Level: World 1-1
+Score: 13300
+Deaths: 1
+Time: 114.6004
+
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 6.778985
+
+Level: World 1-1
+Score: 11600
+Deaths: 0
+Time: 80.97748
+
+Level: World 1-1
+Score: 11400
+Deaths: 0
+Time: 80.29395
+
