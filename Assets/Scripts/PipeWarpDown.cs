@@ -8,6 +8,7 @@ public class PipeWarpDown : MonoBehaviour {
 	private Mario mario;
 	private Transform stop;
 	private bool isMoving;
+	private bool isbottomPipeTriggered = false;  //For delayed actual mario
 
 	private float platformVelocityY = -0.05f;
 	public string sceneName;
@@ -53,7 +54,10 @@ public class PipeWarpDown : MonoBehaviour {
 
 	bool marioEntered = false;
 	void OnTriggerStay2D(Collider2D other) {
+
+
 	
+
 		if (other.tag == "Player" && mario.isCrouching && !marioEntered && marioEnteredCount == 0) {	
 			marioEnteredCount++;
 			mario.AutomaticCrouch ();
@@ -63,6 +67,19 @@ public class PipeWarpDown : MonoBehaviour {
 			t_LevelManager.soundSource.PlayOneShot (t_LevelManager.pipePowerdownSound);
 
 		}
+
+		if (other.tag == "Player" && this.name.Equals("Platformxxx") && !marioEntered && marioEnteredCount == 0 && !isbottomPipeTriggered)  //fOR Delayed actual mario becasue he does not croch so previous If condition doesnt work!
+		{
+			marioEnteredCount++;
+			mario.AutomaticCrouch();
+			isMoving = true;
+			marioEntered = true;
+			t_LevelManager.musicSource.Stop();
+			t_LevelManager.soundSource.PlayOneShot(t_LevelManager.pipePowerdownSound);
+			isbottomPipeTriggered = true;
+
+		}
+
 	}
 
 	private void OnBecameInvisible()

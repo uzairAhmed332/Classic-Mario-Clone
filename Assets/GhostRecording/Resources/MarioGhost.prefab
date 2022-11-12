@@ -176,9 +176,9 @@ GameObject:
   - component: {fileID: 7840398489376526444}
   - component: {fileID: 8029366556533167350}
   - component: {fileID: 7991313465904767326}
-  - component: {fileID: 1643123665594150477}
   - component: {fileID: 7965086384887623610}
   - component: {fileID: 7992881950640359894}
+  - component: {fileID: 5054142836643289780}
   m_Layer: 8
   m_Name: MarioGhost
   m_TagString: Player
@@ -303,29 +303,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.95}
   m_EdgeRadius: 0
---- !u!114 &1643123665594150477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7944034843029093780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 370176bec08c70b45988a4089d87cdd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 136841728
-  Fireball: {fileID: 1067952513393140, guid: 6cc1215ce827544449add993abeac60a, type: 3}
-  FirePos: {fileID: 7939163944827372968}
-  castleWalkSpeedX: 5.86
-  levelEntryWalkSpeedX: 3.05
-  isCrouching: 0
-  inputFreezed: 0
-  isDying: 0
-  stompBox: {fileID: 7943123628233312608}
 --- !u!50 &7965086384887623610
 Rigidbody2D:
   serializedVersion: 4
@@ -363,3 +340,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.05}
   serializedVersion: 2
   m_Radius: 0.05
+--- !u!114 &5054142836643289780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7944034843029093780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370176bec08c70b45988a4089d87cdd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GroundLayers:
+    serializedVersion: 2
+    m_Bits: 136841728
+  Fireball: {fileID: 1067952513393140, guid: 6cc1215ce827544449add993abeac60a, type: 3}
+  FirePos: {fileID: 7939163944827372968}
+  castleWalkSpeedX: 5.86
+  levelEntryWalkSpeedX: 3.05
+  isCrouching: 0
+  inputFreezed: 0
+  isDying: 0
+  stompBox: {fileID: 7943123628233312608}

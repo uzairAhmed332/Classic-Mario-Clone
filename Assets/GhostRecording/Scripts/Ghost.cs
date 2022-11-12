@@ -110,13 +110,19 @@ public class Ghost : MonoBehaviour
 
 	private List<GhostShot> framesList;
 	private List<GhostShot> lastReplayList = null;
+	private List<GhostShot> lastReplayListActualMario = null;
 
 	GameObject theGhost;
 
+	//Mario theMario;
+
 	private float replayTimescale = 1;
 	private int replayIndex = 0;
+	private int replayIndexActualMario = 0;
+	private bool moveActualMario = false;
 	private float recordTime = 0.0f;
 	private float replayTime = 0.0f;
+	private float replayTimeActualMario = 0.0f;
 
 	//Check whether we should be recording or not
 	public bool startRecording = false, recordingFrame = false, playRecording = false;
@@ -190,7 +196,7 @@ public class Ghost : MonoBehaviour
 		}
 	}
 
-	//This is for existing ghost videos
+	//This is for existing ghost videos for immedaite feedback
 	public void loadFromFile(string loadSceneGhostFromLevelManager, bool comingFromPipe = false)
 	{
 
@@ -225,6 +231,46 @@ public class Ghost : MonoBehaviour
 		}
 	}
 
+	//This is for existing ghost videos for delayed feedback
+	public void loadFromFileDelayedFeedback(string ghostfile, string ActualMariofile, bool comingFromPipe = false)
+	{
+
+		if (File.Exists(Application.persistentDataPath + ghostfile))
+		{
+			BinaryFormatter bf = new BinaryFormatter();
+			if (!comingFromPipe)
+			{ //Normal
+				FileStream file1 =  File.Open(Application.persistentDataPath + ghostfile, FileMode.Open);
+				FileStream file2 = File.Open(Application.persistentDataPath + currentVideoEndPath, FileMode.Open);
+				Debug.Log("Loading & Playing GhostGhost file from: " + file1.Name);
+				lastReplayList = (List<GhostShot>)bf.Deserialize(file1);
+				lastReplayListActualMario = (List<GhostShot>)bf.Deserialize(file2);
+				Debug.Log("Loading: " + lastReplayList.Count);
+				
+				file1.Close();
+				file2.Close();
+			}
+			else
+			{
+				//Doing this when coming from pipe but scene name is same!
+				if (ghostfile.Equals("World 1-1"))
+				{
+					FileStream file = File.Open(Application.persistentDataPath + Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, FileMode.Open);
+					Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
+					lastReplayList = (List<GhostShot>)bf.Deserialize(file);
+					Debug.Log("Loading: " + lastReplayList.Count);
+					file.Close();
+				}
+			}
+
+			playGhostRecording();
+		}
+		else
+		{
+			Debug.Log("No Load/Ghost Found");
+		}
+	}
+
 	public void StopRecordingGhost()
 	{
 		recordingFrame = false;
@@ -251,34 +297,74 @@ public class Ghost : MonoBehaviour
 	{
 		CreateGhost();
 		replayIndex = 0;
+		if (Constants.isghostModeDelayedOn) {
+			replayIndexActualMario = 0;
+		}
 		playRecording = true;
 	}
 
 
 	public void MoveGhost()
 	{
-		replayIndex++;
-
-		if (replayIndex < lastReplayList.Count)
+	
+		if (Constants.isghostModeImmediateOn)
 		{
-			GhostShot frame = lastReplayList[replayIndex];
-			DoLerp(lastReplayList[replayIndex - 1], frame);
-			replayTime += Time.smoothDeltaTime * 1000 * replayTimescale;
+			replayIndex++;
+
+			if (replayIndex < lastReplayList.Count)
+			{
+				GhostShot frame = lastReplayList[replayIndex];
+				DoLerp(lastReplayList[replayIndex - 1], frame);
+				replayTime += Time.smoothDeltaTime * 1000 * replayTimescale;
+			}
 		}
-		
+
+
+		if (Constants.isghostModeDelayedOn) {
+			replayIndex++;
+			if (replayIndex < lastReplayList.Count)
+			{
+				
+				GhostShot frame = lastReplayList[replayIndex];
+				DoLerp(lastReplayList[replayIndex - 1], frame);
+				replayTime += Time.smoothDeltaTime * 1000 * replayTimescale;
+			}
+			replayIndexActualMario++;
+			if (replayIndexActualMario < lastReplayListActualMario.Count)
+            {
+				
+				GhostShot frame = lastReplayListActualMario[replayIndexActualMario];
+				DoLerpActualMario(lastReplayListActualMario[replayIndexActualMario - 1], frame);
+                replayTimeActualMario += Time.smoothDeltaTime * 1000 * replayTimescale;
+            }
+        }
+	}
+
+	private void DoLerpActualMario(GhostShot a, GhostShot b)
+	{
+		if (Constants.isghostModeDelayedOn)
+		{
+
+				this.transform.position = Vector3.Slerp(a.posMark, b.posMark, Mathf.Clamp(replayTimeActualMario, a.timeMark, b.timeMark));
+				this.transform.rotation = Quaternion.Slerp(a.rotMark, b.rotMark, Mathf.Clamp(replayTimeActualMario, a.timeMark, b.timeMark));
+		}
+
 	}
 
 	private void DoLerp(GhostShot a, GhostShot b)
 	{
-		if (GameObject.FindWithTag("Ghost") != null)
-		{
-			theGhost.transform.position = Vector3.Slerp(a.posMark, b.posMark, Mathf.Clamp(replayTime, a.timeMark, b.timeMark));
-			theGhost.transform.rotation = Quaternion.Slerp(a.rotMark, b.rotMark, Mathf.Clamp(replayTime, a.timeMark, b.timeMark));
-		}
+		//For delayed feedback. Playing Actual mario reply & Ghost mario feedback. This will used after level ends. 
+
+			if (GameObject.FindWithTag("Ghost") != null )
+			{
+				theGhost.transform.position = Vector3.Slerp(a.posMark, b.posMark, Mathf.Clamp(replayTime, a.timeMark, b.timeMark));
+				theGhost.transform.rotation = Quaternion.Slerp(a.rotMark, b.rotMark, Mathf.Clamp(replayTime, a.timeMark, b.timeMark));
+			}
 	}
 
 
-	public void CreateGhost()
+	public void CreateGhost() 
+		//Camera should not follow this
 	{
 		//Check if ghost exists or not, no reason to destroy and create it everytime.
 		if (GameObject.FindWithTag("Ghost") == null)
@@ -289,13 +375,11 @@ public class Ghost : MonoBehaviour
 			//Disable RigidBody
 			//theGhost.GetComponent<Rigidbody>().isKinematic = true;
 
-			//  MeshRenderer mr = theGhost.gameObject.GetComponent<MeshRenderer>();
-			//	mr.material = Resources.Load("Ghost_Shader1", typeof(Material)) as Material;
-
-			/*			SpriteRenderer mr = theGhost.gameObject.GetComponent<SpriteRenderer>();
-						Color tmp = theGhost.gameObject.GetComponent<SpriteRenderer>().color;
-						tmp.a = 0f;
-						theGhost.gameObject.GetComponent<SpriteRenderer>().color = tmp;*/
 		}
 	}
+
+	//1. Can you run ACtual mario with vectors intead of doing this?Yes... Done:)
+	//2. Now run Actual with ghost mario? Yes...Done :)
+	//3. Now  Play differnt recording for record Actual mario andof of ghost-->!?
+
 }

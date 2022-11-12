@@ -52,7 +52,7 @@ public class MoveAndFlip : MonoBehaviour {
 		 }*/
 		if (!canMove & Mathf.Abs(mario.transform.position.x - transform.position.x) <= minDistanceToMove && canMoveAutomatic) {
 			canMove = true; //comment for temp purpose
-			Debug.Log(this.name + " Enemy now moving!");
+		//	Debug.Log(this.name + " Enemy now moving!");
 		}
 	}
 

@@ -434,7 +434,7 @@ public class Mario : MonoBehaviour {
 		Vector2 bottomSide = new Vector2(0f, 1f);
 		bool bottomHit = normal == bottomSide;
 		
-		Debug.Log("LogCheck1" + this.name +" | "+" name: "+ other.gameObject.name + " tag: "+ other.gameObject.tag);
+		Debug.Log("LogCheck1-> " + this.name +" | "+" name: "+ other.gameObject.name + " tag: "+ other.gameObject.tag);
 		
 		if (other.gameObject.tag.Contains("Enemy") ) { // TODO: koopa shell static does no damage
 			Enemy enemy = other.gameObject.GetComponent<Enemy> ();
