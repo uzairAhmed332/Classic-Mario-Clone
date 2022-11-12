@@ -68,7 +68,7 @@ public class PipeWarpDown : MonoBehaviour {
 
 		}
 
-		if (other.tag == "Player" && this.name.Equals("Platformxxx") && !marioEntered && marioEnteredCount == 0 && !isbottomPipeTriggered)  //fOR Delayed actual mario becasue he does not croch so previous If condition doesnt work!
+		if (other.tag == "Player" && this.name.Equals("bottomPipe1") && !marioEntered && marioEnteredCount == 0 && !isbottomPipeTriggered)  //fOR Delayed actual mario becasue he does not croch so previous If condition doesnt work!
 		{
 			marioEnteredCount++;
 			mario.AutomaticCrouch();

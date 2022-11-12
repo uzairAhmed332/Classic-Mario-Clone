@@ -149,9 +149,9 @@ public class LevelManager : MonoBehaviour
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
                 {
-                    // t_Ghost.loadFromFile();
-                    //t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
-                       t_Ghost.StartRecordingGhost();
+                     //t_Ghost.loadFromFile();
+                    t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
+                     //  t_Ghost.StartRecordingGhost();
  
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
@@ -178,7 +178,7 @@ public class LevelManager : MonoBehaviour
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
                 {
-                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO); //
+                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO); //working
                 }
             }
         }
@@ -840,9 +840,9 @@ public class LevelManager : MonoBehaviour
     {
         Vector3 spawnPosition;
         GameStateManager t_GameStateManager = FindObjectOfType<GameStateManager>();
-        Debug.Log(this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
+/*        Debug.Log(this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
             + " spawnPipeIdx= " + t_GameStateManager.spawnPipeIdx.ToString()
-            + " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());
+            + " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());*/
         if (t_GameStateManager.spawnFromPoint)
         {
             spawnPosition = GameObject.Find("Spawn Points").transform.GetChild(t_GameStateManager.spawnPointIdx).transform.position;

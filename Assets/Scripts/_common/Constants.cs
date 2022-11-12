@@ -10,8 +10,8 @@ public class Constants
 
     //Make either true but not both....DONT make both true 
     //Also make the isghostModeImmediateOn to true and delayed false for debug purpose when recoding a video!
-    public const bool isghostModeImmediateOn = true;
-    public const bool isghostModeDelayedOn = false;   //This will used after level ends. Playing Actual mario reply & Ghost mario feedback.
+    public const bool isghostModeImmediateOn = false;
+    public const bool isghostModeDelayedOn = true;   //This will used after level ends. Playing Actual mario reply & Ghost mario feedback.
 
     public const string LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_1"; //From start till bonus level  //Done
     public const string LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_2"; //Only Bonus level

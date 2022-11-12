@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class WB_Vector3
@@ -128,7 +130,8 @@ public class Ghost : MonoBehaviour
 	public bool startRecording = false, recordingFrame = false, playRecording = false;
 
 	// Temp variable For Saving and loading of video. 
-	string currentVideoEndPath = "/testVideo";
+	string currentStaticVideoEndPath = "/testVideo";
+	string currentDelayedDynamicVideoEndPath = "";
 
 	void FixedUpdate()
 	{
@@ -180,10 +183,10 @@ public class Ghost : MonoBehaviour
 	public void loadFromFile()
 	{
 		//Check if Ghost file exists. If it does load it
-		if (File.Exists(Application.persistentDataPath + currentVideoEndPath))  //Old: Ghost
+		if (File.Exists(Application.persistentDataPath + currentStaticVideoEndPath))  //Old: Ghost
 		{
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + currentVideoEndPath, FileMode.Open);
+			FileStream file = File.Open(Application.persistentDataPath + currentStaticVideoEndPath, FileMode.Open);
 			Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
 			lastReplayList = (List<GhostShot>)bf.Deserialize(file);
 			Debug.Log("Loading: " + lastReplayList.Count);
@@ -241,12 +244,14 @@ public class Ghost : MonoBehaviour
 			if (!comingFromPipe)
 			{ //Normal
 				FileStream file1 =  File.Open(Application.persistentDataPath + ghostfile, FileMode.Open);
-				FileStream file2 = File.Open(Application.persistentDataPath + currentVideoEndPath, FileMode.Open);
-				Debug.Log("Loading & Playing GhostGhost file from: " + file1.Name);
+				FileStream file2 = File.Open(Application.persistentDataPath + ActualMariofile, FileMode.Open);
+				Debug.Log("Loading file1 from: " + file1.Name);
+				Debug.Log("Loading file2 from: " + file2.Name);
 				lastReplayList = (List<GhostShot>)bf.Deserialize(file1);
 				lastReplayListActualMario = (List<GhostShot>)bf.Deserialize(file2);
-				Debug.Log("Loading: " + lastReplayList.Count);
-				
+				Debug.Log("lastReplayList file1: " + lastReplayList.Count);
+				Debug.Log("lastReplayList file2: " + lastReplayListActualMario.Count);
+
 				file1.Close();
 				file2.Close();
 			}
@@ -282,18 +287,40 @@ public class Ghost : MonoBehaviour
 
 	}
 
-	public void SaveGhostToFile()
+	private void SaveGhostToFile()
 	{
-		// Prepare to write
+		currentDelayedDynamicVideoEndPath = currentSceneName();
+
 		BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Create(Application.persistentDataPath + currentVideoEndPath);
-		Debug.Log("Stopping & Saving Ghost in: "+ Application.persistentDataPath + currentVideoEndPath);
+		//	FileStream file = File.Create(Application.persistentDataPath + currentStaticVideoEndPath);  //For making new videos (Static path) remove this in future when everything path is dynamic!
+		FileStream file = File.Create(Application.persistentDataPath + currentDelayedDynamicVideoEndPath);
+		Debug.Log("Stopping & Saving Ghost in: "+ Application.persistentDataPath + currentDelayedDynamicVideoEndPath);
 		// Write data to disk
 		bf.Serialize(file, lastReplayList);
 		file.Close();
 	}
 
-	public void playGhostRecording()
+    private String currentSceneName()
+    {
+		if (SceneManager.GetActiveScene().name.Equals("World 1-1") && LevelManager.comingFromPipe)
+		{//after Bonus level till end
+			return Constants.LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO;
+		}
+		else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
+		{
+			return Constants.LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO;
+		}
+		else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
+		{
+			return Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO;
+		}
+		else {
+			return currentStaticVideoEndPath;
+		}
+
+	}
+
+    public void playGhostRecording()
 	{
 		CreateGhost();
 		replayIndex = 0;
@@ -304,7 +331,7 @@ public class Ghost : MonoBehaviour
 	}
 
 
-	public void MoveGhost()
+	private void MoveGhost()
 	{
 	
 		if (Constants.isghostModeImmediateOn)
@@ -363,7 +390,7 @@ public class Ghost : MonoBehaviour
 	}
 
 
-	public void CreateGhost() 
+	private void CreateGhost() 
 		//Camera should not follow this
 	{
 		//Check if ghost exists or not, no reason to destroy and create it everytime.
@@ -380,6 +407,8 @@ public class Ghost : MonoBehaviour
 
 	//1. Can you run ACtual mario with vectors intead of doing this?Yes... Done:)
 	//2. Now run Actual with ghost mario? Yes...Done :)
-	//3. Now  Play differnt recording for record Actual mario andof of ghost-->!?
+	//3. Now  Play differnt recording for record Actual mario andof of ghost-->!? Done :)
+
+	//Dont change with immedate feedback recodings, O
 
 }
