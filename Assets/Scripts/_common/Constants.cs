@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class Constants 
 {
-    //Scene Name: "World 1-1",
+    //Scene Name: "World 1-1","World 1-2",
 
     public const bool isghostModeOn = true; //Not using anywhere
 
-    //Make either true but not both....DONT make both true 
-    //Also make the isghostModeImmediateOn to true and delayed false for debug purpose when recoding a video!
-    public const bool isghostModeImmediateOn = false;
-    public const bool isghostModeDelayedOn = true;   //This will used after level ends. Playing Actual mario reply & Ghost mario feedback.
+    //Make either true but not both (Immedate or delayed)
+    //For recroding:
+    //1. Make true isghostModeImmediateOn & isBeforeghostModeDelayedOn
+    //2. Enable t_Ghost.StartRecordingGhost(); from levelManager
+
+    public static bool isghostModeImmediateOn = false;
+    public static bool isBeforeghostModeDelayedOn = true; //Normal gameplay without ghost. For *SAVING* current movements.
+                                                          //If ture then it saves in filing for delayed feedback
+                                                          //Sequence:
+                                                          //1. For Delayed FB make isBeforeghostModeDelayedOn to "true" and isghostModeDelayedOn to "false" & "isghostModeImmediateOn" to "true"
+                                                          //2. When level ends make isBeforeghostModeDelayedOn to "false" and isghostModeDelayedOn to "true" for Replay (Actual mario and ghost)
+                                                          //3. When replay ends make isghostModeDelayedOn to "false" & (isBeforeghostModeDelayedOn remains false)
+                                                          //4. When both are "false" means go to NEXT level. Before stating next level makes (follow step 1 - 4)
+
+    public static bool isghostModeDelayedOn = false;   // For *LOADING* Actual mario reply & Ghost mario feedback.This will used AFTER level ends
+
+    //isBeforeghostModeDelayedOn becomes false and isghostModeDelayedOn becomes false
 
     public const string LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_1"; //From start till bonus level  //Done
     public const string LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_2"; //Only Bonus level

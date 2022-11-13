@@ -292,8 +292,8 @@ public class Ghost : MonoBehaviour
 		currentDelayedDynamicVideoEndPath = currentSceneName();
 
 		BinaryFormatter bf = new BinaryFormatter();
-		//	FileStream file = File.Create(Application.persistentDataPath + currentStaticVideoEndPath);  //For making new videos (Static path) remove this in future when everything path is dynamic!
-		FileStream file = File.Create(Application.persistentDataPath + currentDelayedDynamicVideoEndPath);
+		//	FileStream file = File.Create(Application.persistentDataPath + currentStaticVideoEndPath);  //Enable this for making immedaite feeback videos!
+		FileStream file = File.Create(Application.persistentDataPath + currentDelayedDynamicVideoEndPath); //Only for delayed feedback videos
 		Debug.Log("Stopping & Saving Ghost in: "+ Application.persistentDataPath + currentDelayedDynamicVideoEndPath);
 		// Write data to disk
 		bf.Serialize(file, lastReplayList);
@@ -386,6 +386,8 @@ public class Ghost : MonoBehaviour
 			{
 				theGhost.transform.position = Vector3.Slerp(a.posMark, b.posMark, Mathf.Clamp(replayTime, a.timeMark, b.timeMark));
 				theGhost.transform.rotation = Quaternion.Slerp(a.rotMark, b.rotMark, Mathf.Clamp(replayTime, a.timeMark, b.timeMark));
+
+
 			}
 	}
 

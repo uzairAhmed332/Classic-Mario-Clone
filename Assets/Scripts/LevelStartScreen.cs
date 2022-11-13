@@ -64,7 +64,7 @@ public class LevelStartScreen : MonoBehaviour {
 																			
 			Time.timeScale = 1;
 			Debug.Log("=== " + t_GameStateManager.sceneToLoad + " | " + loadScreenDelay);
-			feedbackConditions();
+		//	feedbackConditions();
 
 		}
 		else {

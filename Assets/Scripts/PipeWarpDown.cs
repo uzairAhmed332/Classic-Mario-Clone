@@ -42,21 +42,22 @@ public class PipeWarpDown : MonoBehaviour {
 					{
 						t_LevelManager.LoadSceneCurrentLevel(sceneName);  //"World 1-1 - Underground"
 						this.gameObject.GetComponent<PipeWarpDown>().enabled = false;
-					t_Ghost.StopRecordingGhost();
+
+					if (Constants.isBeforeghostModeDelayedOn)
+					{
+						t_Ghost.StopRecordingGhost();
+					}
 				}
 					else
 					{
-						t_LevelManager.LoadNewLevel(sceneName);
-					}
+						t_LevelManager.LoadNewLevel(sceneName);  //I think this will never called! if it does then check conditons of LoadNewLevel for feedback!
+				}
 			}
 		}
 		}
 
 	bool marioEntered = false;
 	void OnTriggerStay2D(Collider2D other) {
-
-
-	
 
 		if (other.tag == "Player" && mario.isCrouching && !marioEntered && marioEnteredCount == 0) {	
 			marioEnteredCount++;
@@ -67,8 +68,7 @@ public class PipeWarpDown : MonoBehaviour {
 			t_LevelManager.soundSource.PlayOneShot (t_LevelManager.pipePowerdownSound);
 
 		}
-
-		if (other.tag == "Player" && this.name.Equals("bottomPipe1") && !marioEntered && marioEnteredCount == 0 && !isbottomPipeTriggered)  //fOR Delayed actual mario becasue he does not croch so previous If condition doesnt work!
+		else if (other.tag == "Player" && this.name.Equals("bottomPipe1") && !marioEntered && marioEnteredCount == 1 && !isbottomPipeTriggered)  //fOR Delayed actual mario becasue he does not croch so previous If condition doesnt work!
 		{
 			marioEnteredCount++;
 			mario.AutomaticCrouch();

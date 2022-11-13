@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour
 {
     public const float loadSceneDelay = 1f;
 
+    public static bool levelEndsCheck = false; //Used to delayed feedback when player ends level then play replay from start of level intead of comingFromPipe !
     public bool hurryUp; // within last 100 secs?
     public static bool comingFromPipe = false;
     public int marioSize; // 0..2
@@ -102,6 +103,7 @@ public class LevelManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+     //   Invoke("SetComingFromPipeToBack", 10f);
         t_GameStateManager = FindObjectOfType<GameStateManager>();
         t_Ghost = FindObjectOfType<Ghost>();
         RetrieveGameState();
@@ -142,7 +144,7 @@ public class LevelManager : MonoBehaviour
             {
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {//after Bonus level till end
-                    comingFromPipe = false;
+                  //  comingFromPipe = false; DOnt know what the purpose of reverting it back
                     t_Ghost.loadFromFile(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO);
                     //t_Ghost.loadFromFile();
                     // t_Ghost.StartRecordingGhost();
@@ -151,38 +153,112 @@ public class LevelManager : MonoBehaviour
                 {
                      //t_Ghost.loadFromFile();
                     t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
-                     //  t_Ghost.StartRecordingGhost();
+                    //   t_Ghost.StartRecordingGhost();
  
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
                 {
-                    //t_Ghost.loadFromFile(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO);
-                      t_Ghost.StartRecordingGhost();
+                    t_Ghost.loadFromFile(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO);
+                    //t_Ghost.StartRecordingGhost();
                 }
             }
-            //For Recording/Saving use immedate feedback conditions. Below is only for loading files!
-            else if (Constants.isghostModeDelayedOn)
-            {
 
+
+            //  isBeforeghostModeDelayedOn -> when "true" used for SAVING players movements
+            if (Constants.isBeforeghostModeDelayedOn) {
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {
-                }
-
-                else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
-                { //Load 2 recording files for actual and ghost mario
-                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO); //works
+                     t_Ghost.StartRecordingGhost();
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
                 {
+
+                       t_Ghost.StartRecordingGhost();
 
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
                 {
-                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO); //working
+                    t_Ghost.StartRecordingGhost();
+                }
+
+            }
+            // isghostModeDelayedOn->when "true" used for LOADING players movements
+            else if (Constants.isghostModeDelayedOn)
+            {
+                if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
+                {//after Bonus level till end
+                    if (!levelEndsCheck)
+                    {
+                        t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO); //works but not going to next level
+                    }
+                    else
+                    {
+                        levelEndsCheck = false;
+                        t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO); //works :)
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
+                { //Load 2 recording files for actual and ghost mario
+                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO); //works :)
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
+                {
+                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO); //works :)
                 }
             }
         }
     }
+
+    public void LoadNewLevel(string sceneName, float delay = loadSceneDelay)
+    {
+        if (sec_delay_5)
+        {
+            sec_delay_5 = false;
+            Invoke("SetBoolBack", 5f);
+            if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
+            {
+                t_GameStateManager.savePerformanceInFile();
+                t_GameStateManager.SaveGameState();
+                t_GameStateManager.ConfigNewLevel();
+                t_GameStateManager.sceneToLoad = sceneName;
+            }
+
+            Debug.Log("CurrentSceneName: " + SceneManager.GetActiveScene().name);
+            if (Constants.isBeforeghostModeDelayedOn)
+            {
+                t_Ghost.StopRecordingGhost();  //SSame scene level end save recording
+                Constants.isBeforeghostModeDelayedOn = false;
+                Constants.isghostModeDelayedOn = true;
+
+               // t_GameStateManager.ConfigNewGame();
+                //   SceneManager.LoadScene("World 1-1");
+                LoadSceneDelay("World 1-1", 3f);  //todo You have to make this dynamic
+                                                  // ReloadCurrentLevel("default");
+                                                  // LoadSceneCurrentLevel("World 1-1");
+
+            }else if (Constants.isghostModeDelayedOn)
+            {
+                Constants.isBeforeghostModeDelayedOn = true;
+                Constants.isghostModeDelayedOn = false;
+                LoadSceneDelay("World 1-2", 3f);
+            }
+            else
+            {
+                LoadSceneDelay("Level Start Screen", 0f);
+                Debug.Log("TestLog3");
+            }
+
+        }
+    }
+
+    private void SetBoolBack()
+    {
+        sec_delay_5 = true;
+    }
+
+    /* void SetComingFromPipeToBack() {
+         comingFromPipe = false;
+     }*/
 
     void RetrieveGameState()
     {
@@ -223,6 +299,7 @@ public class LevelManager : MonoBehaviour
     List<Animator> unscaledAnimators = new List<Animator>();
     float pauseGamePrevTimeScale;
     bool pausePrevMusicPaused;
+    private bool sec_delay_5 = true;
 
     IEnumerator PauseGameCo()
     {
@@ -587,27 +664,12 @@ public class LevelManager : MonoBehaviour
         }
         yield return new WaitWhile(() => gamePaused);
 
-        /*       if (feedbackPanel != null)
-                   feedbackPanel.gameObject.SetActive(false);
-               mario.Die();
-               isRespawning = false;
-               isPoweringDown = false;*/
         Debug.Log(this.name + sceneName);
 
         SceneManager.LoadScene(sceneName);
 
         Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
     }
-    void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
-    {
-       // t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
-
-        timerPaused = true;
-        //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
-        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
-    }
-
-   
 
     public void ReloadCurrentLevel(string diedFrom, float delay = loadSceneDelay, bool timeup = false)
     {
@@ -647,13 +709,13 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void LoadNewLevel(string sceneName, float delay = loadSceneDelay)
+    void LoadSceneDelay(string sceneName, float delay = loadSceneDelay)
     {
-        t_GameStateManager.savePerformanceInFile();
-        t_GameStateManager.SaveGameState();
-        t_GameStateManager.ConfigNewLevel();
-        t_GameStateManager.sceneToLoad = sceneName;
-        LoadSceneDelay("Level Start Screen", 0f);
+        // t_GameStateManager.delayWhenGamestatesaved = true; //Only using for delayed feedback condition. When Marios dies dont show but when level ends show! 
+
+        timerPaused = true;
+        //  if (PipeWarpDown.marioEnteredCount != 0) //Only start coroutine with these conditons!
+        StartCoroutine(LoadSceneDelayCo(sceneName, delay));
     }
 
     public void LoadSceneCurrentLevel(string sceneName, float delay = loadSceneDelay)
@@ -666,8 +728,9 @@ public class LevelManager : MonoBehaviour
     public void LoadSceneCurrentLevelSetSpawnPipe(string sceneName, int spawnPipeIdx, float delay = loadSceneDelay)
     { //Also called when entering pipe side "PipeWarpSide" and ...
         t_GameStateManager.SaveGameState();
+
         t_GameStateManager.SetSpawnPipe(spawnPipeIdx);
-   
+      
         LoadSceneDelay(sceneName, delay);
         Debug.Log(this.name + " LoadSceneCurrentLevelSetSpawnPipe: supposed to load " + sceneName
             + ", spawnPipeIdx=" + spawnPipeIdx.ToString() + "; actual GSM spawnFromPoint="
@@ -840,9 +903,9 @@ public class LevelManager : MonoBehaviour
     {
         Vector3 spawnPosition;
         GameStateManager t_GameStateManager = FindObjectOfType<GameStateManager>();
-/*        Debug.Log(this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
+        Debug.Log(this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
             + " spawnPipeIdx= " + t_GameStateManager.spawnPipeIdx.ToString()
-            + " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());*/
+            + " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());
         if (t_GameStateManager.spawnFromPoint)
         {
             spawnPosition = GameObject.Find("Spawn Points").transform.GetChild(t_GameStateManager.spawnPointIdx).transform.position;

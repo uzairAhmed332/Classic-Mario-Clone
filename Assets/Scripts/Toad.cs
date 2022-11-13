@@ -32,7 +32,11 @@ public class Toad : MonoBehaviour {
 		yield return new WaitForSecondsRealtime (.75f);
 		ButOurPrincess.SetActive (true);
 		yield return new WaitForSecondsRealtime (t_LevelManager.castleCompleteMusic.length);
-		t_GameStateManager.savePerformanceInFile(); //filing
+
+		if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
+		{
+			t_GameStateManager.savePerformanceInFile(); //filing
+		}
 		SceneManager.LoadScene ("Main Menu");  //OLD
 
 		//t_LevelManager.LoadNewLevel("Main Menu", t_LevelManager.levelCompleteMusic.length);

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour {
+	public bool levelEndsCheck;
 	public bool spawnFromPoint;
 	public int spawnPointIdx;
 	public int spawnPipeIdx;
@@ -110,7 +111,8 @@ public class GameStateManager : MonoBehaviour {
 		scores = t_LevelManager.scores;
 		timeElapsed = t_LevelManager.timeElapsed; // "+ LevelManager.loadSceneDelay" LevelManager.loadSceneDelay is added to add the (extra)time to read feedback!
 		hurryUp = t_LevelManager.hurryUp;
-
+		
+		
 
 		Invoke("SetBoolBack", 5f);
 

@@ -12,8 +12,7 @@ public class PipeWarpSide : MonoBehaviour {
 	public string sceneName;
 	public int spawnPipeIdx;
 	public bool leadToSameLevel = true;
-
-
+	private bool sec_delay_10 = true;
 	// Use this for initialization
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
@@ -45,14 +44,31 @@ public class PipeWarpSide : MonoBehaviour {
 					+ " teleports player to different scene same level " + sceneName
 					+ ", pipe idx " + spawnPipeIdx);
 				t_LevelManager.LoadSceneCurrentLevelSetSpawnPipe (sceneName, spawnPipeIdx);
-				LevelManager.comingFromPipe = true;  //Set booloan value to "true" here for ghost video after coming out from pipe (Bonus level)
-				t_Ghost.StopRecordingGhost();
+
+				//if (sec_delay_10)
+			//	{
+				//	sec_delay_10 = false;
+					LevelManager.comingFromPipe = true;  //Set booloan value to "true" here for ghost video after coming out from pipe (Bonus level) //False it after 10 sec
+					//Invoke("SetBoolBack", 10f);                          
+				//}			
+
+				if (Constants.isBeforeghostModeDelayedOn)
+				{
+					t_Ghost.StopRecordingGhost();
+				}
 			} else {
 				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name
 					+ " teleports player to new level " + sceneName 
 					+ ", pipe idx " + spawnPipeIdx);
-				t_LevelManager.LoadNewLevel (sceneName);
+				t_LevelManager.LoadNewLevel (sceneName);  //I think this will never called! if it does then check conditons of LoadNewLevel for feedback!
 			}
 		}
 	}
+
+/*	private void SetBoolBack()
+	{
+		sec_delay_10 = true;
+		LevelManager.comingFromPipe = false;
+	}*/
+
 }
