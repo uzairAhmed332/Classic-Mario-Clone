@@ -56,6 +56,7 @@ public class LevelManager : MonoBehaviour
     public GameObject feedbackPanel;
     public TextMeshProUGUI feedbackPanelTitleText;
     public TextMeshProUGUI feedbackPanelDecsriptionText;
+    public TextMeshProUGUI DelayedFBGhostText;
 
     public AudioSource musicSource;
     public AudioSource soundSource;
@@ -166,6 +167,7 @@ public class LevelManager : MonoBehaviour
 
             //  isBeforeghostModeDelayedOn -> when "true" used for SAVING players movements
             if (Constants.isBeforeghostModeDelayedOn) {
+                DelayedFBGhostText.gameObject.SetActive(false);
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {
                      t_Ghost.StartRecordingGhost();
@@ -185,6 +187,7 @@ public class LevelManager : MonoBehaviour
             // isghostModeDelayedOn->when "true" used for LOADING players movements
             else if (Constants.isghostModeDelayedOn)
             {
+                DelayedFBGhostText.gameObject.SetActive(true);
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {//after Bonus level till end
                     if (!levelEndsCheck)

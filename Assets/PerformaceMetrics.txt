@@ -9213,3 +9213,23 @@ Score: 1400
 Deaths: 0
 Time: 8.245676
 
+Level: World 1-1
+Score: 900
+Deaths: 0
+Time: 34.83524
+
+Level: World 1-1
+Score: 4600
+Deaths: 0
+Time: 79.1112
+
+Level: World 1-1
+Score: 5100
+Deaths: 0
+Time: 80.14687
+
+Level: World 1-1
+Score: 6300
+Deaths: 0
+Time: 82.07635
+
