@@ -9233,3 +9233,8 @@ Score: 6300
 Deaths: 0
 Time: 82.07635
 
+Level: World 1-1
+Score: 3500
+Deaths: 0
+Time: 79.37229
+

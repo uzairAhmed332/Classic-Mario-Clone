@@ -75,6 +75,7 @@ public class LevelManager : MonoBehaviour
     public AudioClip breakBlockSound;
     public AudioClip bumpSound;
     public AudioClip coinSound;
+    public AudioClip feedbackSound;
     public AudioClip deadSound;
     public AudioClip fireballSound;
     public AudioClip flagpoleSound;
@@ -217,7 +218,7 @@ public class LevelManager : MonoBehaviour
         if (sec_delay_5)
         {
             sec_delay_5 = false;
-            Invoke("SetBoolBack", 5f);
+            Invoke("SetBoolBackIn5Sec", 5f);
             if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
             {
                 t_GameStateManager.savePerformanceInFile();
@@ -254,7 +255,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void SetBoolBack()
+    private void SetBoolBackIn5Sec()
     {
         sec_delay_5 = true;
     }
@@ -295,6 +296,51 @@ public class LevelManager : MonoBehaviour
             }
         }
 
+
+        if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY) //From LevelManager
+        {
+        //    feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            LoadSceneDelay("Level Start Screen", 0);
+            // StartCoroutine(LoadSceneWhenMarioDied(3));// Now not using this
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_LOST_ENEMY) //from KillPlane
+        {
+      //      feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            //mario.UnfreezeUserInput();
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE) //from LevelManager
+        {
+      //      feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+            LoadSceneDelay("Level Start Screen", 0);
+            // StartCoroutine(LoadSceneWhenMarioDied(3));// Now not using this
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_OUT_OF_SIGHT_ENEMY)
+        { //from MoveAndFlip
+     //       feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK)
+        { //from CollectibleBlock
+       //     feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL)
+        { //from PipeWarpDown
+      //      feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MISSED_COIN)
+        { //from Coin
+       //     feedbackPanel.gameObject.SetActive(false);
+            Time.timeScale = 1f;
+
+        }
+
     }
 
 
@@ -303,6 +349,7 @@ public class LevelManager : MonoBehaviour
     float pauseGamePrevTimeScale;
     bool pausePrevMusicPaused;
     private bool sec_delay_5 = true;
+    private bool sec_delay_2 = true;
 
     IEnumerator PauseGameCo()
     {
@@ -575,16 +622,29 @@ public class LevelManager : MonoBehaviour
     {
         if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK)
         {
+            if (sec_delay_2) {
+                sec_delay_2 = false;
+                Invoke("SetBoolBackIn2Sec", 2f);
+            }
             feedbackPanel.gameObject.SetActive(true);
-            Time.timeScale = 0f;
+
+            
+        //    Time.timeScale = 0f;
+
+            soundSource.PlayOneShot(feedbackSound,0.9f);
         }
 
         feedbackPanelTitleText.text = title;
-        feedbackPanelDecsriptionText.text = Description;
+    //    feedbackPanelDecsriptionText.text = Description;
+    }
+
+    void SetBoolBackIn2Sec() {
+        sec_delay_2 = true;
+        feedbackPanel.gameObject.SetActive(false);
     }
 
     public void FeedbackButtonClicked()
-    {
+    {  //Now moving this code in update function!
         if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY) //From LevelManager
         {
             feedbackPanel.gameObject.SetActive(false);
