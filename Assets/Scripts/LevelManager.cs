@@ -153,9 +153,9 @@ public class LevelManager : MonoBehaviour
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
                 {
-                     //t_Ghost.loadFromFile();
+                    // t_Ghost.loadFromFile();
                     t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
-                    //   t_Ghost.StartRecordingGhost();
+                   //    t_Ghost.StartRecordingGhost();
  
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))

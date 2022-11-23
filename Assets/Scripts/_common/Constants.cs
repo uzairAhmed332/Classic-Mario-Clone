@@ -13,8 +13,8 @@ public class Constants
     //1. Make true isghostModeImmediateOn & isBeforeghostModeDelayedOn
     //2. Enable t_Ghost.StartRecordingGhost(); from levelManager
 
-    public static bool isghostModeImmediateOn = false;
-    public static bool isBeforeghostModeDelayedOn = true; //Normal gameplay without ghost. For *SAVING* current movements.
+    public static bool isghostModeImmediateOn = true;
+    public static bool isBeforeghostModeDelayedOn = false; //Normal gameplay without ghost. For *SAVING* current movements.
                                                           //If ture then it saves in filing for delayed feedback
                                                           //Sequence:
                                                           //1. For Delayed FB make isBeforeghostModeDelayedOn to "true" and isghostModeDelayedOn to "false" & "isghostModeImmediateOn" to "true"
