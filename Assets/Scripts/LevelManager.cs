@@ -631,7 +631,7 @@ public class LevelManager : MonoBehaviour
             
         //    Time.timeScale = 0f;
 
-            soundSource.PlayOneShot(feedbackSound,0.9f);
+            soundSource.PlayOneShot(feedbackSound,0.6f);
         }
 
         feedbackPanelTitleText.text = title;
