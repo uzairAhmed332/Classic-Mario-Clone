@@ -12,3 +12,10 @@ Score: 0
 Deaths: 2
 Time: 17.14138
 
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 0
+Deaths: 1
+Time: 2.006558
+
