@@ -81,6 +81,7 @@ public class Constants
     public const string Brown_Goomba= "Brown";
     public const string Green_Koopa= "Green";
 
-    // U+1F60C
+    public const string SAVED_WHEN_LEVEL_END = "Saved when level ends";
+    public const string SAVED_WHEN_MARIO_DIED = "Saved when mario died";
 }
 

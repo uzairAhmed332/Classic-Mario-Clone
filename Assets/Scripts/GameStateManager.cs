@@ -124,7 +124,7 @@ public class GameStateManager : MonoBehaviour {
 	}
 
 
-	public void savePerformanceInFile()
+	public void savePerformanceInFile(string context,string diedfrom = "N/A")
 	{
 		Debug.Log("***Saving Performace Matrics***");
 		LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
@@ -139,7 +139,9 @@ public class GameStateManager : MonoBehaviour {
         //Call When 
         //1. Everytime Level ends
         //2. After 15 min when level ends (Think about it wheter to do it or not! I think not)
-        string content = "Level: " + SceneManager.GetActiveScene().name + "\n" +
+        string content = "Context: "+ context + "\n"+
+						 "diedfrom: "+ diedfrom + "\n" +
+						 "Level: " + SceneManager.GetActiveScene().name + "\n" +
                          "Score: " + t_LevelManager.scores + "\n" +
                          "Deaths: " + t_LevelManager.deaths + "\n" +
                          "Time: " + t_LevelManager.timeElapsed + "\n\n";

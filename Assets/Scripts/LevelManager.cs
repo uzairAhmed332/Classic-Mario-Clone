@@ -221,7 +221,7 @@ public class LevelManager : MonoBehaviour
             Invoke("SetBoolBackIn5Sec", 5f);
             if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
             {
-                t_GameStateManager.savePerformanceInFile();
+                t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_LEVEL_END);
                 t_GameStateManager.SaveGameState();
                 t_GameStateManager.ConfigNewLevel();
                 t_GameStateManager.sceneToLoad = sceneName;
@@ -581,7 +581,7 @@ public class LevelManager : MonoBehaviour
     {
         //Todo Distinguish feedback types from String "diedFrom"
         if (!isRespawning)
-        {
+        { ///todo: filing here when dying!
             isRespawning = true;
 
             marioSize = 0;
@@ -606,8 +606,16 @@ public class LevelManager : MonoBehaviour
             if (deaths > 0)
             {
                 //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
+
+                if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
+                {
+                    t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_MARIO_DIED, diedFrom);
+                }
+
                 ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
-                t_GameStateManager.dontShowDelayedFeedbackWhenDied = true; //
+                t_GameStateManager.dontShowDelayedFeedbackWhenDied = true;
+
+
             }
             else
             {

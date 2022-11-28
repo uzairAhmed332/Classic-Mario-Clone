@@ -35,7 +35,7 @@ public class Toad : MonoBehaviour {
 
 		if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
 		{
-			t_GameStateManager.savePerformanceInFile(); //filing
+			t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_LEVEL_END); //filing
 		}
 		SceneManager.LoadScene ("Main Menu");  //OLD
 
