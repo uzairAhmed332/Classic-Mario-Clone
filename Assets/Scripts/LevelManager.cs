@@ -143,10 +143,10 @@ public class LevelManager : MonoBehaviour
         if (Constants.isghostModeOn)
         {
             if (Constants.isghostModeImmediateOn)
-            {
+            {   //For lvl 1
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {//after Bonus level till end
-                  //  comingFromPipe = false; DOnt know what the purpose of reverting it back
+                    comingFromPipe = false; //This solves: Ghost not working when mario died after coming from bonus lvl
                     t_Ghost.loadFromFile(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO);
                     //t_Ghost.loadFromFile();
                     // t_Ghost.StartRecordingGhost();
@@ -163,6 +163,24 @@ public class LevelManager : MonoBehaviour
                     t_Ghost.loadFromFile(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO);
                     //t_Ghost.StartRecordingGhost();
                 }
+
+                //For lvl 2
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2") && comingFromPipe)
+                {//after Bonus level till end
+                    comingFromPipe = false;
+                   t_Ghost.loadFromFile(Constants.LOAD_LVL2_3_IMMEDAITE_FEEDBACK_VIDEO);
+                 //  t_Ghost.StartRecordingGhost();
+                }
+                else if(SceneManager.GetActiveScene().name.Equals("World 1-2")) {
+                   t_Ghost.loadFromFile(Constants.LOAD_LVL2_1_IMMEDAITE_FEEDBACK_VIDEO);
+                    //t_Ghost.StartRecordingGhost();
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2 - Underground"))
+                {
+                    t_Ghost.loadFromFile(Constants.LOAD_LVL2_2_IMMEDAITE_FEEDBACK_VIDEO);
+                   //   t_Ghost.StartRecordingGhost();
+                }
+
             }
 
 
@@ -184,11 +202,28 @@ public class LevelManager : MonoBehaviour
                     t_Ghost.StartRecordingGhost();
                 }
 
+
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2") && comingFromPipe)
+                {//after Bonus level till end
+                    t_Ghost.StartRecordingGhost();
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2"))
+                {
+                    t_Ghost.StartRecordingGhost();
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2 - Underground"))
+                {
+                    t_Ghost.StartRecordingGhost();
+                }
+
             }
             // isghostModeDelayedOn->when "true" used for LOADING players movements
+             //Load 2 recording files for actual and ghost mario
             else if (Constants.isghostModeDelayedOn)
             {
                 DelayedFBGhostText.gameObject.SetActive(true);
+                //1st level
+                //Load 2 recording files for actual and ghost mario
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {//after Bonus level till end
                     if (!levelEndsCheck)
@@ -202,13 +237,37 @@ public class LevelManager : MonoBehaviour
                     }
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
-                { //Load 2 recording files for actual and ghost mario
+                {
                     t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO); //works :)
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
                 {
                     t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO); //works :)
                 }
+
+
+                //2nd level
+                if (SceneManager.GetActiveScene().name.Equals("World 1-2") && comingFromPipe)
+                {//after Bonus level till end
+                    if (!levelEndsCheck)
+                    {
+                        t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_3_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_3_Delayed_FEEDBACK_VIDEO); //works but not going to next level
+                    }
+                    else
+                    {
+                        levelEndsCheck = false;
+                        t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_1_Delayed_FEEDBACK_VIDEO); //works :)
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2"))
+                {
+                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_1_Delayed_FEEDBACK_VIDEO); //works :)
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2 - Underground"))
+                {
+                    t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_2_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_2_Delayed_FEEDBACK_VIDEO); //works :)
+                }
+
             }
         }
     }
@@ -230,13 +289,21 @@ public class LevelManager : MonoBehaviour
             Debug.Log("CurrentSceneName: " + SceneManager.GetActiveScene().name);
             if (Constants.isBeforeghostModeDelayedOn)
             {
-                t_Ghost.StopRecordingGhost();  //SSame scene level end save recording
+                t_Ghost.StopRecordingGhost();  //Same scene level end save recording
                 Constants.isBeforeghostModeDelayedOn = false;
                 Constants.isghostModeDelayedOn = true;
 
-               // t_GameStateManager.ConfigNewGame();
+                // t_GameStateManager.ConfigNewGame();
                 //   SceneManager.LoadScene("World 1-1");
-                LoadSceneDelay("World 1-1", 3f);  //todo You have to make this dynamic
+
+                //todo You have to make this dynamic
+                if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
+                {
+                    LoadSceneDelay("World 1-1", 3f);
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2")) {
+                    LoadSceneDelay("World 1-2", 3f);
+                }                                         
                                                   // ReloadCurrentLevel("default");
                                                   // LoadSceneCurrentLevel("World 1-1");
 
@@ -244,7 +311,20 @@ public class LevelManager : MonoBehaviour
             {
                 Constants.isBeforeghostModeDelayedOn = true;
                 Constants.isghostModeDelayedOn = false;
-                LoadSceneDelay("World 1-2", 3f);
+                //When delayed fb ghost mode ends at lvl end to to below scene.
+                //Make it dynamic
+                //1. If tranining phase: after lvl 2 go to MainMenu 
+
+                if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
+                {
+                    LoadSceneDelay("World 1-2", 3f);
+                }
+                else if (SceneManager.GetActiveScene().name.Equals("World 1-2"))
+                {
+                    LoadSceneDelay("Main Menu", 3f);
+                }
+
+              // LoadSceneDelay("World 1-2", 3f); 
             }
             else
             {
@@ -628,7 +708,7 @@ public class LevelManager : MonoBehaviour
 
     public void FeedbackActivaotor(string title, string Description)
     {
-        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK)
+        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK && !Constants.isBeforeghostModeDelayedOn) // !Constants.isBeforeghostModeDelayedOn -> To not show immedaite feedback when playing in delayed fb but it should be shown with ghost in delayed fb!
         {
             if (sec_delay_2) {
                 sec_delay_2 = false;

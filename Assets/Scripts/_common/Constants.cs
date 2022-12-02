@@ -26,15 +26,35 @@ public class Constants
 
     //isBeforeghostModeDelayedOn becomes false and isghostModeDelayedOn becomes false
 
+
+    /*
+     When making gamplay for immediate feedback
+     1. Onyl make "isghostModeImmediateOn" true, make others false
+
+    When making gamplay for deayed feedback
+    1. Only make "isBeforeghostModeDelayedOn" true, make others false
+
+    todo: What about normal gameplay
+    1. Should all be false ?
+     */
+
     public const string LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_1"; //From start till bonus level  //Done
-    public const string LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_2"; //Only Bonus level
-    public const string LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_3"; //After bonus level till end
+    public const string LOAD_LVL1_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_2"; //Only Bonus level //Done
+    public const string LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_3"; //After bonus level till end //Done
 
-    public const string LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO = "/GhostLvl1_1d"; //From start till bonus level  //Done
-    public const string LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO = "/GhostLvl1_2d"; //Only Bonus level
-    public const string LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO = "/GhostLvl1_3d"; //After bonus level till end
+    public const string LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO = "/GhostLvl1_1d"; //From start till bonus level  
+    public const string LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO = "/GhostLvl1_2d"; //Only Bonus level 
+    public const string LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO = "/GhostLvl1_3d"; //After bonus level till end 
 
-    public const string LOAD_LVL2_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl2_1"; //From start till
+     
+    public const string LOAD_LVL2_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl2_1"; //From start till bonus level //Done
+    public const string LOAD_LVL2_2_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl2_2"; //Only Bonus level //Done
+    public const string LOAD_LVL2_3_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl2_3"; //After bonus level till end //Done
+
+    public const string LOAD_LVL2_1_Delayed_FEEDBACK_VIDEO = "/GhostLvl2_1d"; //From start till bonus level  
+    public const string LOAD_LVL2_2_Delayed_FEEDBACK_VIDEO = "/GhostLvl2_2d"; //Only Bonus level 
+    public const string LOAD_LVL2_3_Delayed_FEEDBACK_VIDEO = "/GhostLvl2_3d"; //After bonus level till end 
+
 
 
     public const bool IS_FEEDBACK_DELAYED = false;  //False == immediate  feedback, true == Delayed feedback

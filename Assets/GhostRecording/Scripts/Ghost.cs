@@ -301,7 +301,7 @@ public class Ghost : MonoBehaviour
 	}
 
     private String currentSceneName()
-    {
+    {   //For lvl 1
 		if (SceneManager.GetActiveScene().name.Equals("World 1-1") && LevelManager.comingFromPipe)
 		{//after Bonus level till end
 			return Constants.LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO;
@@ -314,6 +314,22 @@ public class Ghost : MonoBehaviour
 		{
 			return Constants.LOAD_LVL1_2_Delayed_FEEDBACK_VIDEO;
 		}
+
+		////For lvl 2
+		else if (SceneManager.GetActiveScene().name.Equals("World 1-2") && LevelManager.comingFromPipe)
+		{//after Bonus level till end
+			return Constants.LOAD_LVL2_3_Delayed_FEEDBACK_VIDEO;
+		}
+		else if (SceneManager.GetActiveScene().name.Equals("World 1-2"))
+		{
+			return Constants.LOAD_LVL2_1_Delayed_FEEDBACK_VIDEO;
+		}
+		else if (SceneManager.GetActiveScene().name.Equals("World 1-2 - Underground"))
+		{
+			return Constants.LOAD_LVL2_2_Delayed_FEEDBACK_VIDEO;
+		}
+
+
 		else {
 			return currentStaticVideoEndPath;
 		}
