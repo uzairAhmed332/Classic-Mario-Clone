@@ -25,7 +25,7 @@ public class Castle : MonoBehaviour {
 			if (flag.position.y < flagStop.position.y) {
 				flag.position = new Vector2 (flag.position.x, flag.position.y + flagVelocityY);
 			} else {
-				LevelManager.levelEndsCheck = true;
+				LevelManager.levelEndsCheckForDelayedFB = true;
 				t_LevelManager.LoadNewLevel(sceneName, t_LevelManager.levelCompleteMusic.length);
 			}
 		}

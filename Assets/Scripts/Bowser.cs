@@ -126,7 +126,7 @@ public class Bowser : Enemy {
 		bool sideHit = normal == leftSide || normal == rightSide;
 
 		if (other.gameObject.tag == "Player") {
-			t_LevelManager.MarioPowerDown ();
+			t_LevelManager.MarioPowerDown (Constants.BOWSER);
 		} else if (sideHit && other.gameObject.tag != "Mario Fireball") { // switch walk direction
 			directionX = -directionX;
 		}

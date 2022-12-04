@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour
 {
     public const float loadSceneDelay = 1f;
 
-    public static bool levelEndsCheck = false; //Used to delayed feedback when player ends level then play replay from start of level intead of comingFromPipe !
+    public static bool levelEndsCheckForDelayedFB = false; //Used to delayed feedback when player ends level then play replay from start of level intead of comingFromPipe !
     public bool hurryUp; // within last 100 secs?
     public static bool comingFromPipe = false;
     public int marioSize; // 0..2
@@ -155,7 +155,7 @@ public class LevelManager : MonoBehaviour
                 {
                     // t_Ghost.loadFromFile();
                     t_Ghost.loadFromFile(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO);
-                   //    t_Ghost.StartRecordingGhost();
+                    //   t_Ghost.StartRecordingGhost();
  
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1 - Underground"))
@@ -226,13 +226,13 @@ public class LevelManager : MonoBehaviour
                 //Load 2 recording files for actual and ghost mario
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
                 {//after Bonus level till end
-                    if (!levelEndsCheck)
+                    if (!levelEndsCheckForDelayedFB)
                     {
                         t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO); //works but not going to next level
                     }
                     else
                     {
-                        levelEndsCheck = false;
+                        levelEndsCheckForDelayedFB = false;
                         t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_1_Delayed_FEEDBACK_VIDEO); //works :)
                     }
                 }
@@ -249,13 +249,13 @@ public class LevelManager : MonoBehaviour
                 //2nd level
                 if (SceneManager.GetActiveScene().name.Equals("World 1-2") && comingFromPipe)
                 {//after Bonus level till end
-                    if (!levelEndsCheck)
+                    if (!levelEndsCheckForDelayedFB)
                     {
                         t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_3_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_3_Delayed_FEEDBACK_VIDEO); //works but not going to next level
                     }
                     else
                     {
-                        levelEndsCheck = false;
+                        levelEndsCheckForDelayedFB = false;
                         t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_1_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_1_Delayed_FEEDBACK_VIDEO); //works :)
                     }
                 }
@@ -278,12 +278,20 @@ public class LevelManager : MonoBehaviour
         {
             sec_delay_5 = false;
             Invoke("SetBoolBackIn5Sec", 5f);
-            if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
+
+            if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn || Constants.isnormalGamePlayOn)
             {
                 t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_LEVEL_END);
                 t_GameStateManager.SaveGameState();
                 t_GameStateManager.ConfigNewLevel();
-                t_GameStateManager.sceneToLoad = sceneName;
+
+                if (Constants.isghostModeImmediateOn && SceneManager.GetActiveScene().name.Equals("World 1-2"))
+                {
+                   // LoadSceneDelay("World 1-4", 3f);
+                    t_GameStateManager.sceneToLoad = "World 1-1";
+                }
+                else
+                { t_GameStateManager.sceneToLoad = sceneName; }
             }
 
             Debug.Log("CurrentSceneName: " + SceneManager.GetActiveScene().name);
@@ -321,7 +329,7 @@ public class LevelManager : MonoBehaviour
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-2"))
                 {
-                    LoadSceneDelay("Main Menu", 3f);
+                    LoadSceneDelay("World 1-1", 3f);
                 }
 
               // LoadSceneDelay("World 1-2", 3f); 
@@ -687,14 +695,19 @@ public class LevelManager : MonoBehaviour
             {
                 //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
 
+                //For noraml gameplay
+                if (Constants.isnormalGamePlayOn)
+                {
+                    t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_MARIO_DIED, diedFrom);
+                }
+                //End
                 if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
                 {
                     t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_MARIO_DIED, diedFrom);
                 }
-
+         
                 ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
                 t_GameStateManager.dontShowDelayedFeedbackWhenDied = true;
-
 
             }
             else
@@ -708,7 +721,7 @@ public class LevelManager : MonoBehaviour
 
     public void FeedbackActivaotor(string title, string Description)
     {
-        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK && !Constants.isBeforeghostModeDelayedOn) // !Constants.isBeforeghostModeDelayedOn -> To not show immedaite feedback when playing in delayed fb but it should be shown with ghost in delayed fb!
+        if (!Constants.IS_FEEDBACK_DELAYED && !Constants.NO_FEEDBACK && !Constants.isBeforeghostModeDelayedOn && !Constants.isnormalGamePlayOn) // !Constants.isBeforeghostModeDelayedOn -> To not show immedaite feedback when playing in delayed fb but it should be shown with ghost in delayed fb!
         {
             if (sec_delay_2) {
                 sec_delay_2 = false;
@@ -836,7 +849,7 @@ public class LevelManager : MonoBehaviour
             FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_PLANE, Constants.FEEDBACK_DESCRIPTION_PLANE);
             Constants.FEEDBACK_MARIO_DIED_FROM_PLANE_COUNT++; 
         }
-        else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA || diedFrom == Constants.ENEMY_PIRANHA)
+        else if (diedFrom == Constants.ENEMY_GOOMBA || diedFrom == Constants.ENEMY_KOOPA || diedFrom == Constants.ENEMY_PIRANHA  || diedFrom == Constants.FIRE_BAR || diedFrom == Constants.BOWSER_FIRE || diedFrom == Constants.BOWSER)
         {
             FeedbackActivaotor(Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY, Constants.FEEDBACK_DESCRIPTION_MARIO_DIED);
             Constants.FEEDBACK_MARIO_DIED_FROM_ENEMY_COUNT++;

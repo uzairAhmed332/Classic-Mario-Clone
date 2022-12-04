@@ -12,8 +12,8 @@ public class Constants
     //For recroding:
     //1. Make true isghostModeImmediateOn & isBeforeghostModeDelayedOn
     //2. Enable t_Ghost.StartRecordingGhost(); from levelManager
-
-    public static bool isghostModeImmediateOn = true;
+    
+    public static bool isghostModeImmediateOn = false;
     public static bool isBeforeghostModeDelayedOn = false; //Normal gameplay without ghost. For *SAVING* current movements.
                                                           //If ture then it saves in filing for delayed feedback
                                                           //Sequence:
@@ -25,7 +25,7 @@ public class Constants
     public static bool isghostModeDelayedOn = false;   // For *LOADING* Actual mario reply & Ghost mario feedback.This will used AFTER level ends
 
     //isBeforeghostModeDelayedOn becomes false and isghostModeDelayedOn becomes false
-
+    public static bool isnormalGamePlayOn = true;  //NOTE: keep this false unless when playing normal gameplay
 
     /*
      When making gamplay for immediate feedback
@@ -35,7 +35,7 @@ public class Constants
     1. Only make "isBeforeghostModeDelayedOn" true, make others false
 
     todo: What about normal gameplay
-    1. Should all be false ?
+    1. Make "isnormalGamePlayOn" True and allfalse.
      */
 
     public const string LOAD_LVL1_1_IMMEDAITE_FEEDBACK_VIDEO = "/GhostLvl1_1"; //From start till bonus level  //Done
@@ -65,6 +65,10 @@ public class Constants
     public const string ENEMY_PIRANHA = "Piranha";
     
     public const string ENEMY_PLANES = "Planes";
+
+    public const string FIRE_BAR = "Firebar";
+    public const string BOWSER_FIRE = "Bowser fire";
+    public const string BOWSER = "Bowser";
 
     //1
     public const string FEEDBACK_TITLE_MISSED_COLLECTABLE_BLOCK = "Missed a collectable block";//"You just missed a collectable block";

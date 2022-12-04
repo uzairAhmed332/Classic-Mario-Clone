@@ -656,3 +656,374 @@ Score: 1200
 Deaths: 0
 Time: 36.01345
 
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 0
+Deaths: 1
+Time: 2.118477
+
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 0
+Deaths: 1
+Time: 14.83872
+
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-1
+Score: 0
+Deaths: 1
+Time: 16.77556
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.82949
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 3.267376
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.598436
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.834413
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.331205
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.165357
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.420566
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.450747
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.923063
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.274648
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.372708
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.831923
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.351316
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.951719
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.252295
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.326912
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.5272
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 27.95312
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 41.49541
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 13.09855
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.984759
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.858497
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 16.81302
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 63.69403
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.477108
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 8.533029
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 5.41693
+
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 3.138503
+
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-4
+Score: 0
+Deaths: 2
+Time: 6.262825
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 3
+Time: 11.12149
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.377359
+
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 4.21862
+
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 3.0377
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 2
+Time: 7.989587
+
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 3.038607
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 2
+Time: 16.59156
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 5.21679
+
+Context: Saved when mario died
+diedfrom: FireBar
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 10.83919
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 29.33555
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 2.677928
+
+Context: Saved when mario died
+diedfrom: default
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 14.49312
+
+Context: Saved when mario died
+diedfrom: Bowser fire
+Level: World 1-4
+Score: 0
+Deaths: 1
+Time: 2.697556
+
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-4
+Score: 0
+Deaths: 2
+Time: 11.11538
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 200
+Deaths: 0
+Time: 5.880959
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.407263
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 2.281592
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.032065
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.875665
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 1.849903
+
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.557307
+
