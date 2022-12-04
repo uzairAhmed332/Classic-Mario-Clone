@@ -202,9 +202,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You will now play a 2nd phase is a test phase without feedback/ guidance
-    with limited lives to 5.\n\nRememeber: Goal is to finish the levels as fast as
-    possible with maximum\r score. Score is more important than speed."
+  m_text: 'You will now play the 2nd phase is a test phase without feedback/ guidance
+    with limited lives to 5.
+
+
+    Remember: The goal is to finish the levels as
+    fast as possible with a maximum score. The score is more important than speed.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -333,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49019608, g: 0.1372226, b: 0.015686277, a: 0.8156863}
+  m_Color: {r: 0.49019608, g: 0.1372226, b: 0.015686277, a: 0.89411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -674,7 +674,7 @@ public class LevelManager : MonoBehaviour
 
             marioSize = 0;
             deaths++;
-            scores = 0;  //Makes score always 0 when marios dies. AS game will starts from srart.
+         //   scores = 0;  //Makes score always 0 when marios dies. AS game will starts from srart. //Make score 0 when filling is done!
             SetHudDeath();
             soundSource.Stop();
             musicSource.Stop();
@@ -696,18 +696,21 @@ public class LevelManager : MonoBehaviour
                 //  ReloadCurrentLevel(diedFrom, deadSound.length, timeup); Old
 
                 //For noraml gameplay
-                if (Constants.isnormalGamePlayOn)
+                if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn || Constants.isnormalGamePlayOn) //isnormalGamePlayOn ->For noraml gameplay
                 {
                     t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_MARIO_DIED, diedFrom);
                 }
-                //End
-                if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
+
+                if (Constants.isnormalGamePlayOn && deaths >= 5)
                 {
-                    t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_MARIO_DIED, diedFrom);
+                    LoadGameOver(deadSound.length, timeup);  //old -> LoadGameOver(deadSound.length, timeup);
                 }
-         
-                ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
-                t_GameStateManager.dontShowDelayedFeedbackWhenDied = true;
+                else {
+                    scores = 0;
+                    ReloadCurrentLevel(diedFrom, loadSceneDelay, timeup);
+                    t_GameStateManager.dontShowDelayedFeedbackWhenDied = true;
+                }
+
 
             }
             else
@@ -905,13 +908,13 @@ public class LevelManager : MonoBehaviour
     
     public void LoadGameOver(float delay = loadSceneDelay, bool timeup = false)
     {
-        // I think this will never called! as game never ends beacuse of infite lives! 
+        //Only called in normal game play when mario died after 5 deaths
 
-        int currentHighScore = PlayerPrefs.GetInt("highScore", 0);
+/*        int currentHighScore = PlayerPrefs.GetInt("highScore", 0);
         if (scores > currentHighScore)
         {
             PlayerPrefs.SetInt("highScore", scores);
-        }
+        }*/
         t_GameStateManager.timeup = timeup;
         LoadSceneDelay("Game Over Screen", delay);
     }

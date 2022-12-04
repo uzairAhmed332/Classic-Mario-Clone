@@ -27,14 +27,28 @@ public class GameStateManager : MonoBehaviour {
 
     public bool dontShowDelayedFeedbackWhenDied = false; //if delayed feedback is true. Then dont show it when mario dies, Only show after level ends
 
-	void Start()
+
+	void Awake()
 	{
-		//StartCoroutine(Countdown());
+		if (!Constants.isnormalGamePlayOn) //Only run in Traning session
+		{
+			StartCoroutine(Countdown());
+		}
+
+		if (FindObjectsOfType(GetType()).Length == 1)
+		{
+			DontDestroyOnLoad(gameObject);
+			ConfigNewGame();
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	private IEnumerator Countdown()
 	{
-		float counter = 10f; // 3 seconds you can change this 
+		float counter = 1200f; // 3 seconds you can change this    //20min == 1200 sec
 							 //to whatever you want
 		while (counter > 0)
 		{
@@ -51,18 +65,11 @@ public class GameStateManager : MonoBehaviour {
 			counter--;
 		}
 		Debug.Log("Times Up ");
-		Time.timeScale = 0;
 		traningTimeOverCanvas.gameObject.SetActive(true);
+		Time.timeScale = 0;
 	}
 
-	void Awake () {
-		if (FindObjectsOfType (GetType ()).Length == 1) {
-			DontDestroyOnLoad (gameObject);
-			ConfigNewGame ();
-		} else {
-			Destroy (gameObject);
-		}
-	}
+
 	
 	public void ResetSpawnPosition() {
 		spawnFromPoint = true;
@@ -125,7 +132,7 @@ public class GameStateManager : MonoBehaviour {
 
 
 	public void savePerformanceInFile(string context,string diedfrom = "N/A")
-	{
+	{  //isTraningSession is based on "isnormalGamePlayOn"
 		Debug.Log("***Saving Performace Matrics***");
 		LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
 		//Path of the file
@@ -135,11 +142,9 @@ public class GameStateManager : MonoBehaviour {
 		{
 			File.WriteAllText(path, "Performance Metric \n\n");
 		}
-        //Content of the file 
-        //Call When 
-        //1. Everytime Level ends
-        //2. After 15 min when level ends (Think about it wheter to do it or not! I think not)
-        string content = "Context: "+ context + "\n"+
+
+        string content = "From Traning Session: " + !Constants.isnormalGamePlayOn + "\n" + 
+						 "Context: " + context + "\n"+
 						 "diedfrom: "+ diedfrom + "\n" +
 						 "Level: " + SceneManager.GetActiveScene().name + "\n" +
                          "Score: " + t_LevelManager.scores + "\n" +

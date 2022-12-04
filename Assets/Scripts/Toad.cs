@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
+//Queen at the last level
 public class Toad : MonoBehaviour {
 	public GameObject ThankYouMario;
 	public GameObject ButOurPrincess;
@@ -33,11 +33,11 @@ public class Toad : MonoBehaviour {
 		ButOurPrincess.SetActive (true);
 		yield return new WaitForSecondsRealtime (t_LevelManager.castleCompleteMusic.length);
 
-		if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn)
+		if (Constants.isBeforeghostModeDelayedOn || Constants.isghostModeImmediateOn || Constants.isnormalGamePlayOn)
 		{
-			t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_LEVEL_END); //filing
+			t_GameStateManager.savePerformanceInFile(Constants.SAVED_WHEN_LEVEL_END); 
 		}
-		SceneManager.LoadScene ("Main Menu");  //OLD
+	//	SceneManager.LoadScene ("Main Menu");  //OLD
 
 		//t_LevelManager.LoadNewLevel("Main Menu", t_LevelManager.levelCompleteMusic.length);
 	}
