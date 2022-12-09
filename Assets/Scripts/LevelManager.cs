@@ -372,7 +372,7 @@ public class LevelManager : MonoBehaviour
             SetHudTime();
         }
 
-        if (Input.GetButtonDown("Pause"))
+       /* if (Input.GetButtonDown("Pause"))
         {
             if (!gamePaused)
             {
@@ -382,7 +382,7 @@ public class LevelManager : MonoBehaviour
             {
                 StartCoroutine(UnpauseGameCo());
             }
-        }
+        }*/
 
 
         if (feedbackPanelTitleText.text == Constants.FEEDBACK_TITLE_MARIO_DIED_FROM_ENEMY) //From LevelManager

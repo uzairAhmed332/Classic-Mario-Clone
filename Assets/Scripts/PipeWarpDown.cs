@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PipeWarpDown : MonoBehaviour {
 	private LevelManager t_LevelManager;
@@ -15,6 +16,8 @@ public class PipeWarpDown : MonoBehaviour {
 	public bool leadToSameLevel = true;
 
 	public static int marioEnteredCount = 0;
+
+	public static bool dontShowBonusLevelText = false;
 
 	// Use this for initialization
 	void Start () {
@@ -70,7 +73,9 @@ public class PipeWarpDown : MonoBehaviour {
 		}
 		else if (other.tag == "Player" && this.name.Equals("bottomPipe1") && !marioEntered && marioEnteredCount == 1 && !isbottomPipeTriggered)  //fOR Delayed actual mario becasue he does not croch so previous If condition doesnt work!
 		{
-			marioEnteredCount++;
+			//	marioEnteredCount++;
+			marioEnteredCount = 0; //resetting it so that it can be used again in lvl2
+			dontShowBonusLevelText = true;
 			mario.AutomaticCrouch();
 			isMoving = true;
 			marioEntered = true;
@@ -84,7 +89,7 @@ public class PipeWarpDown : MonoBehaviour {
 
 	private void OnBecameInvisible()
 	{
-			if(marioEnteredCount == 0)
+			if(marioEnteredCount == 0 && !dontShowBonusLevelText)
 		{
 			t_LevelManager.FeedbackActivaotor(Constants.FEEDBACK_TITLE_MISSED_BONUS_LEVEL, Constants.FEEDBACK_DESCRIPTION_MISSED_BONUS_LEVEL);
 			Constants.FEEDBACK_MISSED_BONUS_LEVEL_COUNT++;

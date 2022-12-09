@@ -61,7 +61,7 @@ public class GameStateManager : MonoBehaviour {
 			float seconds = Mathf.FloorToInt(timeTraningInt % 60);
 			timeTraningString = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-			Debug.Log("Rem time: " + timeTraningString);
+			//Debug.Log("Rem time: " + timeTraningString);
 			counter--;
 		}
 		Debug.Log("Times Up ");

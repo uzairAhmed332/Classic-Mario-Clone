@@ -183,10 +183,10 @@ public class Ghost : MonoBehaviour
 	public void loadFromFile()
 	{
 		//Check if Ghost file exists. If it does load it
-		if (File.Exists(Application.persistentDataPath + currentStaticVideoEndPath))  //Old: Ghost
+		if (File.Exists(Application.streamingAssetsPath + currentStaticVideoEndPath))  //Old: Ghost
 		{
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + currentStaticVideoEndPath, FileMode.Open);
+			FileStream file = File.Open(Application.streamingAssetsPath + currentStaticVideoEndPath, FileMode.Open);
 			Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
 			lastReplayList = (List<GhostShot>)bf.Deserialize(file);
 			Debug.Log("Loading: " + lastReplayList.Count);
@@ -203,12 +203,12 @@ public class Ghost : MonoBehaviour
 	public void loadFromFile(string loadSceneGhostFromLevelManager, bool comingFromPipe = false)
 	{
 
-		if (File.Exists(Application.persistentDataPath + loadSceneGhostFromLevelManager))  
+		if (File.Exists(Application.streamingAssetsPath + loadSceneGhostFromLevelManager))  
 		{
 			BinaryFormatter bf = new BinaryFormatter();
 			if (!comingFromPipe)
 			{ //Normal
-				FileStream file = File.Open(Application.persistentDataPath + loadSceneGhostFromLevelManager, FileMode.Open);
+				FileStream file = File.Open(Application.streamingAssetsPath + loadSceneGhostFromLevelManager, FileMode.Open);
 				Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
 				lastReplayList = (List<GhostShot>)bf.Deserialize(file);
 				Debug.Log("Loading: " + lastReplayList.Count);
@@ -218,7 +218,7 @@ public class Ghost : MonoBehaviour
 				//Doing this when coming from pipe but scene name is same!
 				if (loadSceneGhostFromLevelManager.Equals("World 1-1"))
 				{ 
-					FileStream file = File.Open(Application.persistentDataPath + Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, FileMode.Open);
+					FileStream file = File.Open(Application.streamingAssetsPath + Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, FileMode.Open);
 					Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
 					lastReplayList = (List<GhostShot>)bf.Deserialize(file);
 					Debug.Log("Loading: " + lastReplayList.Count);
@@ -238,13 +238,17 @@ public class Ghost : MonoBehaviour
 	public void loadFromFileDelayedFeedback(string ghostfile, string ActualMariofile, bool comingFromPipe = false)
 	{
 
-		if (File.Exists(Application.persistentDataPath + ghostfile))
+		if (File.Exists(Application.streamingAssetsPath + ghostfile))
 		{
 			BinaryFormatter bf = new BinaryFormatter();
 			if (!comingFromPipe)
 			{ //Normal
-				FileStream file1 =  File.Open(Application.persistentDataPath + ghostfile, FileMode.Open);
-				FileStream file2 = File.Open(Application.persistentDataPath + ActualMariofile, FileMode.Open);
+				Debug.Log("Loading dataPath: " + Application.dataPath);
+				Debug.Log("Loading persistentDataPath: " + Application.streamingAssetsPath);
+				Debug.Log("Loading streamingAssetsPath: " + Application.streamingAssetsPath);
+
+				FileStream file1 =  File.Open(Application.streamingAssetsPath + ghostfile, FileMode.Open);
+				FileStream file2 = File.Open(Application.streamingAssetsPath + ActualMariofile, FileMode.Open);
 				Debug.Log("Loading file1 from: " + file1.Name);
 				Debug.Log("Loading file2 from: " + file2.Name);
 				lastReplayList = (List<GhostShot>)bf.Deserialize(file1);
@@ -260,7 +264,7 @@ public class Ghost : MonoBehaviour
 				//Doing this when coming from pipe but scene name is same!
 				if (ghostfile.Equals("World 1-1"))
 				{
-					FileStream file = File.Open(Application.persistentDataPath + Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, FileMode.Open);
+					FileStream file = File.Open(Application.streamingAssetsPath + Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, FileMode.Open);
 					Debug.Log("Loading & Playing GhostGhost file from: " + file.Name);
 					lastReplayList = (List<GhostShot>)bf.Deserialize(file);
 					Debug.Log("Loading: " + lastReplayList.Count);
@@ -293,8 +297,8 @@ public class Ghost : MonoBehaviour
 
 		BinaryFormatter bf = new BinaryFormatter();
 		//	FileStream file = File.Create(Application.persistentDataPath + currentStaticVideoEndPath);  //Enable this for making immedaite feeback videos!
-		FileStream file = File.Create(Application.persistentDataPath + currentDelayedDynamicVideoEndPath); //Only for delayed feedback videos
-		Debug.Log("Stopping & Saving Ghost in: "+ Application.persistentDataPath + currentDelayedDynamicVideoEndPath);
+		FileStream file = File.Create(Application.streamingAssetsPath + currentDelayedDynamicVideoEndPath); //Only for delayed feedback videos
+		Debug.Log("Stopping & Saving Ghost in: "+ Application.streamingAssetsPath + currentDelayedDynamicVideoEndPath);
 		// Write data to disk
 		bf.Serialize(file, lastReplayList);
 		file.Close();

@@ -284,7 +284,7 @@ public class MarioGhost : MonoBehaviour {
 			}
 		}
 
-		if (!inputFreezed) {
+		/*if (!inputFreezed) {
 			faceDirectionX = Input.GetAxisRaw("Horizontal"); // > 0 for right, < 0 for left
 			isDashing = Input.GetButton("Dash");
 			isCrouching = Input.GetButton("Crouch");
@@ -293,7 +293,7 @@ public class MarioGhost : MonoBehaviour {
 			if (Input.GetButtonUp("Jump")) {
 				jumpButtonReleased = true;
 			}
-		}
+		}*/
 
 		isFalling = m_Rigidbody2D.velocity.y < 0 && !isGrounded;
 		isGrounded = Physics2D.OverlapPoint(m_GroundCheck1.position, GroundLayers) || Physics2D.OverlapPoint(m_GroundCheck2.position, GroundLayers);
