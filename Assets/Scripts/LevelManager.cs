@@ -285,13 +285,16 @@ public class LevelManager : MonoBehaviour
                 t_GameStateManager.SaveGameState();
                 t_GameStateManager.ConfigNewLevel();
 
+
                 if (Constants.isghostModeImmediateOn && SceneManager.GetActiveScene().name.Equals("World 1-2"))
                 {
-                   // LoadSceneDelay("World 1-4", 3f);
+                    // LoadSceneDelay("World 1-4", 3f);
+                    PipeWarpDown.marioEnteredCount = 0;  //so that Mario can go again to bonus level
                     t_GameStateManager.sceneToLoad = "World 1-1";
                 }
                 else
-                { t_GameStateManager.sceneToLoad = sceneName; }
+                { 
+                    t_GameStateManager.sceneToLoad = sceneName; }
             }
 
             Debug.Log("CurrentSceneName: " + SceneManager.GetActiveScene().name);
@@ -321,7 +324,6 @@ public class LevelManager : MonoBehaviour
                 Constants.isghostModeDelayedOn = false;
                 //When delayed fb ghost mode ends at lvl end to to below scene.
                 //Make it dynamic
-                //1. If tranining phase: after lvl 2 go to MainMenu 
 
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
                 {
@@ -329,6 +331,7 @@ public class LevelManager : MonoBehaviour
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-2"))
                 {
+                    PipeWarpDown.marioEnteredCount = 0;  //so that Mario can go again to bonus level
                     LoadSceneDelay("World 1-1", 3f);
                 }
 
