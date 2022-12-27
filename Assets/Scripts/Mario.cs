@@ -384,7 +384,7 @@ public class Mario : MonoBehaviour {
 		isShooting = false;
 
 		gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero; // stop all momentum
-		Debug.Log(this.name + " FreezeUserInput called");
+	//	Debug.Log(this.name + " FreezeUserInput called");
 	}
 
 
@@ -394,7 +394,7 @@ public class Mario : MonoBehaviour {
 			faceDirectionX = walkVelocityX / Mathf.Abs(walkVelocityX);
 		}
 		automaticWalkSpeedX = Mathf.Abs(walkVelocityX);
-		Debug.Log(this.name + " AutomaticWalk: speed=" + automaticWalkSpeedX.ToString());
+	//	Debug.Log(this.name + " AutomaticWalk: speed=" + automaticWalkSpeedX.ToString());
 	}
 
 

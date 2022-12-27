@@ -105,7 +105,7 @@ public class LevelManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-     //   Invoke("SetComingFromPipeToBack", 10f);
+       // Invoke("SetComingFromPipeToBack", 10f);
         t_GameStateManager = FindObjectOfType<GameStateManager>();
         t_Ghost = FindObjectOfType<Ghost>();
         RetrieveGameState();
@@ -167,7 +167,8 @@ public class LevelManager : MonoBehaviour
                 //For lvl 2
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-2") && comingFromPipe)
                 {//after Bonus level till end
-                    comingFromPipe = false;
+
+                   comingFromPipe = false;
                    t_Ghost.loadFromFile(Constants.LOAD_LVL2_3_IMMEDAITE_FEEDBACK_VIDEO);
                  //  t_Ghost.StartRecordingGhost();
                 }
@@ -188,7 +189,7 @@ public class LevelManager : MonoBehaviour
             if (Constants.isBeforeghostModeDelayedOn) {
                 DelayedFBGhostText.gameObject.SetActive(false);
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
-                {
+                {   
                      t_Ghost.StartRecordingGhost();
                 }
                 else if (SceneManager.GetActiveScene().name.Equals("World 1-1"))
@@ -225,9 +226,10 @@ public class LevelManager : MonoBehaviour
                 //1st level
                 //Load 2 recording files for actual and ghost mario
                 if (SceneManager.GetActiveScene().name.Equals("World 1-1") && comingFromPipe)
-                {//after Bonus level till end
+                {//after Bonus level till end'
+                    comingFromPipe = false;
                     if (!levelEndsCheckForDelayedFB)
-                    {
+                    {  
                         t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL1_3_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL1_3_Delayed_FEEDBACK_VIDEO); //works but not going to next level
                     }
                     else
@@ -249,6 +251,7 @@ public class LevelManager : MonoBehaviour
                 //2nd level
                 if (SceneManager.GetActiveScene().name.Equals("World 1-2") && comingFromPipe)
                 {//after Bonus level till end
+                    comingFromPipe = false;
                     if (!levelEndsCheckForDelayedFB)
                     {
                         t_Ghost.loadFromFileDelayedFeedback(Constants.LOAD_LVL2_3_IMMEDAITE_FEEDBACK_VIDEO, Constants.LOAD_LVL2_3_Delayed_FEEDBACK_VIDEO); //works but not going to next level
@@ -351,9 +354,9 @@ public class LevelManager : MonoBehaviour
         sec_delay_5 = true;
     }
 
-    /* void SetComingFromPipeToBack() {
+     void SetComingFromPipeToBack() {
          comingFromPipe = false;
-     }*/
+     }
 
     void RetrieveGameState()
     {
@@ -580,26 +583,30 @@ public class LevelManager : MonoBehaviour
 
     public void MarioPowerDown(string diedFrom = "default")
     { //called when mario dies by colliding with enemy (So far Brown Goomba, Green Koopa(turtile),  ) and ...
-        if (!isPoweringDown)
-        {
-            Debug.Log(this.name + " MarioPowerDown: called and executed");
-            isPoweringDown = true;
 
-            if (marioSize > 0)
+        if (!Constants.isghostModeDelayedOn)  //in testing phase! : As mario dies sometimes during delayed feedback, this is to prevent it. 
+        {
+            if (!isPoweringDown)
             {
-                StartCoroutine(MarioPowerDownCo());
-                soundSource.PlayOneShot(pipePowerdownSound);
+                Debug.Log(this.name + " MarioPowerDown: called and executed");
+                isPoweringDown = true;
+
+                if (marioSize > 0)
+                {
+                    StartCoroutine(MarioPowerDownCo());
+                    soundSource.PlayOneShot(pipePowerdownSound);
+                }
+                else
+                {
+                    PipeWarpDown.marioEnteredCount = 0;  //so that Mario can go again to bonus level
+                    MarioRespawn(diedFrom);
+                }
+                Debug.Log(this.name + " MarioPowerDown: done executing");
             }
             else
             {
-                PipeWarpDown.marioEnteredCount = 0;  //so that Mario can go again to bonus level
-                MarioRespawn(diedFrom);
+                Debug.Log(this.name + " MarioPowerDown: called but not executed");
             }
-            Debug.Log(this.name + " MarioPowerDown: done executing");
-        }
-        else
-        {
-            Debug.Log(this.name + " MarioPowerDown: called but not executed");
         }
     }
 
@@ -820,7 +827,7 @@ public class LevelManager : MonoBehaviour
 
      IEnumerator LoadSceneDelayCo(string sceneName, float delay)
     {
-        Debug.Log(this.name + " LoadSceneDelayCo: starts loading " + sceneName);
+      //  Debug.Log(this.name + " LoadSceneDelayCo: starts loading " + sceneName);
 
         float waited = 0;
         while (waited < delay)
@@ -838,7 +845,7 @@ public class LevelManager : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
 
-        Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
+     //   Debug.Log(this.name + " LoadSceneDelayCo: done loading " + sceneName);
     }
 
     public void ReloadCurrentLevel(string diedFrom, float delay = loadSceneDelay, bool timeup = false)
@@ -972,7 +979,7 @@ public class LevelManager : MonoBehaviour
         {
             musicSource.Play();
         }
-        Debug.Log(this.name + " ChangeMusicCo: done changing music to " + clip.name);
+     //   Debug.Log(this.name + " ChangeMusicCo: done changing music to " + clip.name);
     }
 
     public void PauseMusicPlaySound(AudioClip clip, bool resumeMusic)
@@ -1006,7 +1013,7 @@ public class LevelManager : MonoBehaviour
         }
         musicPaused = false;
 
-        Debug.Log(this.name + " PausemusicPlaySoundCo: done pausing music to play sound " + clip.name);
+    //    Debug.Log(this.name + " PausemusicPlaySoundCo: done pausing music to play sound " + clip.name);
     }
 
     /****************** Game state */
@@ -1073,9 +1080,9 @@ public class LevelManager : MonoBehaviour
     {
         Vector3 spawnPosition;
         GameStateManager t_GameStateManager = FindObjectOfType<GameStateManager>();
-        Debug.Log(this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
+/*        Debug.Log(this.name + " FindSpawnPosition: GSM spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
             + " spawnPipeIdx= " + t_GameStateManager.spawnPipeIdx.ToString()
-            + " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());
+            + " spawnPointIdx=" + t_GameStateManager.spawnPointIdx.ToString());*/
         if (t_GameStateManager.spawnFromPoint)
         {
             spawnPosition = GameObject.Find("Spawn Points").transform.GetChild(t_GameStateManager.spawnPointIdx).transform.position;

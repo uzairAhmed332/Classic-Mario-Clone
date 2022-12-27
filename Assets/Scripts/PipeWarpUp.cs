@@ -27,11 +27,11 @@ public class PipeWarpUp : MonoBehaviour {
 			isTakingMarioUp = true;
 			mario.FreezeUserInput ();
 			t_LevelManager.timerPaused = true;
-			Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " taking Mario up");
+		//	Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " taking Mario up");
 		} else {
 			isTakingMarioUp = false;
 			transform.position = stop.position;
-			Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " not taking Mario up");
+	//		Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " not taking Mario up");
 		}
 
 	}

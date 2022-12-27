@@ -40,9 +40,9 @@ public class PipeWarpSide : MonoBehaviour {
 			t_LevelManager.soundSource.PlayOneShot (t_LevelManager.pipePowerdownSound);
 
 			if (leadToSameLevel) {
-				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name 
+/*				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name 
 					+ " teleports player to different scene same level " + sceneName
-					+ ", pipe idx " + spawnPipeIdx);
+					+ ", pipe idx " + spawnPipeIdx);*/
 				t_LevelManager.LoadSceneCurrentLevelSetSpawnPipe (sceneName, spawnPipeIdx);
 
 				//if (sec_delay_10)
@@ -57,9 +57,9 @@ public class PipeWarpSide : MonoBehaviour {
 					t_Ghost.StopRecordingGhost();
 				}
 			} else {
-				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name
+/*				Debug.Log (this.name + " OnCollisionEnter2D: " + transform.parent.gameObject.name
 					+ " teleports player to new level " + sceneName 
-					+ ", pipe idx " + spawnPipeIdx);
+					+ ", pipe idx " + spawnPipeIdx);*/
 				t_LevelManager.LoadNewLevel (sceneName);  //I think this will never called! if it does then check conditons of LoadNewLevel for feedback!
 			}
 		}

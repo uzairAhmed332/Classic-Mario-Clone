@@ -34,8 +34,8 @@ public class MainMenu : MonoBehaviour {
 		SoundSlider.GetComponent<Slider> ().value = PlayerPrefs.GetFloat ("soundVolume");
 		MusicSlider.GetComponent<Slider> ().value = PlayerPrefs.GetFloat ("musicVolume");
 
-		Debug.Log (this.name + " Start: Volume Setting sound=" + PlayerPrefs.GetFloat ("soundVolume")
-			+ "; music=" + PlayerPrefs.GetFloat ("musicVolume"));
+/*		Debug.Log (this.name + " Start: Volume Setting sound=" + PlayerPrefs.GetFloat ("soundVolume")
+			+ "; music=" + PlayerPrefs.GetFloat ("musicVolume"));*/
 	}
 
 	public void OnMouseHover(Button button) {

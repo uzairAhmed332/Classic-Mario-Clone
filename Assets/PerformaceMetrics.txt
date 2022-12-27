@@ -1502,3 +1502,291 @@ Score: 500
 Deaths: 1
 Time: 3.798363
 
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-2
+Score: 0
+Deaths: 1
+Time: 3.174515
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-4
+Score: 1000
+Deaths: 0
+Time: 1.596683
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.744059
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 3.861521
+
+From Traning Session: False
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 0
+Deaths: 0
+Time: 2.357312
+
+From Traning Session: False
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 0
+Deaths: 0
+Time: 1.297115
+
+From Traning Session: False
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-4
+Score: 1000
+Deaths: 0
+Time: 2.775442
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 1500
+Deaths: 1
+Time: 19.56551
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 1500
+Deaths: 2
+Time: 47.47412
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 1400
+Deaths: 3
+Time: 72.12833
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 1500
+Deaths: 0
+Time: 25.2945
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Piranha
+Level: World 1-2
+Score: 2900
+Deaths: 1
+Time: 4.636808
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-2
+Score: 3200
+Deaths: 2
+Time: 19.26374
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 1700
+Deaths: 0
+Time: 27.83392
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-2
+Score: 6400
+Deaths: 1
+Time: 28.22315
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-2
+Score: 5200
+Deaths: 2
+Time: 48.26527
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 5400
+Deaths: 2
+Time: 66.89193
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 1400
+Deaths: 0
+Time: 25.46494
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Planes
+Level: World 1-1
+Score: 1400
+Deaths: 1
+Time: 16.40293
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 1400
+Deaths: 1
+Time: 45.03706
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 1400
+Deaths: 0
+Time: 27.55696
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 1400
+Deaths: 1
+Time: 46.45702
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 2000
+Deaths: 0
+Time: 22.8136
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 2300
+Deaths: 0
+Time: 26.26027
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 7200
+Deaths: 0
+Time: 32.36806
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 6500
+Deaths: 0
+Time: 35.93016
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 6600
+Deaths: 0
+Time: 35.2046
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 5100
+Deaths: 0
+Time: 26.67143
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 5400
+Deaths: 0
+Time: 24.22262
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 800
+Deaths: 1
+Time: 9.452609
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 3600
+Deaths: 1
+Time: 45.1017
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 6500
+Deaths: 0
+Time: 67.52429
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-1
+Score: 7300
+Deaths: 0
+Time: 108.8426
+
+From Traning Session: True
+Context: Saved when level ends
+diedfrom: N/A
+Level: World 1-2
+Score: 7200
+Deaths: 0
+Time: 173.3674
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 4400
+Deaths: 1
+Time: 123.4857
+
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 0
+Deaths: 2
+Time: 127.7224
+

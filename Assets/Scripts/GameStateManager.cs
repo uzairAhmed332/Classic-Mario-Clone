@@ -48,7 +48,7 @@ public class GameStateManager : MonoBehaviour {
 
 	private IEnumerator Countdown()
 	{
-		float counter = 780; // 3 seconds you can change this    //20min == 1200 sec   //17min == 1020 sec //15 == 900 //10min == 600  //12min == 720 //13 ==780
+		float counter = 1020; // 3 seconds you can change this    //20min == 1200 sec   //17min == 1020 sec //15 == 900 //10min == 600  //12min == 720 //13 ==780
 							  //to whatever you want
 		while (counter > 0)
 		{
