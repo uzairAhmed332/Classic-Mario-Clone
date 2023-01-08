@@ -136,7 +136,7 @@ public class GameStateManager : MonoBehaviour {
 		Debug.Log("***Saving Performace Matrics***");
 		LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
 		//Path of the file
-		string path = Application.dataPath + "/PerformaceMetrics.txt";
+		string path = Application.dataPath + "/PerformaceMetrics.txt";  //Old: Application.dataPath
 		//Create File if it doesn't exist
 		if (!File.Exists(path))
 		{

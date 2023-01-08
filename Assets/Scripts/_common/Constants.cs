@@ -13,7 +13,7 @@ public class Constants
     //1. Make true isghostModeImmediateOn & isBeforeghostModeDelayedOn
     //2. Enable t_Ghost.StartRecordingGhost(); from levelManager
     
-    public static bool isghostModeImmediateOn = true;
+    public static bool isghostModeImmediateOn = false;
     public static bool isBeforeghostModeDelayedOn = false; //Normal gameplay without ghost. For *SAVING* current movements.
                                                           //If ture then it saves in filing for delayed feedback
                                                           //Sequence:
@@ -25,7 +25,7 @@ public class Constants
     public static bool isghostModeDelayedOn = false;   // For *LOADING* Actual mario reply & Ghost mario feedback.This will used AFTER level ends
 
     //isBeforeghostModeDelayedOn becomes false and isghostModeDelayedOn becomes false
-    public static bool isnormalGamePlayOn = false;  //NOTE: keep this false unless when playing normal gameplay
+    public static bool isnormalGamePlayOn = true;  //NOTE: keep this false unless when playing normal gameplay
 
     /*
      When making gamplay for immediate feedback
