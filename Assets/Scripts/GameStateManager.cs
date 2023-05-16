@@ -30,6 +30,7 @@ public class GameStateManager : MonoBehaviour {
 
 	void Awake()
 	{
+		Debug.Log("LOL"+ Application.dataPath);
 		if (!Constants.isnormalGamePlayOn) //Only run in Traning session
 		{
 			StartCoroutine(Countdown());
@@ -48,7 +49,7 @@ public class GameStateManager : MonoBehaviour {
 
 	private IEnumerator Countdown()
 	{
-		float counter = 1020; // 3 seconds you can change this    //20min == 1200 sec   //17min == 1020 sec //15 == 900 //10min == 600  //12min == 720 //13 ==780
+		float counter = 900; // 3 seconds you can change this    //20min == 1200 sec   //17min == 1020 sec //15 == 900 //10min == 600  //12min == 720 //13 ==780
 							  //to whatever you want
 		while (counter > 0)
 		{
@@ -137,6 +138,7 @@ public class GameStateManager : MonoBehaviour {
 		LevelManager t_LevelManager = FindObjectOfType<LevelManager>();
 		//Path of the file
 		string path = Application.dataPath + "/PerformaceMetrics.txt";  //Old: Application.dataPath
+		
 		//Create File if it doesn't exist
 		if (!File.Exists(path))
 		{
