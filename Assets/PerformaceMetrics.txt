@@ -14,3 +14,11 @@ Score: 0
 Deaths: 1
 Time: 2.658699
 
+From Traning Session: True
+Context: Saved when mario died
+diedfrom: Goomba
+Level: World 1-1
+Score: 0
+Deaths: 1
+Time: 3.958213
+
