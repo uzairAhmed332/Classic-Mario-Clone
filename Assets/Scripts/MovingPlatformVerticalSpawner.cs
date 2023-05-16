@@ -19,15 +19,22 @@ public class MovingPlatformVerticalSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		mario = FindObjectOfType<Mario> ().gameObject;
-		timer = WaitBetweenSpawn / 2;
-		isMoving = false;
+		//mario = FindObjectOfType<Mario> ().gameObject;
+		//timer = WaitBetweenSpawn / 2;
+		//	isMoving = true;
+
+		GameObject clone = Instantiate(MovingPlatform, SpawnPos.position, Quaternion.identity);
+		PatrolVertical patrolScript = clone.GetComponent<PatrolVertical>();
+		patrolScript.UpStop = UpStop;
+		patrolScript.DownStop = DownStop;
+		patrolScript.directionY = directionY;
+		patrolScript.canMove = true;
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		if (Mathf.Abs (mario.transform.position.x - transform.position.x) <= minDistanceToMove) {
+		/*if (Mathf.Abs (mario.transform.position.x - transform.position.x) <= minDistanceToMove) {
 			isMoving = true;
 		} else {
 			isMoving = false;
@@ -45,6 +52,6 @@ public class MovingPlatformVerticalSpawner : MonoBehaviour {
 				patrolScript.canMove = true;
 				timer = WaitBetweenSpawn;
 			}
-		}
+		}*/
 	}
 }

@@ -28,6 +28,8 @@ public class BridgeAxe : MonoBehaviour {
 		if (other.tag == "Player" && !gotAxe) {
 			gotAxe = true;
 			mario.FreezeUserInput ();
+			t_LevelManager.scores += 1000;
+			t_LevelManager.SetHudScore();
 			t_LevelManager.timerPaused = true;
 
 			if (bowser) {  // bowser not yet defeated

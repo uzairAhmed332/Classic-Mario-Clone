@@ -27,10 +27,10 @@ public class KoopaShell : Enemy {
 		isRolling = false;
 
 		starmanBonus = 200; // ???
- 		rollingShellBonus = 500; // ???
+ 		rollingShellBonus = 100; // ???
 		hitByBlockBonus = 100; // ???
 		fireballBonus = 100; // ???
-		stompBonus = 500;
+		stompBonus = 100;
 	}
 
 	void Update() {

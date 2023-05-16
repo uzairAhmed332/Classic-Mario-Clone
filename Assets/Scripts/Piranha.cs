@@ -9,7 +9,7 @@ public class Piranha : Enemy {
 	private PatrolVertical patrolScript;
 
 	private bool visible;
-	private float maxDistanceToMove = 2; // should not emerge if Mario is within this distance of pipe
+	private float maxDistanceToMove = 2; //default: 2 should not emerge if Mario is within this distance of pipe
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class Piranha : Enemy {
 		m_CircleCollider2D.enabled = false;
 
 		starmanBonus = 100; // ???
-		rollingShellBonus = 500; // ???
+		rollingShellBonus = 100; // ???
 		hitByBlockBonus = 0;
 		fireballBonus = 200;
 		stompBonus = 0;
@@ -68,7 +68,7 @@ public class Piranha : Enemy {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player") {
-			t_LevelManager.MarioPowerDown ();
+			t_LevelManager.MarioPowerDown (Constants.ENEMY_PIRANHA);
 		}
 	}
 }

@@ -8,9 +8,9 @@ public class Koopa : Enemy {
 	// Use this for initialization
 	void Start () {
 		starmanBonus = 200;
-		rollingShellBonus = 500;
+		rollingShellBonus = 100;
 		hitByBlockBonus = 100; // ???
-		fireballBonus = 200;
+		fireballBonus = 100;
 		stompBonus = 100;
 	}
 

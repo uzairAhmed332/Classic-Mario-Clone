@@ -14,7 +14,7 @@ public class Bowser : Enemy {
 	public bool active;
 
 	private Vector2 impostorInitialVelocity = new Vector2 (3, 3);
-	private float minDistanceToMove = 55; // start moving if mario is within this distance
+	private float minDistanceToMove = 55; //55 start moving if mario is within this distance
 
 	private int fireResistance = 5;
 	private float waitBetweenJump = 3;
@@ -45,7 +45,7 @@ public class Bowser : Enemy {
 		hitByBlockBonus = 0;
 		fireballBonus = 0;
 		stompBonus = 0;
-		defeatBonus = 5000;
+		defeatBonus = 500;
 	}
 	
 	// Update is called once per frame
@@ -126,7 +126,7 @@ public class Bowser : Enemy {
 		bool sideHit = normal == leftSide || normal == rightSide;
 
 		if (other.gameObject.tag == "Player") {
-			t_LevelManager.MarioPowerDown ();
+			t_LevelManager.MarioPowerDown (Constants.BOWSER);
 		} else if (sideHit && other.gameObject.tag != "Mario Fireball") { // switch walk direction
 			directionX = -directionX;
 		}

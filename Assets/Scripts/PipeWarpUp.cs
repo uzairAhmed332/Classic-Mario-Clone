@@ -19,19 +19,19 @@ public class PipeWarpUp : MonoBehaviour {
 		GameStateManager t_GameStateManager = FindObjectOfType<GameStateManager> ();
 		t_LevelManager = FindObjectOfType<LevelManager> ();
 
-		Debug.Log (this.name + " Start: " + transform.parent.gameObject.name 
+/*		Debug.Log (this.name + " Start: " + transform.parent.gameObject.name 
 			+ " spawnFromPoint=" + t_GameStateManager.spawnFromPoint.ToString()
-			+ " with idx=" + t_GameStateManager.spawnPipeIdx.ToString());
+			+ " with idx=" + t_GameStateManager.spawnPipeIdx.ToString());*/
 
 		if (!t_GameStateManager.spawnFromPoint && t_GameStateManager.spawnPipeIdx == transform.parent.GetSiblingIndex ()) {
 			isTakingMarioUp = true;
 			mario.FreezeUserInput ();
 			t_LevelManager.timerPaused = true;
-			Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " taking Mario up");
+		//	Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " taking Mario up");
 		} else {
 			isTakingMarioUp = false;
 			transform.position = stop.position;
-			Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " not taking Mario up");
+	//		Debug.Log (this.name + " Start: " + transform.parent.gameObject.name + " not taking Mario up");
 		}
 
 	}

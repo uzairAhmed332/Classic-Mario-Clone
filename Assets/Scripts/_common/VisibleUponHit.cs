@@ -20,7 +20,7 @@ public class VisibleUponHit : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.tag == "Player") {
-			m_SpriteRenderer.enabled = true;
+		//	m_SpriteRenderer.enabled = true; //Old Made this so that immediate feedback dont trigger!
 			m_BoxCollider2D.enabled = true;
 		}
 	}

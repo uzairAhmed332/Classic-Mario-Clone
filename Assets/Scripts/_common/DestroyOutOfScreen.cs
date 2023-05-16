@@ -19,6 +19,6 @@ public class DestroyOutOfScreen : MonoBehaviour {
 	}
 
 	void OnBecameInvisible() {
-		Destroy (gameObject);
+//		Destroy (gameObject);  //Commented it as its not needed!
 	}
 }

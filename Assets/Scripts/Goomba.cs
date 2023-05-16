@@ -11,7 +11,7 @@ public class Goomba : Enemy {
 		m_Animator = GetComponent<Animator> ();
 
 		starmanBonus = 100;
-		rollingShellBonus = 500;
+		rollingShellBonus = 100;
 		hitByBlockBonus = 100;
 		fireballBonus = 100;
 		stompBonus = 100;
@@ -22,7 +22,7 @@ public class Goomba : Enemy {
 		StopInteraction ();
 		Debug.Log (this.name + " StompedByMario: stopped interaction");
 		m_Animator.SetTrigger ("stomped");
-		Destroy (gameObject, stompedDuration);
-		isBeingStomped = false;
+		Destroy (gameObject, stompedDuration); //Make enemy deleted from inspector! and
+		//isBeingStomped = false;
 	}
 }

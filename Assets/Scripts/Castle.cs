@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Castle : MonoBehaviour {
 	private LevelManager t_LevelManager;
+	private Ghost t_Ghost;
 	private Transform flag;
 	private Transform flagStop;
 	private bool moveFlag;
@@ -14,6 +15,7 @@ public class Castle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		t_LevelManager = FindObjectOfType<LevelManager> ();
+		t_Ghost = FindObjectOfType<Ghost>();
 		flag = transform.Find ("Flag");
 		flagStop = transform.Find ("Flag Stop");
 	}
@@ -23,7 +25,8 @@ public class Castle : MonoBehaviour {
 			if (flag.position.y < flagStop.position.y) {
 				flag.position = new Vector2 (flag.position.x, flag.position.y + flagVelocityY);
 			} else {
-				t_LevelManager.LoadNewLevel (sceneName, t_LevelManager.levelCompleteMusic.length);
+				LevelManager.levelEndsCheckForDelayedFB = true;
+				t_LevelManager.LoadNewLevel(sceneName, t_LevelManager.levelCompleteMusic.length);
 			}
 		}
 	}

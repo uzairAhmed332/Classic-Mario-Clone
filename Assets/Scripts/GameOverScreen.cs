@@ -30,14 +30,15 @@ public class GameOverScreen : MonoBehaviour {
 
 		bool timeup = t_GameStateManager.timeup;
 		if (!timeup) {
-			MessageText.text = "GAME OVER";
+		//	MessageText.text = "GAME OVER";
 		} else {
 			StartCoroutine (ChangeMessageCo ());
 		}
 
 		gameOverMusicSource.volume = PlayerPrefs.GetFloat ("musicVolume");
 		gameOverMusicSource.Play ();
-		LoadMainMenu (gameOverMusicSource.clip.length);
+		
+	//	LoadMainMenu (gameOverMusicSource.clip.length);
 
 		Debug.Log (this.name + " Start: current scene is " + SceneManager.GetActiveScene ().name);
 	}
