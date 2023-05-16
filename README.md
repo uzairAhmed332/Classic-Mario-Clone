@@ -1,9 +1,9 @@
-# Classic-Mario-Clone
+# Effect of Immediate vs Delayed Feedback in Video Games
 
 This repository contains the source code and materials for a research project investigating the effectiveness of a real-time gameplay route visualization feedback system using a ghost to display the optimal route. The research explores players' preferences for receiving immediate or delayed feedback in the context of video games.
 
 # Introduction
-This project builds upon the game found at https://github.com/linhdvu14/SMB-clone by extending it with a feedback system. The original game serves as the foundation for our research, allowing us to investigate the impact of immediate versus delayed feedback on gameplay performance and user experience.
+This project builds upon the Super Mario Bros game found at https://github.com/linhdvu14/SMB-clone by extending it with a feedback system. The original game serves as the foundation for our research, allowing us to investigate the impact of immediate versus delayed feedback on gameplay performance and user experience.
 
 The motivation behind this research is to understand how real-time gameplay route visualization, provided through the presence of a ghost representing the optimal route, influences players' performance and preferences for feedback timing. By studying the effects of immediate versus delayed feedback, we aim to contribute to the growing body of knowledge on effective feedback mechanisms in video games.
 
